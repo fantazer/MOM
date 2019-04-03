@@ -1,0 +1,76 @@
+@import 'rupture'
+@import "variable/_function.styl"
+@import "variable/_fonts.styl"
+@import "variable/_ie.styl"
+@import "variable/_helper.styl"
+@import "variable/_default.styl"
+@import "variable/config/_color.styl"
+@import "variable/config/_typography.styl"
+@import "variable/config/_btn.styl"
+@import "variable/config/_input.styl"
+@import "../module/**/*"
+
+body
+	@extend .type--main
+	font-family $v-font
+	color $main-text-color
+	line-height 1.2
+	letter-spacing 0.01em
+
+.main-cont
+	center(1200px,10px)
+
+.header
+	box-shadow 0 2px 8px rgba(43, 45, 53, 0.1)
+	height: 50px
+	background-color #ffffff
+.header-cont
+	center(1375px,10px)
+	padding: 10px 0
+	f()
+	align-items: center
+.header-logo
+	width: 12%
+.header-logo-divider
+	margin: 0 15px
+	height: 30px
+	width: 1px
+	background: $gray
+.header-location
+	@extend .type--sm
+	margin-right: 30px
+.header-phone
+	flex(mid)
+.header-phone__icon
+	.icon
+		fill $pink
+		size 30px
+		margin-right: 15px
+.header-phone__val
+	font-size 18px
+	font-weight 700
+.header-nav
+	margin-left: auto
+	width: 37%
+	flex(between)
+	margin-right: 30px
+.header-nav__el
+	@extend .type--sm
+.header-lk
+	flex(mid)
+.header-lk__icon
+	margin-right: 15px
+	position: relative
+	.icon
+		size 30px
+		fill $pink
+.header-lk__bonus
+	position: absolute
+	color $pink-mark
+	@extend .type--xs
+	font-weight 700
+	top -5px
+	left: 100%
+//.icon
+.header-lk__text
+	@extend .type--sm

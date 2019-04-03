@@ -1,0 +1,24 @@
+mixin header()
+	//block header
+	.header
+		.header-cont
+			a(href="/").header-logo
+				img(src="img/logo-mam-long.svg", alt="")
+			.header-logo-divider
+			.header-location Москва
+			.header-phone
+				.header-phone__icon
+					+icon("phone","icon")
+				a(href="tel:+7 495 223 35 03").header-phone__val +7 495 223 35 03
+			.header-nav
+				a(href="#").header-nav__el Программы питания
+				a(href="#").header-nav__el Как это работает
+				a(href="#").header-nav__el Отзывы
+				a(href="#").header-nav__el FAQ
+				a(href="#").header-nav__el Блог
+			.header-lk
+				.header-lk__icon
+					+icon("user","icon")
+					.header-lk__bonus 200
+				.header-lk__text Личный кабинет
+	//block header end
