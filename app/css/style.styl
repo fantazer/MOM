@@ -14,15 +14,20 @@ body
 	@extend .type--main
 	font-family $v-font
 	color $main-text-color
-	line-height 1.2
+	line-height 1.4
 	letter-spacing 0.01em
 
 .main-cont
 	center(1200px,10px)
 
+.main-cont--sm
+	center(800px,10px)
+.main-cont--md
+	center(1000px,10px)
+
 .header
 	box-shadow 0 2px 8px rgba(43, 45, 53, 0.1)
-	height: 50px
+	height: 55px
 	background-color #ffffff
 .header-cont
 	center(1375px,10px)
@@ -74,3 +79,784 @@ body
 //.icon
 .header-lk__text
 	@extend .type--sm
+
+.slider
+	margin-bottom: 0 !important
+	overflow-x: hidden
+	.slick-dots
+		bottom 0px
+	.dot
+		opacity:.5
+		tr(all)
+		&:hover
+			opacity:1
+	.slick-active
+		.dot
+			border 1px solid #ffffff73 !important
+.slider__el
+	bg-full()
+	padding: 18% 10%
+	display: list-item!important
+.section
+	padding: 80px 0
+
+.section--gray
+	background: #f6f7fa
+
+.description
+	f()
+	justify-content: space-between
+	margin-bottom: 50px
+.description__info
+	width: 42%
+.description-title
+	@extend .type--xl
+	up()
+	margin-bottom: 20px
+	font-family "Fira Sans"
+	font-weight 700
+	letter-spacing 0.72px
+.description-title__logo
+	display: inline-block
+.description-title__text
+	display: inline
+	line-height: 1.6
+.description-text
+	line-height: 1.6
+.description__img
+	br(20px)
+	bg-full()
+	padding: 18% 10%
+	width: calc(59% - 50px)
+	overflow: hidden
+
+.description-list
+	f()
+	justify-content: space-between
+.description-el
+	width calc(100%/6 - 30px)
+	f()
+	align-items: center
+	justify-content: flex-start
+	fl()
+.description-el__icon
+	size 72px
+	position: relative
+	margin-bottom: 15px
+	& >.icon
+		size 72px
+		fill $silver
+.description-el__plus
+	position: absolute
+	top 6px
+	right: -3px
+	z-index 10
+	&:hover
+		.description-el__more
+			opacity:1
+			transform translate(0,0)
+			left: 100%
+.description-el__more
+	@extend .type--xs
+	height: auto
+	transition opacity .4s, transform .4s
+	position: absolute
+	bottom 100%
+	left: 100%
+	background: white
+	box-shadow 0 2px 8px rgba(43, 45, 53, 0.1)
+	border-radius 10px
+	padding: 15px 20px
+	line-height: 1.6
+	width: 190px
+	opacity:1
+	transform translate(20px,-20px)
+	left -9999px
+.description-el__text
+	@extend .type--sm
+	text-align: center
+
+.description-el__plus-wrap
+	&:hover
+		background: $pink
+	tr(all)
+	cp()
+	position: relative
+	round()
+	flex(mid)
+	size 21px
+	background: $silver
+	.icon
+		size 7px
+		fill white
+
+.section-title
+	@extend .type--xl
+	@extend .type--bold
+	letter-spacing 0.72px
+	text-align center
+	margin-bottom: 60px
+
+//.diet
+.diet-cond
+	display: grid
+	grid-gap 30px
+	grid-template-columns: repeat(5, 1fr)
+	margin-bottom: 40px
+.diet-cond__el
+	f()
+	fl()
+	cp()
+	transition border-color .4s, box-shadow .4s
+	justify-content flex-start
+	align-items center
+	box-shadow 0 2px 8px rgba(43, 45, 53, 0.1)
+	border-radius 20px
+	background-color #ffffff
+	padding: 20px
+	border 2px solid transparent
+	&:hover
+		border 2px solid $pink
+		box-shadow none
+.diet-cond__el--active
+	border 2px solid $pink
+	background: #f6f7fa
+	box-shadow none
+	.diet-cond__el-title
+		color $silver
+	.diet-cond__el-text
+		color $silver
+	.icon--main
+		display: none
+	.icon--mark
+		display: block
+.diet-cond__el-icon
+	size 60px
+	margin-bottom: 15px
+	.icon
+		size 60px
+		fill $pink
+.icon--mark
+	display: none
+.diet-cond__el-title
+	color $pink
+	@extend .type--bold
+	margin-bottom: 5px
+.diet-cond__el-text
+	color $pink
+	@extend .type--sm
+
+.section-how
+	bg-full()
+
+.deliver-map-container
+	position: relative
+	br(20px)
+	overflow: hidden
+.deliver-map-el
+	position: absolute
+	background: #ececec
+	top 0
+	left 0
+	width: 100%
+	height: 100%
+.deliver-map-cont
+	f()
+	br(20px)
+	justify-content: space-between
+	align-items: stretch
+	z-index 10
+	position: relative
+	padding: 30px
+.deliver-map-col
+	background: white
+	br(20px)
+	padding: 30px
+	width: 30%
+.deliver-map-content
+	p
+		@extend .type--xs
+		margin-bottom: 25px
+		line-height: 1.6
+		&:last-child
+			margin-bottom: 0
+.deliver-map-title
+	@extend .type--xl
+	@extend .type--bold
+	margin-bottom: 30px
+
+.section-review
+	overflow: hidden
+
+.review-slider__el
+	bg-full()
+	background-size contain
+	padding: 95% 10%
+
+//for custom navigation
+.slider-control
+	round()
+	flex(mid)
+	tr(all)
+	size 40px
+	position: absolute
+	top calc(50% - 20px)
+	z-index 10
+	cp()
+	&:hover
+		.icon
+			fill black
+	.icon
+		tr(all)
+		cp()
+		fill $silver
+		size 40px
+
+.slider-control--left
+	left -60px
+.slider-control--right
+	right -60px
+
+//Отступы для для слайдов
+.review-slider
+	.slick-slide
+		margin: 0 10px
+	.slick-list
+		margin: 0 -10px
+
+.slick-dots li button:before
+	font-size: 18px
+	color transparent
+	border 2px solid white
+	background: white
+	round()
+	opacity 1
+
+
+.slick-dots
+	width: 100%
+	bottom -50px
+	.dot
+		background: white
+		width: 24px
+		height: 6px
+		display: block
+		br(3px)
+		border 1px solid #e7e7e7
+	.slick-active
+		.dot
+			border 1px solid transparent
+			background: $pink
+
+.faq-tab
+	display: grid
+	grid-gap 15px
+	grid-template-columns: repeat(4, 1fr)
+	margin-bottom: 50px
+.faq-tab__el
+	f()
+	fl()
+	cp()
+	transition border-color .4s
+	@extend .type--sm
+	position: relative
+	justify-content: flex-start
+	align-items: center
+	box-shadow 0 2px 8px rgba(43, 45, 53, 0.1)
+	border-radius 20px
+	background-color #ffffff
+	padding: 20px 10px
+	border 1px solid transparent
+	&:hover
+		border 1px solid $pink
+.faq-tab__el-icon
+	margin-bottom: 15px
+	.icon
+		size 45px
+.faq-tab__el-text
+	text-align: center
+
+.faq-tab__el--active
+	background: $pink-mark
+	box-shadow none
+	.icon
+		fill white
+	.faq-tab__el-text
+		color white
+	.faq-tab__el-coner
+		left 50%
+		bottom -10px
+.faq-tab__el-coner
+	transition bottom .4s
+	br(4px)
+	size 20px
+	transform rotate(45deg)
+	position: absolute
+	background: $pink-mark
+	bottom 0
+	left -9999px
+	margin-left: -10px
+
+.faq
+	left -9999px
+	transform translateX(20px)
+	opacity:0
+	transition all .6s
+	height: 1px
+.faq--active
+	height: auto
+	left 0
+	transform translateX(0px)
+	opacity:1
+	box-shadow 0 2px 8px rgba(43, 45, 53, 0.1)
+.faq__el
+	border-bottom 1px solid #e5e5e5
+	cp()
+	&:hover
+		.faq__el-head-icon
+			&:before
+				content ''
+				background: $pink
+			&:after
+				content ''
+				background: $pink
+	&:last-child
+		border 0
+.faq__el-head
+	padding: 20px
+	flex(between)
+.faq__el-head-text
+	@extend .type--md
+	width: 80%
+
+.faq__el-head-icon
+	position: relative
+	size 28px
+	&:before
+		content ''
+		tr(all)
+		height: 2px
+		width: 100%
+		background: $silver
+		position: absolute
+		top calc(50% - 1px)
+	&:after
+		content ''
+		tr(all)
+		height: 100%
+		width: 2px
+		background: $silver
+		position: absolute
+		left calc(50% - 1px)
+
+.faq__el-content
+	padding: 0 20px 20px 20px
+	display: none
+	@extend .type--sm
+	p
+		@extend .type--sm
+		line-height: 1.8
+
+.faq__el--active
+	.faq__el-head-text
+		color $pink-mark
+	.faq__el-head-icon
+		&:after
+			content ''
+			transform rotate(90deg)
+
+.video-wrap
+	flex(between)
+.video-info
+	width: 35%
+.video-info__title
+	@extend .type--md
+	@extend .type--bold
+	margin-bottom: 20px
+.video-info__text
+	margin-bottom: 20px
+	line-height: 1.8
+.video-info__get
+	f()
+	fl()
+.video-info__get-el
+	@extend .btn--sm
+	margin-bottom: 20px
+	width: 220px
+//.btn--mark
+//.btn--light
+.video-cont
+	width: 58%
+.video-cont__title
+	@extend .type--md
+	@extend .type--bold
+	margin-bottom: 40px
+//.fancybox
+//.video-link
+.video
+	bg-full()
+	br(10px)
+	padding: 30% 10%
+	position: relative
+	overflow: hidden
+	&:hover
+		.video-filter
+			background: rgba(17, 17, 17, 0.4)
+	.icon
+		transition all .6s
+		position: absolute
+		size 80px
+		z-index 10
+		top calc(50% - 40px)
+		left calc(50% - 40px)
+
+.video-filter
+	transition all .6s
+	position: absolute
+	top 0
+	left 0
+	width: 100%
+	height: 100%
+	background: #11111130
+
+//.footer
+.footer-top
+	background: #b6bcda
+	padding: 40px 0
+//.main-cont
+.footer-top-cont
+	f()
+	justify-content: space-between
+	align-items: flex-start
+	margin-bottom: 30px
+.footer-col
+	&:nth-child(1)
+		width: 50%
+	&:nth-child(2)
+		width: 40%
+.footer-logo-row
+	f()
+	justify-content: space-between
+	align-items: stretch
+	margin-bottom: 30px
+.footer-logo-el
+	width: 30%
+	box-shadow 0 2px 8px rgba(43, 45, 53, 0.1)
+	border-radius 20px
+	background-color $silver
+	padding: 10px
+	flex(mid)
+	fl()
+	tr(all)
+	&:hover
+		background: darken($silver,20)
+.footer-logo-el--fe
+	img
+		width: 40%
+.footer-logo-text
+	text-align: center
+	color white
+	@extend .type--xs
+	margin-bottom: 10px
+.footer-logo-el--zn
+	img
+		width: 60%
+.footer-logo-el--green
+	img
+		width: 80%
+.footer-conect
+	flex(between)
+.footer-conect__col
+	width: 45%
+.footer-conect__text
+	@extend .type--sm
+	margin-bottom: 20px
+.soc-row
+	f()
+	align-items: center
+.soc-row__el
+	margin-right: 15px
+	&:last-child
+		margin-right: 0
+	.icon
+		&:hover
+			fill #4b4f5e
+		transition fill .6s
+		size 30px
+		fill $silver
+.soc-row__phone
+	@extend .type--bold
+	margin-right: 15px
+	font-size: 18px
+.footer-nav
+	f()
+	align-items: center
+	margin-bottom: 20px
+.footer-nav__el
+	@extend .type--sm
+	margin-right: 40px
+	&:last-child
+		margin-right: 0
+.footer-contact
+	f()
+	justify-content: space-between
+	align-items: flex-start
+	margin-bottom: 30px
+.footer-contact__el
+	width: 45%
+.footer-contact__phone
+	@extend .type--bold
+	margin-bottom: 10px
+	font-size: 18px
+	display: block
+.footer-contact__mail
+	display: block
+	@extend .type--sm
+.footer-contact__text
+	@extend .type--sm
+	line-height: 1.8
+//.footer-payment
+.footer-payment__text
+	@extend .type--sm
+	margin-bottom: 10px
+.payment-row
+	f()
+	align-items: center
+.payment-row__el
+	margin-right: 20px
+	&:last-child
+		margin-right: 0
+	.icon
+		size 40px
+.footer-top__text
+	@extend .type--xs
+.footer-bottom
+	background: #888faa
+	padding: 10px 0
+	color white
+.footer-bottom-cont
+	flex(between)
+.footer-bottom__tm
+	@extend .type--xs
+.footer-bottom-nav
+	flex(between)
+	width: 40%
+.footer-bottom-nav__el
+	@extend .type--xs
+	color white
+.footer-develop
+	flex(mid)
+.footer-develop__text
+	@extend .type--xs
+	margin-right: 15px
+	color white
+.footer-develop__icon
+	.icon
+		size 40px
+.diet
+	f()
+.diet-day
+	f()
+	align-items:center
+	justify-content: space-between
+	fl()
+	width: 70px
+.diet-day__el
+	font-size: 16px
+	size 50px
+.diet-consist
+	f()
+	justify-content: space-between
+	width calc(100% - 70px)
+.diet-slider-wrap
+	width: 52%
+	position: relative
+
+	overflow: hidden
+	.slider-control
+		size 40px
+		position: absolute
+		top calc(50% - 20px)
+		z-index 10
+		cp()
+		&:hover
+			.icon
+				fill black
+	.icon
+		tr(all)
+		cp()
+		fill white
+		size 20px
+	.slider-control--left
+		left 0px
+	.slider-control--right
+		right 0px
+	.slick-active
+		.diet-slider__el-layer
+			opacity: 1
+			transform translateY(0)
+	.slider-wrap
+		br(30px)
+		overflow: hidden
+		height: 400px
+//.slider-control
+//.slider-control--left
+//.slider-control--right
+
+
+//.diet-slider
+
+
+.diet-slider__el
+	height: 400px
+	bg-full()
+	padding: 40% 10%
+	position: relative
+	overflow: hidden
+.diet-slider__el-layer
+	transition all .8s
+	transform translateY(20px)
+	f()
+	position: absolute
+	width: 100%
+	height: 100%
+	top 0
+	left 0
+	opacity:0
+.diet-slider__el-content
+	margin-top: auto
+	padding: 20px
+	background: #00000087
+.diet-slider__el-title
+	@extend .type--md
+	@extend .type--bold
+	color white
+	margin-bottom: 10px
+.diet-slider__el-text
+	color white
+	line-height: 1.6
+	@extend .type--sm
+	margin-bottom: 10px
+.diet-slider-gbu
+	flex(between)
+.diet-slider-gbu__el
+	@extend .type--sm
+	color white
+.diet-control
+	width: 45%
+.diet-clock
+	display: grid
+	grid-gap 30px
+	grid-template-columns: repeat(6, 1fr)
+	margin-bottom: 40px
+.diet-clock__el
+	flex(mid)
+	justify-content: flex-start
+	fl()
+	cp()
+	&:hover
+		.icon
+			fill $pink
+		.diet-clock__el-text
+			color black
+.diet-clock__el-icon
+	.icon
+		size 36px
+		fill $silver
+		tr(all)
+.diet-clock__el-text
+	@extend .type--xs
+	color $silver
+	text-align: center
+	tr(all)
+.diet-clock__el--active
+	.icon
+			fill $pink
+	.diet-clock__el-text
+		color black
+.diet-tab
+	br(30px)
+	overflow: hidden
+	width: 100%
+	box-shadow 0 2px 8px rgba(43, 45, 53, 0.2)
+.diet-tab__head-wrap
+	f()
+	width: 100%
+	height: 50px
+
+.diet-tab__head-el
+	flex(mid)
+	fl()
+	height: 100%
+.diet-tab__head
+	flex-grow 1
+	background: #f2f2f2
+	border-right 2px solid white
+	&:last-child
+		border 0
+.diet-tab__head-day
+	@extend .type--sm
+.diet-tab__head--active
+	background: white
+.diet-tab__head-sale
+	@extend .type--sm
+	font-weight:700
+	color $pink
+//.diet-tab__cont-wrap
+.diet-tab__cont
+	padding: 20px 25px
+//.diet-tab__cont--active
+.diet-tab__title
+	@extend .type--lg
+	@extend .type--bold
+	margin-bottom: 10px
+.diet-tab__text
+	@extend .type--sm
+	@extend .type--bold
+	color $silver
+	margin-bottom: 20px
+.diet-cost
+	f()
+	align-items: center
+	margin-bottom: 15px
+.diet-cost-val
+	@extend .type--lg
+	@extend .type--bold
+	margin-right: 4%
+.diet-cost-day
+	color $silver
+	@extend .type--xs
+	margin-right: 4%
+.diet-cost-bonus
+	@extend .type--sm
+	@extend .type--bold
+	color $silver
+.mark
+	padding: 3px 10px
+	border-radius 15px
+	background: $pink
+	color white
+	display: inline-block
+	margin: 0 5px
+.diet-get
+	flex(between)
+.diet-get__el
+	width: 48%
+	height: 50px
+.diet-get__el--order
+	@extend .btn--md
+	@extend .btn--mark
+	padding: 15px 10px
+	flex(mid)
+.diet-get__el--trust
+	@extend .btn--md
+	@extend .btn--light
+	flex(mid)
+	padding: 15px 10px
+	.icon
+		size 20px
+		margin-right: 10px
+.trust-new
+	@extend .type--sm
+	color $pink-mark
+	transform:translateY(-10px)

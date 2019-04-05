@@ -1,35 +1,74 @@
 mixin footer()
-	//block footer
-	.modal-layer
-		.modal-filter
-		.modal-wrap
-			.modal(data-modal="order")
-				.modal-content
-					.modal-close
-						+icon("close","icon")
-					.modal-title Оставьте заявку
-					.modal-text Обращаетесь к нам впервые? <br> Оформите обращение с помощью этой формы, мы перезвоним Вам и проконсультируем по любому Вашему вопросу совершенно бесплатно!
-					form.validate-form( action="javascript:void(null);")
-						.input-row
-							input(type="text" name="name" placeholder="Ваше имя").input
-						.input-row
-							input(type="text" name="phone" placeholder="Ваш телефон").input
-						.input-row
-							textarea(name="info", cols="30", rows="5" placeholder="Сообщение").input
-						.agree-row
-							.check-el
-								label.style-label.style-label--checkbox
-									input(type="checkbox" name="agree").sytle-input
-									.sytle-input-element
-										+icon("checked","icon-check")
-									.sytle-input-text=text
-							.agree-row__text Согласен с
-								a(href="#") условиями обработки персональных данных
-						input(type="submit" value="Отправить заявку").modal-send
-			//success message
-			.modal(data-modal="truemessage")
-				.modal-content.modal-content--true
-					+icon("interface","icon")
-					.modal-text-true Ваша заявка принята
-	a(href="#" data-modal="order").modal-get Открыть модальное окно
-	//block footer end
+	// footer
+	.footer
+		.footer-top
+			.main-cont
+				.footer-top-cont
+					.footer-col
+						.footer-logo-row
+							a(href="#").footer-logo-el.footer-logo-el--fe
+								.footer-logo-text головная компания
+								img(src="img/logo-fe--white.svg", alt="")
+							a(href="#").footer-logo-el.footer-logo-el--zn
+								img(src="img/logo-zn--white.svg", alt="")
+							a(href="#").footer-logo-el.footer-logo-el--green
+								.footer-logo-text сбалансированное питание
+								img(src="img/logo-green--white.svg", alt="")
+						.footer-conect
+							.footer-conect__col
+								.footer-conect__text Подпишитесь на нас в соцсетях:
+								.soc-row
+									a(href="#").soc-row__el
+										+icon("vk","icon")
+									a(href="#").soc-row__el
+										+icon("fb","icon")
+							.footer-conect__col
+								.footer-conect__text Напишите нам в мессенджеры:
+								.soc-row
+									a(href="tel:+7 962 123 45 67").soc-row__phone +7 962 123 45 67
+									a(href="#").soc-row__el
+										+icon("whatsapp","icon")
+									a(href="#").soc-row__el
+										+icon("viber","icon")
+									a(href="#").soc-row__el
+										+icon("telegram","icon")
+					.footer-col
+						.footer-nav
+							a(href="#").footer-nav__el Блог
+							a(href="#").footer-nav__el Акции
+							a(href="#").footer-nav__el О компании
+						.footer-contact
+							.footer-contact__el
+								a(href="tel:+7 962 123 45 67").footer-contact__phone +7 962 123 45 67
+								a(href="mailto:hm@feel-eat.ru").footer-contact__mail hm@feel-eat.ru
+							.footer-contact__el
+								.footer-contact__text 117534, Россия, г Москва, ул. Кировоградская, дом 23а, м. Улица Академика Янгеля
+						.footer-payment
+							.footer-payment__text Принимаем оплату:
+							.payment-row
+								.payment-row__el
+									+icon("maestro--color","icon")
+								.payment-row__el
+									+icon("mastercard--color","icon")
+								.payment-row__el
+									+icon("visa--color","icon")
+								.payment-row__el
+									+icon("mir--color","icon")
+								.payment-row__el
+									+icon("apay","icon")
+								.payment-row__el
+									+icon("gpay--color","icon")
+				.footer-top__text Фотографии блюд на сайте являются вариантом сервировки. Внешний вид блюда может отличаться от фотографии на сайте
+		.footer-bottom
+			.main-cont
+				.footer-bottom-cont
+					.footer-bottom__tm © 2019 FeelEat — сервис доставки здорового питания
+					.footer-bottom-nav
+						a(href="#").footer-bottom-nav__el Условия оплаты
+						a(href="#").footer-bottom-nav__el Публичная оферта
+						a(href="#").footer-bottom-nav__el Договор конфиденциальности
+					a(href="#").footer-develop
+						.footer-develop__text Разработка сайта:
+						.footer-develop__icon
+							+icon("jq--color","icon")
+	// footer === end
