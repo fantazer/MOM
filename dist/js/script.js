@@ -49,6 +49,23 @@ $(document).ready(function () {
 	});
 	//toggle state header=== end
 
+	// tab programs
+	$('.diet-tab__head').click(function(){
+		$(this).closest('.diet-tab').find('.diet-tab__head').removeClass('diet-tab__head--active');
+		$(this).addClass('diet-tab__head--active');
+		var currentTab = $(this).index();
+		console.log(currentTab);
+		$(this).closest('.diet-tab').find('.diet-tab__cont').each(function(){
+				if($(this).index()===currentTab){
+					$(this).addClass('diet-tab__cont--active')
+				}else{
+					$(this).removeClass('diet-tab__cont--active')
+				}
+			})
+	});
+	// tab programs === end
+
+	//calc slider
 	$('.diet-slider').slick({
 			slidesToShow: 1,
 			speed: 800, //animate time
@@ -57,8 +74,59 @@ $(document).ready(function () {
 			autoplaySpeed: 8000, //time between
 			dots:false,
 			centerMode: true,
+			lazyLoad: 'ondemand',
+			infinite:true
 			//fade: true
 	});
+	//calc slider === end
+
+	//toggle state day
+	$('.diet-day__el').click(function(){
+		$('.diet-day__el').removeClass('diet-day__el--active');
+		$(this).addClass('diet-day__el--active');
+		var current = $(this).index();
+		$('.diet-container').each(function(){
+			console.log($(this).index());
+				if($(this).index()===current){
+					$(this).addClass('diet-container--active');
+				}else{
+					$(this).removeClass('diet-container--active');
+				}
+			})
+		//$('.diet-slider').eq(current).slick('reinit');
+	});
+	//toggle state day === end
+
+
+
+	//clock state + nav slider day
+	$('.diet-clock__el').click(function(){
+		var currentClock = $(this).closest('.diet-container').find('.diet-clock__el');
+		currentClock.removeClass('diet-clock__el--active');
+		$(this).addClass('diet-clock__el--active');
+		var current = $(this).index();
+		var currentSlider = $(this).closest('.diet-container').index();
+
+		$('.diet-slider').eq(currentSlider).slick('slickGoTo', current);
+	});
+	//clock state + nav slider day === end
+
+	//change state on slider move
+	$('.diet-slider').on("afterChange", function (event, slick, currentSlide, nextSlide) {
+		$(this).closest('.diet-container').find('.diet-clock__el').each(function(){
+				if($(this).index()===currentSlide){
+					$(this).addClass('diet-clock__el--active')
+				}else{
+					$(this).removeClass('diet-clock__el--active')
+				}
+			})
+	});
+	//change state on slider move === end
+
+
+	// tab programs === end
+
+
 
 	// ==== diet calc  end====
 

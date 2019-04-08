@@ -80,77 +80,80 @@ include block_html/_include.pug
 				.diet-day
 					-
 						var items = ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
-					each item in items
-						.diet-day__el(class=i===0?'diet-day__el--active':'') #{item}
+					each item,i in items
+						.diet-day__el(class=i===0?'diet-day__el--active':'') <span> #{item} </span>
+							.diet-day__el-heart
+								img(src="img/heart-pink.svg", alt="")
 				.diet-consist
-					.diet-slider-wrap
-						.slider-wrap
-							.slider-control.slider-control--left
-								+icon("arrow-left","icon")
-							.slider-control.slider-control--right
-								+icon("arrow-right","icon")
-							.diet-slider.slider-item
-								- for (var i=0;i<5;i++)
-									.diet-slider__el(style="background-image:url('img/diet-slider-1.jpg')")
-										.diet-slider__el-layer
-											.diet-slider__el-content
-												.diet-slider__el-title Фарфалле с семгой и соусом песто
-												.diet-slider__el-text макароны из твердых сортов фарфалле, сливки 10%, семга, специи, соус песто макароны из сортов фарфалле, сливки 10%, семга, специи, соус песто.
-												.diet-slider-gbu
-													.diet-slider-gbu__el В блюде:
-													.diet-slider-gbu__el 890 ккал
-													.diet-slider-gbu__el 45 белки
-													.diet-slider-gbu__el 6 жиры
-													.diet-slider-gbu__el 29.4 углеводы
-					.diet-control
-						.diet-clock
-							-
-								var items = [
-									{"icon":"7","text":"завтрак"},
-									{"icon":"9_30","text":"второй завтрак"},
-									{"icon":"12","text":"обед"},
-									{"icon":"15","text":"полдник"},
-									{"icon":"17_30","text":"второй полдник"},
-									{"icon":"20","text":"ужин"}
-								];
-							each item,i in items
-								.diet-clock__el(class=i===0?'diet-clock__el--active':'')
-									.diet-clock__el-icon
-										+icon(item.icon,"icon")
-									.diet-clock__el-text #{item.text}
-						.diet-tab
-							.diet-tab__head-wrap
-								.diet-tab__head.diet-tab__head--active
-									.diet-tab__head-el
-										.diet-tab__head-day 1 день
-										.diet-tab__head-sale -50%
-								.diet-tab__head
-									.diet-tab__head-el
-										.diet-tab__head-day 6 дней
-								.diet-tab__head
-									.diet-tab__head-el
-										.diet-tab__head-day 14 дней
-										.diet-tab__head-sale -3%
-								.diet-tab__head
-									.diet-tab__head-el
-										.diet-tab__head-day 28 дней
-										.diet-tab__head-sale -7%
-							.diet-tab__cont-wrap
-								.diet-tab__cont.diet-tab__cont--active
-									.diet-tab__title Я беременна. 2 триместр
-									.diet-tab__text ≈ 2500 ккал, 6 приёмов/день
-									.diet-cost
-										.diet-cost-val 7 700 ₽
-										.diet-cost-day 500 ₽/день
-										.diet-cost-bonus Вы получите <span class="mark">215</span> баллов
-									.diet-get
-										.diet-get__el.diet-get__el--order Заказать
-										.diet-get__el.diet-get__el--trust
-											+icon("fire--color","icon")
-											span.trust-text В рассрочку
-											span.trust-new new!
-
-
+					- for (var k=0;k<7;k++)
+						.diet-container(class=k===0?'diet-container--active':'')
+							.diet-slider-wrap
+								.slider-wrap
+									.slider-control.slider-control--left
+										+icon("arrow-left","icon")
+									.slider-control.slider-control--right
+										+icon("arrow-right","icon")
+									.diet-slider.slider-item
+										- for (var i=0;i<7;i++)
+											.diet-slider__el(style="background-image:url('img/diet-slider-1.jpg')")
+												.diet-slider__el-layer
+													.diet-slider__el-content
+														.diet-slider__el-title Фарфалле с семгой и соусом песто #{i}
+														.diet-slider__el-text макароны из твердых сортов фарфалле, сливки 10%, семга, специи, соус песто макароны из сортов фарфалле, сливки 10%, семга, специи, соус песто.
+														.diet-slider-gbu
+															.diet-slider-gbu__el В блюде:
+															.diet-slider-gbu__el 890 ккал
+															.diet-slider-gbu__el 45 белки
+															.diet-slider-gbu__el 6 жиры
+															.diet-slider-gbu__el 29.4 углеводы
+							.diet-control
+								.diet-clock
+									-
+										var items = [
+											{"icon":"7","text":"завтрак"},
+											{"icon":"9_30","text":"второй завтрак"},
+											{"icon":"12","text":"обед"},
+											{"icon":"15","text":"полдник"},
+											{"icon":"17_30","text":"второй полдник"},
+											{"icon":"20","text":"ужин"}
+										];
+									each item,i in items
+										.diet-clock__el(class=i===0?'diet-clock__el--active':'')
+											.diet-clock__el-icon
+												+icon(item.icon,"icon")
+											.diet-clock__el-text #{item.text}
+								.diet-tab
+									.diet-tab__head-wrap
+										.diet-tab__head.diet-tab__head--active
+											.diet-tab__head-el
+												.diet-tab__head-day 1 день
+												.diet-tab__head-sale -50%
+										.diet-tab__head
+											.diet-tab__head-el
+												.diet-tab__head-day 6 дней
+										.diet-tab__head
+											.diet-tab__head-el
+												.diet-tab__head-day 14 дней
+												.diet-tab__head-sale -3%
+										.diet-tab__head
+											.diet-tab__head-el
+												.diet-tab__head-day 28 дней
+												.diet-tab__head-sale -7%
+									.diet-tab__cont-wrap
+										- for (var j=0;j<4;j++)
+											.diet-tab__cont(class=j===0?'diet-tab__cont--active':'')
+												.diet-tab__title Я беременна. #{j+1} триместр
+												.diet-tab__text ≈ 2500 ккал, 6 приёмов/день
+												.diet-cost
+													.diet-cost-val 7 700 ₽
+													.diet-cost-day 500 ₽/день
+													.diet-cost-bonus Вы получите <span class="mark">215</span> баллов
+												.diet-get
+													.diet-get__el.diet-get__el--order Заказать
+													.diet-get__el.diet-get__el--trust
+														+icon("fire--color","icon")
+														span.trust-text В рассрочку
+														span.trust-new new!
 			//head toggle cond
 // section program === end
 
