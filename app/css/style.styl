@@ -29,22 +29,36 @@ body
 	box-shadow 0 2px 8px rgba(43, 45, 53, 0.1)
 	height: 55px
 	background-color #ffffff
+	border-bottom 1px solid #f8f8f8
+	padding: 0 10px
 .header-cont
+	+below(1200px)
+		padding: 10px
 	center(1375px,10px)
 	padding: 10px 0
 	f()
 	align-items: center
+	height: 100%
 .header-logo
-	width: 12%
+	+below(640px)
+		width: 120px
+	//width: 12%
+	max-width 12%
 .header-logo-divider
+	+below(640px)
+		display: none
 	margin: 0 15px
 	height: 30px
 	width: 1px
 	background: $gray
 .header-location
+	+below(640px)
+		display: none
 	@extend .type--sm
 	margin-right: 30px
 .header-phone
+	+below(1200px)
+		display: none
 	flex(mid)
 .header-phone__icon
 	.icon
@@ -55,13 +69,17 @@ body
 	font-size 18px
 	font-weight 700
 .header-nav
+	+below(1200px)
+		display: none
 	margin-left: auto
-	width: 37%
 	flex(between)
 	margin-right: 30px
 .header-nav__el
 	@extend .type--sm
+	margin: 0 15px
 .header-lk
+	+below(1200px)
+		display: none
 	flex(mid)
 .header-lk__icon
 	margin-right: 15px
@@ -94,22 +112,36 @@ body
 		.dot
 			border 1px solid #ffffff73 !important
 .slider__el
+	+below(640px)
+		padding: 25%
 	bg-full()
 	padding: 18% 10%
 	display: list-item!important
 .section
+	+below(640px)
+		padding: 40px 0
 	padding: 80px 0
 
 .section--gray
 	background: #f6f7fa
 
 .description
+	+below(640px)
+		fw()
+		margin-bottom: 0
 	f()
 	justify-content: space-between
 	margin-bottom: 50px
 .description__info
+	+below(640px)
+		width: 100%
+		margin-bottom: 20px
 	width: 42%
 .description-title
+	+below(1024px)
+		font-size: 24px
+	+below(768px)
+		font-size: 18px
 	@extend .type--xl
 	up()
 	margin-bottom: 20px
@@ -124,6 +156,9 @@ body
 .description-text
 	line-height: 1.6
 .description__img
+	+below(640px)
+		width: 100%
+		padding: 25% 10%
 	br(20px)
 	bg-full()
 	padding: 18% 10%
@@ -131,9 +166,19 @@ body
 	overflow: hidden
 
 .description-list
+	+below(640px)
+		display: none
 	f()
+	fw()
 	justify-content: space-between
 .description-el
+	+below(768px)
+		width calc(100%/3 - 30px)
+		margin-bottom: 30px
+	+below(640px)
+		width calc(100%/2 - 30px)
+	+below(480px)
+		width 100%
 	width calc(100%/6 - 30px)
 	f()
 	align-items: center
@@ -191,19 +236,37 @@ body
 		fill white
 
 .section-title
+	+below(768px)
+		margin-bottom: 30px
 	@extend .type--xl
 	@extend .type--bold
 	letter-spacing 0.72px
 	text-align center
 	margin-bottom: 60px
 
+.section-title--extend
+	margin: 40px 0
+
 //.diet
 .diet-cond
+	+below(1024px)
+		grid-gap 10px
+	+below(480px)
+		grid-gap 0
+		margin-left: -10px
+		width calc(100% + 20px)
+		margin-bottom: 20px
 	display: grid
 	grid-gap 30px
 	grid-template-columns: repeat(5, 1fr)
 	margin-bottom: 40px
 .diet-cond__el
+	+below(740px)
+		padding: 10px
+	+below(480px)
+		padding: 10px 0
+		br(0)
+		box-shadow none
 	f()
 	fl()
 	cp()
@@ -216,14 +279,20 @@ body
 	padding: 20px
 	border 2px solid transparent
 	&:hover
+		+below(480px)
+			border 2px solid transparent
 		border 2px solid $pink
 		box-shadow none
 .diet-cond__el--active
+	+below(640px)
+		border 2px solid transparent
 	border 2px solid $pink
 	background: #f6f7fa
 	box-shadow none
 	.diet-cond__el-title
+		text-align: center
 		color $silver
+		width: 100%
 	.diet-cond__el-text
 		color $silver
 	.icon--main
@@ -231,18 +300,31 @@ body
 	.icon--mark
 		display: block
 .diet-cond__el-icon
-	size 60px
+	+below(640px)
+		margin-bottom: 5px
 	margin-bottom: 15px
+	flex(mid)
 	.icon
+		+below(740px)
+			size 40px
 		size 60px
 		fill $pink
 .icon--mark
 	display: none
 .diet-cond__el-title
+	+below(740px)
+		font-size: 10px
+	+below(480px)
+		font-size: 8px
+	text-align: center
 	color $pink
 	@extend .type--bold
 	margin-bottom: 5px
 .diet-cond__el-text
+	+below(740px)
+		font-size: 10px
+	+below(480px)
+		font-size: 8px
 	color $pink
 	@extend .type--sm
 
@@ -250,10 +332,15 @@ body
 	bg-full()
 
 .deliver-map-container
+	+below(1024px)
+		display: none
 	position: relative
 	br(20px)
 	overflow: hidden
 .deliver-map-el
+	+below(1024px)
+		position: static
+		height: 400px
 	position: absolute
 	background: #ececec
 	top 0
@@ -261,6 +348,8 @@ body
 	width: 100%
 	height: 100%
 .deliver-map-cont
+	+below(1024px)
+		fl()
 	f()
 	br(20px)
 	justify-content: space-between
@@ -269,6 +358,8 @@ body
 	position: relative
 	padding: 30px
 .deliver-map-col
+	+below(1024px)
+		width: 100%
 	background: white
 	br(20px)
 	padding: 30px
@@ -288,11 +379,16 @@ body
 .section-review
 	overflow: hidden
 
-.review-slider__el
+//.review-slider__el
+.review-slider__el-img
 	bg-full()
 	background-size contain
 	padding: 95% 10%
 
+.deliver-map-mobile
+	+above(1025px)
+		display: none
+	border 1px solid $border-color
 //for custom navigation
 .slider-control
 	round()
@@ -349,11 +445,19 @@ body
 			background: $pink
 
 .faq-tab
+	+below(640px)
+		grid-gap 0
+		width calc(100% + 20px)
+		margin-left: -10px
+		margin-bottom: 20px
 	display: grid
 	grid-gap 15px
 	grid-template-columns: repeat(4, 1fr)
 	margin-bottom: 50px
 .faq-tab__el
+	+below(640px)
+		br(0)
+		padding: 10px 5px
 	f()
 	fl()
 	cp()
@@ -370,12 +474,22 @@ body
 	&:hover
 		border 1px solid $pink
 .faq-tab__el-icon
+	+below(480px)
+		margin-bottom: 5px
 	margin-bottom: 15px
 	.icon
+		+below(480px)
+			size 30px
 		size 45px
 .faq-tab__el-text
+	+below(480px)
+		font-size: 8px
 	text-align: center
 
+.faq-container
+	+below(640px)
+		width calc(100% + 20px)
+		margin-left: -10px
 .faq-tab__el--active
 	background: $pink-mark
 	box-shadow none
@@ -409,11 +523,11 @@ body
 	transform translateX(0px)
 	opacity:1
 	box-shadow 0 2px 8px rgba(43, 45, 53, 0.1)
-.faq__el
+.akkord__el
 	border-bottom 1px solid #e5e5e5
 	cp()
 	&:hover
-		.faq__el-head-icon
+		.akkord__el-head-icon
 			&:before
 				content ''
 				background: $pink
@@ -422,14 +536,14 @@ body
 				background: $pink
 	&:last-child
 		border 0
-.faq__el-head
+.akkord__el-head
 	padding: 20px
 	flex(between)
-.faq__el-head-text
+.akkord__el-head-text
 	@extend .type--md
 	width: 80%
 
-.faq__el-head-icon
+.akkord__el-head-icon
 	position: relative
 	size 28px
 	&:before
@@ -449,7 +563,8 @@ body
 		position: absolute
 		left calc(50% - 1px)
 
-.faq__el-content
+
+.akkord__el-content
 	padding: 0 20px 20px 20px
 	display: none
 	@extend .type--sm
@@ -457,17 +572,22 @@ body
 		@extend .type--sm
 		line-height: 1.8
 
-.faq__el--active
-	.faq__el-head-text
+.akkord__el--active
+	.akkord__el-head-text
 		color $pink-mark
-	.faq__el-head-icon
+	.akkord__el-head-icon
 		&:after
 			content ''
 			transform rotate(90deg)
 
 .video-wrap
+	+below(640px)
+		fw()
 	flex(between)
 .video-info
+	+below(640px)
+		width: 100%
+		margin-bottom: 20px
 	width: 35%
 .video-info__title
 	@extend .type--md
@@ -480,14 +600,20 @@ body
 	f()
 	fl()
 .video-info__get-el
+	+below(480px)
+		width: 100%
 	@extend .btn--sm
 	margin-bottom: 20px
 	width: 220px
 //.btn--mark
 //.btn--light
 .video-cont
+	+below(640px)
+		width: 100%
 	width: 58%
 .video-cont__title
+	+below(480px)
+		margin-bottom: 20px
 	@extend .type--md
 	@extend .type--bold
 	margin-bottom: 40px
@@ -521,20 +647,33 @@ body
 
 //.footer
 .footer-top
-	background: #b6bcda
+	background: #f7f7f7
 	padding: 40px 0
 //.main-cont
 .footer-top-cont
+	+below(1024px)
+		fw()
+	+below(640px)
+		flex-flow column-reverse
+		margin-bottom: 0
 	f()
 	justify-content: space-between
 	align-items: flex-start
-	margin-bottom: 30px
 .footer-col
 	&:nth-child(1)
+		+below(1024px)
+			width: 100%
+			margin-bottom: 20px
+		+below(640px)
+			margin-bottom: 0
 		width: 50%
 	&:nth-child(2)
+		+below(1024px)
+			width: 100%
 		width: 40%
 .footer-logo-row
+	+below(640px)
+		display: none
 	f()
 	justify-content: space-between
 	align-items: stretch
@@ -565,12 +704,24 @@ body
 	img
 		width: 80%
 .footer-conect
-	flex(between)
+	+below(640px)
+		fw()
+		fl()
+	f()
+	justify-content: space-between
 .footer-conect__col
+	+below(768px)
+		width: 48%
+	+below(640px)
+		width: 100%
+		margin-bottom: 20px
 	width: 45%
 .footer-conect__text
-	@extend .type--sm
-	margin-bottom: 20px
+	+below(640px)
+		margin-bottom: 10px
+	@extend .type--xs
+	margin-bottom: 10px
+	line-height: 1.6
 .soc-row
 	f()
 	align-items: center
@@ -598,11 +749,17 @@ body
 	&:last-child
 		margin-right: 0
 .footer-contact
+	+below(640px)
+		fl()
+		margin-bottom: 10px
 	f()
 	justify-content: space-between
 	align-items: flex-start
 	margin-bottom: 30px
 .footer-contact__el
+	+below(640px)
+		width: 100%
+		margin-bottom: 10px
 	width: 45%
 .footer-contact__phone
 	@extend .type--bold
@@ -615,7 +772,9 @@ body
 .footer-contact__text
 	@extend .type--sm
 	line-height: 1.8
-//.footer-payment
+.footer-payment
+	+below(640px)
+		display: none
 .footer-payment__text
 	@extend .type--sm
 	margin-bottom: 10px
@@ -631,17 +790,34 @@ body
 .footer-top__text
 	@extend .type--xs
 .footer-bottom
-	background: #888faa
+	background: #2c3047
 	padding: 10px 0
 	color white
 .footer-bottom-cont
+	+below(1200px)
+		fw()
+	+below(640px)
+		justify-content: center
 	flex(between)
 .footer-bottom__tm
+	+below(1200px)
+		width: 100%
+		margin-bottom: 10px
+	+below(640px)
+		text-align: center
 	@extend .type--xs
 .footer-bottom-nav
+	+below(1200px)
+		width: 70%
+		max-width 500px
+	+below(640px)
+		width: 100%
+		fl()
 	flex(between)
 	width: 40%
 .footer-bottom-nav__el
+	+below(640px)
+		margin-bottom: 10px
 	@extend .type--xs
 	color white
 .footer-develop
@@ -654,20 +830,37 @@ body
 	.icon
 		size 40px
 .diet
+	+below(1024px)
+		fw()
 	f()
 .diet-day
+	+below(1024px)
+		width: 100%
+		flex-flow row
+		margin-bottom: 20px
+	+below(768px)
+		margin-bottom: 10px
 	f()
+	fl()
 	align-items:center
 	justify-content: space-between
-	fl()
 	width: 70px
+.diet-wrap
+	+below(1024px)
+		max-width 768px
+		margin-left: auto
+		margin-right: auto
 .diet-day__el
+
 	flex(mid)
 	cp()
 	font-size: 16px
 	size 50px
 	position: relative
 	span
+		+below(480px)
+			font-size: 12px
+			margin-top: -15px
 		display: inline-block
 		margin-top: -5px
 	.diet-day__el-heart
@@ -686,8 +879,12 @@ body
 	height: 100%
 
 .diet-consist
+	+below(1024px)
+		width: 100%
 	width calc(100% - 70px)
 .diet-container
+	+below(1024px)
+		fw()
 	height: 0
 	overflow: hidden
 	opacity:.1
@@ -702,6 +899,9 @@ body
 	height: auto
 	overflow: initial
 .diet-slider-wrap
+	+below(1024px)
+		width: 100%
+		margin-bottom: 30px
 	//display: none
 	width: 52%
 	position: relative
@@ -721,14 +921,20 @@ body
 		fill white
 		size 20px
 	.slider-control--left
+		+below(480px)
+			left -10px
 		left 0px
 	.slider-control--right
+		+below(480px)
+			right -10px
 		right 0px
 	.slick-active
 		.diet-slider__el-layer
 			opacity: 1
 			transform translateY(0)
 	.slider-wrap
+		+below(1024px)
+			height: auto
 		br(30px)
 		overflow: hidden
 		height: 400px
@@ -741,6 +947,12 @@ body
 
 
 .diet-slider__el
+	+below(1024px)
+		height: auto
+		padding: 30% 10%
+		overflow: initial
+	+below(480px)
+		height: 250px
 	height: 400px
 	bg-full()
 	padding: 40% 10%
@@ -757,6 +969,8 @@ body
 	left 0
 	opacity:0
 .diet-slider__el-content
+	+below(640px)
+		padding: 20px 10px
 	margin-top: auto
 	padding: 20px
 	background: #00000087
@@ -766,6 +980,8 @@ body
 	color white
 	margin-bottom: 10px
 .diet-slider__el-text
+	+below(480px)
+		display: none
 	color white
 	line-height: 1.6
 	@extend .type--sm
@@ -773,11 +989,18 @@ body
 .diet-slider-gbu
 	flex(between)
 .diet-slider-gbu__el
+	+below(480px)
+		text-align: center
 	@extend .type--xs
 	color white
 .diet-control
+	+below(1024px)
+		width: 100%
 	width: 45%
 .diet-clock
+	+below(480px)
+		grid-gap 10px
+		margin-bottom: 20px
 	display: grid
 	grid-gap 30px
 	grid-template-columns: repeat(6, 1fr)
@@ -794,10 +1017,14 @@ body
 			color black
 .diet-clock__el-icon
 	.icon
+		+below(480px)
+			size 25px
 		size 36px
 		fill $silver
 		tr(all)
 .diet-clock__el-text
+	+below(480px)
+		font-size: 8px
 	@extend .type--xs
 	color $silver
 	text-align: center
@@ -852,10 +1079,14 @@ body
 	color $silver
 	margin-bottom: 20px
 .diet-cost
+	+below(480px)
+		fw()
 	f()
 	align-items: center
 	margin-bottom: 15px
 .diet-cost-val
+	+below(480px)
+		font-size: 38px
 	@extend .type--lg
 	@extend .type--bold
 	margin-right: 4%
@@ -875,8 +1106,13 @@ body
 	display: inline-block
 	margin: 0 5px
 .diet-get
+	+below(480px)
+		fl()
 	flex(between)
 .diet-get__el
+	+below(480px)
+		width: 100%
+		margin-bottom: 10px
 	width: 48%
 	height: 50px
 .diet-get__el--order
@@ -896,3 +1132,293 @@ body
 	@extend .type--sm
 	color $pink-mark
 	transform:translateY(-10px)
+
+//slide menu
+.head-toggle
+	flex(mid)
+	cp()
+	margin-left: auto
+	+above(1201px)
+		display: none
+	.icon
+		size 25px
+	.icon-close
+		display: none
+
+.head-toggle--open
+	.icon-close
+		display: block
+	.icon-open
+		display: none
+
+.slide-menu
+	+above(1200px)
+		display: none !important
+	+below(480px)
+		width: 100%
+	background: white
+	position: fixed
+	height: calc(100% - 55px) //Отступ хедер
+	z-index 1250
+	top 55px
+	right 0
+	width: 320px
+	transform translateX(100%)
+	tr(all)
+	overflow-x: hidden
+	.header-search
+		width: 100%
+		padding: 20px
+.slide-menu--open
+	transform translateX(0%)
+	overflow-y: auto
+.body-fix
+	position: fixed!important
+	overflow-Y: scroll!important
+	width:100%!important
+	.page-head
+		transform initial!important
+.slide-menu-wrap
+	height: 100%
+	position: relative
+
+
+//slide menu === end
+
+.slide-menu-head
+	padding: 20px 30px 10px 30px
+	border-bottom 10px solid #f6f7fa
+	.soc-row
+		margin-left: 40px
+		.icon
+			opacity:.4
+
+.slide-menu-head__phone
+	f()
+	align-items: center
+	margin-bottom: 5px
+.slide-menu-head__phone-icon
+	margin-right: 15px
+	margin-top: 7px
+	.icon
+		fill $green
+		size 20px
+//.icon
+.slide-menu-head__phone-val
+	color black
+	font-family Oswald
+	font-size 18px
+	font-weight 700
+.slide-menu-head__text
+	@extend .type--xs
+	margin-bottom: 15px
+	margin-left: 40px
+.slide-menu-list
+	border-bottom 10px solid #f6f7fa
+.slide-menu-profile
+	f()
+	align-items: center
+	padding: 20px
+	border-bottom 1px solid #e5e5e5
+	&:hover
+		background: #f6f6f6
+.slide-menu-profile__icon
+	margin-right: 25px
+	position: relative
+	.icon
+		size 20px
+		fill $green
+.slide-menu-profile-bonus
+	position: absolute
+	@extend .type--xs
+	color $red
+	font-weight: 700
+	top -10px
+	right: -100%
+.slide-menu-profile__name
+	@extend .type--bold
+	color $dark
+	font-size 18px
+	text-overflow: ellipsis
+	white-space nowrap
+	overflow: hidden
+.slide-menu-list__el
+	f()
+	tr(all)
+	align-items: center
+	padding: 20px
+	border-bottom 1px solid #e5e5e5
+	&:hover
+		background: #f6f6f6
+	&:last-child
+		border-bottom 0
+.slide-menu-list__el-icon
+	margin-right: 25px
+	position: relative
+	.icon
+		size 20px
+		fill $gray
+.slide-menu-list__el-text
+	@extend .type--sm
+.slide-menu-money
+	@extend .type--xs
+	@extend .type--bold
+	color $red
+	display: inline-block
+	margin-top: -10px
+	transform translateY(-10px)
+.slide-menu-footer
+	flex(between)
+	padding: 10px 20px
+.slide-menu-footer__text
+	@extend .type--xs
+	width: 50%
+
+.deliver-map-mobile__item
+	+below(640px)
+		height: 350px
+	height: 500px
+	background: #ececec
+	margin-left: -20px
+	width calc(100% + 40px)
+
+.controller
+	+below(640px)
+		fl()
+		height: auto
+		min-height 600px
+	height: calc(100vh - 55px)
+	f()
+	overflow: hidden
+.controller__el
+	+below(640px)
+		height calc(100vh/2 - 55px)
+		min-height 250px
+	flex-grow 1
+	bg-full()
+	align-items: stretch
+	position: relative
+	display: block
+	//tr(all)
+	//transform translateY(-10000px)
+	transition: .4s flex-grow ease-out
+	&:hover
+		flex-grow 1.2
+		.controller__el-img
+			-webkit-filter unquote("grayscale(100%)")
+		.controller__logo--color
+			display: block
+		.controller__logo--white
+			display: none
+.controller__el-img
+	+below(640px)
+		width: 100%
+		background-position: top center
+	bg-full()
+	//tr(all)
+	padding: 20% 10%
+	position: absolute
+	height: 100%
+	top 0
+	width: 120%
+	-webkit-filter unquote("grayscale(0%)")
+.controller__el--left
+	.controller__el-img
+		left 0
+.controller__el--right
+	.controller__el-img
+		right 0
+	.controller__logo
+		img
+			+below(640px)
+				size 140px
+			size 250px
+.controller__el--center
+	overflow: hidden
+	.controller__el-img
+		+above(740px)
+			transform skew(10deg) scale(1.25)
+	+above(740px)
+		transform skew(-10deg)
+		z-index 10
+	.controller__content
+		+above(740px)
+			transform skew(10deg)
+.controller__content
+	position: absolute
+	width: 100%
+	height: 100%
+	top 0
+	left 0
+	flex(mid)
+
+.controller__logo
+	img
+		+below(640px)
+			size 120px
+		size 200px
+.controller__logo--color
+	display: none
+	
+// skin feel eat
+.skin--fe
+	.header-phone__icon
+		.icon
+			fill $green
+	.header-lk__icon
+		.icon
+			fill $green
+	.header-lk__bonus
+		color $red
+	.slide-menu-money
+		color $red
+// skin feel eat === end
+
+
+.mode
+	display: grid
+	grid-gap 30px
+	grid-template-columns: repeat(3, 1fr)
+	margin-bottom: 40px
+.mode__el
+	flex(mid)
+	br(10px)
+	tr(all)
+	box-shadow 0 2px 8px rgba(44, 48, 71, 0.1)
+	background-color #ffffff
+	border 2px solid transparent
+	padding: 10px
+	&:hover
+		bsh-hover()
+.mode__el--active
+	border 2px solid $green
+.sale
+	display: grid
+	grid-gap 30px
+	grid-template-columns: 1fr 1fr
+.sale__el
+	br(10px)
+	bsh()
+	tr(all)
+	overflow: hidden
+	&:hover
+		bsh-hover()
+		.sale__el-text
+			color $green
+.sale__el-img
+	bg-full()
+	padding: 20% 10%
+.sale__el-content
+	padding: 15px 20px 30px 20px
+
+.sale__el-date
+	color $gray
+	@extend .type--xs
+	margin-bottom: 10px
+.sale__el-text
+	tr(all)
+	@extend .type--bold
+	font-size: 18px
+
+.page-footer
+	margin-top: 40px

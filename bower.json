@@ -18,6 +18,8 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "fancybox": "^3.5.7"
+    "fancybox": "^3.5.7",
+    "scrollmagic": "^2.0.6",
+    "gsap": "^2.1.2"
   }
 }

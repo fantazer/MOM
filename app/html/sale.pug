@@ -1,0 +1,24 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.page.skin--fe
+	+header('main')
+	.page-content
+		.main-cont
+			.section-title.section-title--extend Акции
+			.mode
+				a(href="#").mode__el.mode__el--active
+					img(src="img/logo-mam-text.svg", alt="")
+				a(href="#").mode__el
+					img(src="img/logo-zn.svg", alt="")
+				a(href="#").mode__el
+					img(src="img/logo-green-long.svg", alt="")
+			.sale
+				- for (var i=0;i<6;i++)
+					a(href="#").sale__el
+						.sale__el-img(style="background-image:url('img/diet-slider-1.jpg')")
+						.sale__el-content
+							.sale__el-date с 25 января до 1 мая 2019
+							.sale__el-text Копи баллы - питайся бесплатно! Бонусная программа для наших клиентов
+	+footer()
+include ./block_html/_script.pug

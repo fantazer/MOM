@@ -1,24 +1,116 @@
-mixin header()
+mixin header(type)
 	//block header
-	.header
-		.header-cont
-			a(href="/").header-logo
-				img(src="img/logo-mam-long.svg", alt="")
-			.header-logo-divider
-			.header-location Москва
-			.header-phone
-				.header-phone__icon
-					+icon("phone","icon")
-				a(href="tel:+7 495 223 35 03").header-phone__val +7 495 223 35 03
-			.header-nav
-				a(href="#").header-nav__el Программы питания
-				a(href="#").header-nav__el Как это работает
-				a(href="#").header-nav__el Отзывы
-				a(href="#").header-nav__el FAQ
-				a(href="#").header-nav__el Блог
-			.header-lk
-				.header-lk__icon
-					+icon("user","icon")
-					.header-lk__bonus 200
-				.header-lk__text Личный кабинет
+	.page-head
+		.header
+			.header-cont
+				a(href="/").header-logo
+					if type==='main'
+						img(src="img/logo-fe-long.svg", alt="")
+					else
+						img(src="img/logo-mam-long.svg", alt="")
+				.header-logo-divider
+				.header-location Москва
+				.header-phone
+					.header-phone__icon
+						+icon("phone","icon")
+					a(href="tel:+7 495 223 35 03").header-phone__val +7 495 223 35 03
+				.header-nav
+					if type==='main  '
+						-
+							var items = [
+							'Акции',
+							'Блог',
+							'О компании'
+							];
+					else
+						-
+							var items = [
+								'Программы питания',
+								'Как это работает',
+								'Отзывы',
+								'FAQ',
+								'Блог'
+								];
+					each item in items
+						a(href="#").header-nav__el #{item}
+				a(href="#").header-lk
+					.header-lk__icon
+						+icon("user","icon")
+						.header-lk__bonus 200
+					.header-lk__text Личный кабинет
+				.head-toggle
+					+icon("menu","icon icon-open")
+					+icon("close","icon icon-close")
+				//мобильное меню
+				.slide-menu
+					.slide-menu-wrap
+						.slide-menu-head
+							.slide-menu-head__phone
+								.slide-menu-head__phone-icon
+									+icon("phone-tube","icon")
+								a(href="tel:+7 495 223 35 03").slide-menu-head__phone-val +7 495 223 35 03
+							.slide-menu-head__text Напишите в мессенджеры:
+							.soc-row
+								a(href="#").soc-row__el
+									+icon("viber","icon")
+								a(href="#").soc-row__el
+									+icon("whatsapp","icon")
+								a(href="#").soc-row__el
+									+icon("telegram","icon")
+						.slide-menu-list
+							a(href="#").slide-menu-profile
+								.slide-menu-profile__icon
+									.slide-menu-profile-bonus 200
+									+icon("user","icon")
+								.slide-menu-profile__name Константин Константинович Второй
+							a(href="#").slide-menu-list__el
+								.slide-menu-list__el-icon
+									+icon("pocket","icon")
+								.slide-menu-list__el-text Мои финансы
+									span.slide-menu-money 2167 ₽
+							a(href="#").slide-menu-list__el
+								.slide-menu-list__el-icon
+									+icon("purse","icon")
+								.slide-menu-list__el-text Вывод средств
+							a(href="#").slide-menu-list__el
+								.slide-menu-list__el-icon
+									+icon("profile-plus","icon")
+								.slide-menu-list__el-text Мой промокод
+							a(href="#").slide-menu-list__el
+								.slide-menu-list__el-icon
+									+icon("food","icon")
+								.slide-menu-list__el-text Мои заказы
+							a(href="#").slide-menu-list__el
+								.slide-menu-list__el-icon
+									+icon("history","icon")
+								.slide-menu-list__el-text История заказов
+							a(href="#").slide-menu-list__el
+								.slide-menu-list__el-icon
+									+icon("payment","icon")
+								.slide-menu-list__el-text История начислений
+							a(href="#").slide-menu-list__el
+								.slide-menu-list__el-icon
+									+icon("profile","icon")
+								.slide-menu-list__el-text Профиль
+						.slide-menu-list
+							-
+								var items = [
+									'Программы питания',
+									'Как это работает',
+									'Отзывы',
+									'FAQ',
+									'Блог',
+									'Акции',
+									'О компании'
+									];
+							each item in items
+								a(href="#").slide-menu-list__el
+									.slide-menu-list__el-text #{item}
+						.slide-menu-footer
+							.slide-menu-footer__text Подпишитесь на нас в соцсетях:
+							.soc-row
+								a(href="#").soc-row__el
+									+icon("vk","icon")
+								a(href="#").soc-row__el
+									+icon("fb","icon")
 	//block header end

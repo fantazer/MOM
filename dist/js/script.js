@@ -26,6 +26,26 @@ $(document).ready(function () {
 		customPaging : function(slider, i) {
 		 	return '<span class="dot"></span>';
 		},
+		responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
 		//fade: true
 		});
 	// review slider === end
@@ -75,7 +95,9 @@ $(document).ready(function () {
 			dots:false,
 			centerMode: true,
 			lazyLoad: 'ondemand',
-			infinite:true
+			infinite:true,
+			centerPadding: '8%',
+
 			//fade: true
 	});
 	//calc slider === end
@@ -147,12 +169,12 @@ $(document).ready(function () {
 	});
 	// toggle faq head === end
 
-	// faq row toggle
-	$('.faq__el').click(function(){
-		$(this).toggleClass('faq__el--active');
-		$(this).find('.faq__el-content').slideToggle();
+	// akkord row toggle
+	$('.akkord__el').click(function(){
+		$(this).toggleClass('akkord__el--active');
+		$(this).find('.akkord__el-content').slideToggle();
 	});
-	// faq row toggle === end
+	// akkord row toggle === end
 
 	// init fancybox
 	$('.fancybox').fancybox({
@@ -165,4 +187,45 @@ $(document).ready(function () {
 		]
 	});
 	// init fancybox === end
+
+	//mobile menu
+	//Фиксируем скрол
+	$('.head-toggle--open').click(function(){
+		$('body').css({
+			overflow: '',
+			position: '',
+			top: ''
+		})
+	});
+
+	$('.head-toggle').click(function(event){
+		event.stopPropagation();
+		$(this).toggleClass('head-toggle--open');
+		$('.slide-menu').toggleClass('slide-menu--open');
+		$('body').toggleClass('body-fix')
+	});
+
+	$('.slide-menu').on("click", function (event) {
+		event.stopPropagation();
+	});
+
+	$(document).on("click", function () {
+			$('.head-wrap').removeClass('head--up');
+			$('.head-toggle').removeClass('head-toggle--open');
+			$('.slide-menu').removeClass('slide-menu--open');
+			console.log(modalState.isModalShow);
+			if(modalState.isModalShow == false){
+				$('body').removeClass('body-fix')
+		}
+	});
+
+	//mobile menu===end
+
+
+	//animate main-page on load
+	if($(".controller").length) {
+		var tl = new TimelineMax();
+		tl.fromTo('.page-head', 1.5, {y: -200, opacity: 0}, {y: 0, opacity: 1}).staggerFromTo('.controller__el', 1, {x: -20, opacity: 0}, {x: 0, opacity: 1, ease: Sine.easeOut}, 0.5).staggerFromTo('.controller__logo', .8, {x: 20, opacity: 0}, {x: 0, opacity: 1, ease: Sine.easeOut}, 0.3);
+	}
+	//animate main-page on load === end
 });
