@@ -243,9 +243,11 @@ body
 	letter-spacing 0.72px
 	text-align center
 	margin-bottom: 60px
-
+	max-width 770px
+	margin-left: auto
+	margin-right: auto
 .section-title--extend
-	margin: 40px 0
+	margin: 40px auto
 
 //.diet
 .diet-cond
@@ -1422,3 +1424,186 @@ body
 
 .page-footer
 	margin-top: 40px
+
+.article-head
+	flex(between)
+.article-head__nav
+	flex(mid)
+.nav-prev
+	.nav-prev__icon
+		margin-right: 15px
+.nav-next
+	.nav-prev__icon
+		margin-left: 15px
+
+.nav-item
+	flex(mid)
+	&:hover
+		.nav-prev__text
+			color $green
+		.icon
+			fill black
+.nav-prev__icon
+	flex(mid)
+	.icon
+		tr(all)
+		size 35px
+		fill $green
+.nav-prev__text
+	@extend .type--sm
+	tr(all)
+//.article-head__date
+//.article-head__soc
+//.soc-row
+//.soc-row__el
+
+.article-img
+	margin: 30px 0
+	margin-left: -100px
+	width calc(100% + 200px)
+	max-width initial
+	display: block
+//title
+.title
+	+below(768px)
+		margin: 30px auto
+	@extend .type--xl
+	@extend .type--bold
+	letter-spacing 0.72px
+	max-width 770px
+	margin: 40px auto
+.title--center
+	text-align: center
+.title--sm
+	@extend .type--bold
+	font-size: 18px
+	margin: 25px 0
+//title ===end
+
+
+.content
+	p
+		line-height: 1.8
+		margin-bottom: 20px
+	a
+		color $green
+		text-decoration: underline
+		font-weight:600
+		tr(all)
+		&:hover
+			color lighten($green,10)
+	ul
+		margin-bottom: 30px
+		list-style none
+	li
+		margin-bottom: 20px
+		&:before
+			content "\2022"
+			color $green
+			font-weight bold
+			display inline-block
+			width 1em
+			margin-left -1em
+
+.article-nav
+	flex(between)
+	margin-top: 50px
+
+.about-logo
+	flex(mid)
+	margin-bottom: 50px
+
+.why
+	display: grid
+	grid-row-gap 50px
+	grid-column-gap 30px
+	grid-template-columns: 1fr 1fr
+	margin-bottom: 60px
+//.why__el
+.why__el-icon
+	.icon
+		size 70px
+		margin-bottom: 15px
+		fill $silver
+.why__el-title
+	@extend .type--bold
+	margin-bottom: 15px
+.why__el-text
+	line-height: 1.8
+
+.blog
+	display: grid
+	grid-gap 3   0px
+	grid-template-columns: 1fr 1fr
+.blog__el
+	f()
+	tr(all)
+	br(10px)
+	bsh()
+	overflow: hidden
+	&:hover
+		bsh-hover()
+	&:nth-child(4n-1)
+		.blog__el-img
+			order 2
+		.blog__el-content
+			order 1
+	&:nth-child(4n)
+		.blog__el-img
+			order 2
+		.blog__el-content
+			order 1
+.blog__el-img
+	bg-full()
+	padding: 20% 10%
+	width: 45%
+	order 1
+.blog__el-content
+	order 2
+	width: 55%
+	padding: 20px 30px
+.blog__el-head
+	flex(between)
+	margin-bottom: 15px
+.blog__el-date
+	@extend .type--xs
+	color $gray
+.blog__el-time
+	@extend .type--xs
+	color $gray
+.blog__el-title
+	@extend .type--bold
+	color $green
+	margin-bottom: 15px
+	font-size: 18px
+.blog__el-text
+	line-height: 1.8
+	@extend .type--sm
+
+.blog-tag
+	f()
+	fw()
+	margin-bottom: 40px
+.blog-tag__el
+	@extend .type--sm
+	br(5px)
+	tr(all)
+	padding: 15px 20px
+	border 1px solid $green
+	margin-right: 20px
+	margin-bottom: 20px
+	color $green
+	font-weight: 700
+	&:hover
+		background: $green
+		color white
+.blog-tag__el--active
+	background: $green
+	color white
+
+.loader
+	flex(mid)
+	margin: 20px 0
+
+.article-head__count
+	@extend .type--sm

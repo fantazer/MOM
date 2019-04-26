@@ -1,0 +1,43 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.page.skin--fe
+	+header('main')
+	.page-content
+		.main-cont
+			.section-title.section-title--extend Акции
+			.mode
+				a(href="#").mode__el.mode__el--active
+					img(src="img/logo-mam-text.svg", alt="")
+				a(href="#").mode__el
+					img(src="img/logo-zn.svg", alt="")
+				a(href="#").mode__el
+					img(src="img/logo-green-long.svg", alt="")
+			
+			.blog-tag
+				-
+					var items = [
+						'Все темы',
+						'Здоровье',
+						'Правильное питание',
+						'Интервью',
+						'Спорт',
+						'Снижение веса',
+						'Прочее'
+						];
+				each item,i in items
+					a(href="#" class=i===0?'blog-tag__el--active':'').blog-tag__el #{item}
+			.blog
+				- for (var i=0;i<10;i++)
+					a(href="#").blog__el
+						.blog__el-img(style="background-image:url('img/diet-slider-1.jpg')")
+						.blog__el-content
+							.blog__el-head
+								.blog__el-date 25 января 2019
+								.blog__el-time 3 мин чтения
+							.blog__el-title Правильное питание
+							.blog__el-text Мы составляем меню каждую неделю, считаем БЖУ, выбираем только свежие продукты и лучшие рецептуры.
+			.loader
+				img(src="img/loader.svg", alt="")
+	+footer()
+include ./block_html/_script.pug

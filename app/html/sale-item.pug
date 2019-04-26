@@ -4,15 +4,45 @@ include block_html/_include.pug
 .page.skin--fe
 	+header('main')
 	.page-content
-	.main-cont
-		.title.title--center Акции
-		.mode
-			.mode__el
-				img(src="img/logo-mam-text.svg", alt="")
-			.mode__el
-				img(src="img/logo-zn.svg", alt="")
-			.mode__el
-				img(src="img/logo-green-long.svg", alt="")
+		.main-cont--sm
+			.title.title--center Копи баллы - питайся бесплатно! Бонусная программа для наших клиентов
+			.article-head
+				a(href="#").nav-item.nav-prev
+					.nav-prev__icon
+						+icon("arrow-left--slim","icon")
+					.nav-prev__text назад
+				.article-head__date с 25 января по 1 апреля 2019
+				.article-head__soc
+					.soc-row
+						a(href="#").soc-row__el
+							+icon("vk","icon")
+						a(href="#").soc-row__el
+							+icon("fb","icon")
+			//использую как обертку для текстового контента
+			.content
+				img(src="img/diet-slider-1.jpg", alt="").article-img
+				.title--sm Отзывы
+				p Вы оставляете отзыв с фото в любой из соцсетей (instagram, vk.com, facebook)
+				p Ссылку на отзыв присылаете в наш whatsapp - мы обрабатываем и присваиваем Вам 500 баллов за каждый уникальный отзыв!
+				p 1 балл = 1 рублю
+				p Отзыв можно публиковать не более 1 раза в неделю.
 
+				.title--sm Рекомендации друзьям
+				p Вы рекомендуете наш сервис Вашим друзьям и знакомым. Ваш знакомый, делая заказ, называет Ваш контактный телефон или e-mail адрес. Вы и Ваш друг получаете по 250 бонусных баллов
+					a(href="#") на свой счет
+				ul
+					li список
+					li список
+					li список
+					li список
+			.article-nav
+				a(href="#").nav-item.nav-prev
+					.nav-prev__icon
+						+icon("arrow-left--slim","icon")
+					.nav-prev__text предыдущая акция
+				a(href="#").nav-item.nav-next
+					.nav-prev__text следующая акция
+					.nav-prev__icon
+						+icon("arrow-right--slim","icon")
 	+footer()
 include ./block_html/_script.pug
