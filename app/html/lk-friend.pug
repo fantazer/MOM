@@ -1,0 +1,70 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.page.skin--fe
+	+header('main')
+	.page-content
+		.main-cont
+			.lk-bnner
+				img(src="img/lk-banner.jpg", alt="")
+			.lk
+				.lk-bar
+					.lk-user
+						.lk-user__icon
+							+icon("user","icon")
+						.lk-user__content
+							.user__title Константин Константинопольский
+							a(href="#").lk-user__out Выйти из аккаунта
+					.lk-menu
+						a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("food","icon")
+							.lk-menu__el-text Мои заказы
+						a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("gift","icon")
+							.lk-menu__el-text Мои бонусы
+								span.slide-menu-money 2167 ₽
+						a(href="#").lk-menu__el.lk-menu__el--active
+							.lk-menu__el-icon
+								+icon("profile-plus","icon")
+							.lk-menu__el-text Пригласить друга
+						a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("history","icon")
+							.lk-menu__el-text История заказов
+						a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("profile","icon")
+							.lk-menu__el-text Профиль
+						//a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("purse","icon")
+							.lk-menu__el-text Вывод средств
+						//a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("payment","icon")
+							.lk-menu__el-text История начислений
+
+				.lk-content
+					.lk-section
+						.banner-friend(style="background-image:url('img/banner-friend.jpg')")
+							.banner-friend__content
+								.banner-friend__title Пригласи друга и вы оба получите бонусные баллы
+								.banner-friend__text Поделись ссылкой с другом. Вы оба получите бонусы на свой счёт.Потратить их можно будет в любой момент.
+								.url
+									.url-text
+										input(type="text" value="https://growfood.pro/?invite=vladislavpro" readonly).input
+									.url-get скопировать ссылку
+					.lk-section
+						.lk-person
+							.lk-person__el
+								.lk-person__el--title 2 человека
+								.lk-person__el--text Перешли по вашей ссылке
+							.lk-person__el
+								.lk-person__el--title 1 человек
+								.lk-person__el--text Сделал заказ благодаря вам
+
+	+footer()
+	+modal()
+include ./block_html/_script.pug

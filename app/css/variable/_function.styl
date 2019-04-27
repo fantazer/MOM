@@ -1,3 +1,15 @@
+link($color=#e5e5e5)
+	background-image: linear-gradient(to bottom, $color 0%, $color 100%);
+	background-size: 100% 1px;
+	background-repeat: no-repeat;
+	background-position: bottom
+	text-decoration: none
+	padding-bottom:4px
+	tr(all)
+	line-height: 1.6
+	&:hover
+		background-size: 0% 1px
+
 btnStyle(bg-btn,color-btn)
 	background bg-btn
 	color color-btn
@@ -98,7 +110,11 @@ bsh()
 	box-shadow 0px 3px 8px #e3e3e3
 
 bsh-hover()
-	box-shadow 0px 10px 18px #c7c3c3
+	box-shadow 0px 3px 8px #e3e3e3
+	transition box-shadow .8s
+	&:hover
+		box-shadow 0 18px 32px #e3e3e3
+
 up()
 	text-transform uppercase
 	

@@ -205,7 +205,24 @@
             </div>
         </div>
         <!--block header end-->
-        <div class="page-content"></div>
+        <div class="page-content">
+            <div class="main-cont">
+                <h1>Модальные окна</h1>
+                <p>Чтобы вызвать нужное окно добавь на элемент класс .modal-get и data-modal="имя окна"</p>
+                <br/>
+                <br/>
+                <div class="btn--md btn--mark modal-get" data-modal="login">Авторизация | data-modal="login "</div>
+                <br/>
+                <br/>
+                <div class="btn--md btn--mark modal-get" data-modal="sms">CMC | data-modal="sms"</div>
+                <br/>
+                <br/>
+                <div class="btn--md btn--mark modal-get" data-modal="registration">Регистрация | data-modal="registration"</div>
+                <br/>
+                <br/>
+                <div class="btn--md btn--mark modal-get" data-modal="truemessage">Успешное действие | data-modal="truemessage"</div>
+            </div>
+        </div>
         <!-- footer-->
         <div class="page-footer">
             <div class="footer">
@@ -330,6 +347,123 @@
             </div>
         </div>
         <!-- footer === end-->
+        <div class="modal-layer">
+            <div class="modal-filter"></div>
+            <div class="modal-wrap">
+                <!--success message-->
+                <div class="modal" data-modal="truemessage">
+                    <div class="modal-content modal-content--true">
+                        <div class="modal-close">
+                            <svg class="icon">
+                                <use xlink:href="#close-fat"></use>
+                            </svg>
+                        </div>
+                        <svg class="icon icon-true">
+                            <use xlink:href="#success--color"></use>
+                        </svg>
+                        <div class="modal-title">Отлично!</div>
+                        <div class="modal-text-true">Спасибо за Ваш отзыв, мы ценим внимание каждого клиента</div>
+                    </div>
+                </div>
+                <!--login-->
+                <div class="modal modal--md" data-modal="login">
+                    <div class="modal-content">
+                        <div class="modal-user">Я пользователь</div>
+                        <div class="modal-close">
+                            <svg class="icon">
+                                <use xlink:href="#close-fat"></use>
+                            </svg>
+                        </div>
+                        <div class="modal-title">Войти в личный кабинет</div>
+                        <div class="modal-text">Пожалуйста, введите свой номер телефона, мы пришлём вам проверочный смс-код</div>
+                        <form class="login-form" action="#">
+                            <div class="input-row">
+                                <input class="input" type="text" placeholder="Телефон" />
+                            </div>
+                            <div class="login-remember">
+                                <div class="check-el">
+                                    <label class="style-label style-label--checkbox">
+                                        <input class="sytle-input" type="checkbox" />
+                                        <div class="sytle-input-element">
+                                            <svg class="icon-check">
+                                                <use xlink:href="#checked"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="sytle-input-text">Я ознакомился с
+                                            <a href="#">политикой конфиденциальности</a>,
+                                            <a href="#">публичной офертой</a>и даю согласие на обработку моих персональных данных</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="btn--md btn--mark btn--full">Отправить</div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal modal--md" data-modal="sms">
+                    <div class="modal-content">
+                        <div class="modal-user">Я пользователь</div>
+                        <div class="modal-close">
+                            <svg class="icon">
+                                <use xlink:href="#close-fat"></use>
+                            </svg>
+                        </div>
+                        <div class="modal-title">Войти в личный кабинет</div>
+                        <div class="modal-text">Введите код из смс, которая пришла вам на телефон</div>
+                        <form class="login-form" action="#">
+                            <div class="input-row">
+                                <input class="input" type="text" placeholder="код" />
+                            </div>
+                            <div class="btn--md btn--mark btn--full">Войти</div>
+                        </form>
+                        <div class="foget-link">
+                            <div class="link-mark">Выслать смс повторно</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal modal--md" data-modal="registration">
+                    <div class="modal-content">
+                        <div class="modal-user">Я пользователь</div>
+                        <div class="modal-close">
+                            <svg class="icon">
+                                <use xlink:href="#close-fat"></use>
+                            </svg>
+                        </div>
+                        <div class="modal-title">Войти в личный кабинет</div>
+                        <div class="modal-text">Заполните эти поля, чтобы завершить процесс регистрации</div>
+                        <form class="login-form" action="#">
+                            <div class="input-row">
+                                <input class="input" type="text" placeholder="Имя" />
+                            </div>
+                            <div class="input-row">
+                                <input class="input" type="text" placeholder="Телефон" />
+                            </div>
+                            <div class="promocode-check">
+                                <div class="check-el">
+                                    <label class="style-label style-label--checkbox">
+                                        <input class="sytle-input" type="checkbox" />
+                                        <div class="sytle-input-element">
+                                            <svg class="icon-check">
+                                                <use xlink:href="#checked"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="sytle-input-text">У меня есть промокод</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="input-row input-row--code">
+                                <input class="input" type="text" placeholder="Промокод" />
+                            </div>
+                            <div class="btn--md btn--mark btn--full">Отправить</div>
+                        </form>
+                        <div class="modal-text">Регистрируйся и зарабатывай до 10% с покупки каждого привлечённого тобой пользователя</div>
+                        <div class="modal-text modal-text--footer modal-text--sm">
+                            <span class="text--green text--bold">45 000</span>(примерная стоимость месячной подписки)
+                            <span class="text--green text--bold">* 10% = 4 500</span>рублей в месяц с одного клиента</div>
+                    </div>
+                </div>
+                <!--cart === end-->
+            </div>
+        </div>
     </div>
     <script src="js/combined.js"></script>
     <script src="js/script.js"></script>

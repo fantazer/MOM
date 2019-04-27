@@ -228,4 +228,80 @@ $(document).ready(function () {
 		tl.fromTo('.page-head', 1.5, {y: -200, opacity: 0}, {y: 0, opacity: 1}).staggerFromTo('.controller__el', 1, {x: -20, opacity: 0}, {x: 0, opacity: 1, ease: Sine.easeOut}, 0.5).staggerFromTo('.controller__logo', .8, {x: 20, opacity: 0}, {x: 0, opacity: 1, ease: Sine.easeOut}, 0.3);
 	}
 	//animate main-page on load === end
+
+
+	//closeModal() - закрыть окна
+	//initModal('data-name-attr') - Открыть нужное окно
+	//modals
+	var modalState = {
+		"isModalShow": false, //state show modal
+		"scrollPos": 0
+	};
+	$('.modal-content').click(function (event) {
+		event.stopPropagation();
+	});
+
+	var openModal = function () {
+		if (!$('.modal-layer').hasClass('modal-layer-show')) {
+			$('.modal-layer').addClass('modal-layer-show');
+			modalState.scrollPos = $(window).scrollTop();
+			$('body').css({
+				overflow: 'hidden',
+				position: 'fixed',
+				overflowY: 'hidden',
+				top: -modalState.scrollPos,
+				width: '100%'
+			});
+		}
+		modalState.isModalShow = true;
+	};
+	var closeModal = function () {
+		$('.modal-layer').removeClass('modal-layer-show');
+		$('body').css({
+			overflow: '',
+			position: '',
+			top: modalState.scrollPos
+		});
+		$(window).scrollTop(modalState.scrollPos);
+		$('.modal').removeClass('modal__show');
+		modalState.isModalShow = false;
+	};
+
+	var initModal = function (el) {
+		openModal();
+		$('.modal').each(function () {
+			if ($(this).data('modal') === el) {
+				$(this).addClass('modal__show')
+			} else {
+				$(this).removeClass('modal__show')
+			}
+		});
+		var modalHeightCont = $(window).height();
+		$('.modal-filter').height(modalHeightCont);
+
+	};
+
+	$('.modal-get').click(function () {
+		var currentModal = $(this).data("modal");
+		initModal(currentModal);
+	});
+
+	$('.modal-layer , .modal-close').click(function () {
+		closeModal();
+	});
+	//modals===end
+
+	//toggle input promocode
+	$('.promocode-check').click(function(){
+		if($(".promocode-check input").prop('checked')){
+			$('.input-row--code').slideToggle();
+		}
+	});
+	//toggle input promocode===end
+
+	// remove indent pay
+	$('.indent-pay__remove').click(function(){
+		$(this).closest('.indent-row').slideUp();
+	});
+	// remove indent pay === end
 });

@@ -27,11 +27,8 @@
 	font-size 20px
 	padding 10px 30px
 
-.btn--mobile
-	@extend .btn
-	+below(768px)
-		width 100%
-		text-align center
+.btn--full
+	width 100%
 
 
 .btn--mark
@@ -85,5 +82,13 @@
 
 .nav-icon--right
 	margin-rihgt 10px
+
+.skin--fe
+	.btn--md
+		br(5px)
+	.btn--mark
+		background: $green
+		&:hover
+			background: lighten($green,10)
 
 

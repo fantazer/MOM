@@ -1374,6 +1374,14 @@ body
 		color $red
 	.slide-menu-money
 		color $red
+	.akkord__el
+		border 1px solid #e5e5e5
+		margin-bottom: -1px
+	.akkord__el--active
+		border 1px solid $green
+		position: relative
+		.akkord__el-head-text
+			color $green
 // skin feel eat === end
 
 
@@ -1470,7 +1478,6 @@ body
 	@extend .type--xl
 	@extend .type--bold
 	letter-spacing 0.72px
-	max-width 770px
 	margin: 40px auto
 .title--center
 	text-align: center
@@ -1607,3 +1614,654 @@ body
 
 .article-head__count
 	@extend .type--sm
+
+//modal
+.modal-layer
+	width: 100%
+	height: 100vh
+	position: fixed
+	z-index 1000
+	top 0
+	left 0
+	visibility: hidden
+	transition all 1s // duration for fade
+	opacity 0
+
+.modal-layer-show
+	visibility: visible
+	opacity 1
+
+.modal-cont
+	width: 100%
+	height: 100%
+	position: relative
+	max-height 100%
+	overflow: auto
+
+.modal-filter
+	position: absolute
+	top: 0
+	left: 0
+	background: #18191da1
+	width: 100%
+	height: 100vh
+	min-height 100vh
+
+.modal
+	+below(768px)
+		width: 100%
+		box-shadow 0 0 0
+	box-shadow 0 2px 4px rgba(0, 0, 0, 0.24)
+	transform translateY(-350%)
+	position: absolute
+	opacity .1
+	transition transform .8s, opacity 1s
+	max-width 450px
+	.order__row
+		margin-bottom: 20px
+		border-bottom 0
+.modal-content
+	+below(640px)
+		height: 100%
+		padding: 20px 10px
+		overflow-y scroll
+		width: 100%!important
+		br(0)
+	background: white
+	position: relative
+	padding: 70px 60px
+
+.modal__show
+	max-height 100%
+	opacity 1
+	transform translateY(0)
+	position: relative
+
+.modal-close
+	flex(mid)
+	cp()
+	position: absolute
+	top: 0
+	right: 0
+	size 45px
+	border 1px solid $border-color
+	tr(all)
+	&:hover
+		border 1px solid $green
+		.icon
+			fill $green
+			opacity:1
+	.icon
+		tr(all)
+		size 12px
+		fill black
+		opacity:.3
+
+.modal-open
+	overflow: hidden
+	overflow-y: scroll
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	width: 100%
+.modal-wrap
+	position: fixed
+	width: 100%
+	height: 100%
+	overflow-y auto
+	flex(mid)
+
+.modal-title
+	+below(768px)
+		font-size: 20px
+	margin-bottom: 30px
+	text-align: center
+	color black
+	@extend .type--md
+	@extend .type--bold
+
+.modal-text
+	+below(768px)
+		width: 100%
+		font-size: 12px
+	margin: 20px auto 30px auto
+	//width: 80%
+	line-height: 1.6
+	color #5f5f5f
+	font-size: 14px
+
+.modal-text--footer
+	margin-bottom: 0
+.modal-text--sm
+	font-size: 12px
+
+.validate-form
+	input,textarea
+		width: 100%
+		margin-bottom: 20px
+
+.modal-send
+	@extend .btn--md
+	@extend .btn--mark
+	width: 100%
+
+.agree-row
+	f()
+	align-items: center
+	margin:10px 0 20px 0
+	a
+		text-decoration: underline
+		display: inline-block
+
+.agree-row__text
+	width: 100%
+	color black
+	font-size: 12px
+	a
+		color #9c9a9a
+		text-decoration: none
+
+.field-error
+	.error
+		display: none!important
+
+.field-error
+	input
+		border 1px solid #dc3d3d
+.style-label--checkbox.field-error
+	.sytle-input-element
+		border 1px solid #dc3d3d
+
+.modal-content--true
+	flex(mid)
+	fl()
+	br(10px)
+	overflow: hidden
+	.modal-title
+		margin-bottom: 10px
+	.icon-true
+		size 160px
+		margin-bottom: 20px
+
+.modal-text-true
+	text-align: center
+	line-height: 1.6
+
+//modal===end
+
+.input-row
+	margin-bottom: 20px
+
+.login-remember
+	margin-bottom: 25px
+
+.link-mark
+	@extend .type--sm
+	link($green)
+	cp()
+	font-weight: 400
+	display: inline
+
+.foget-link
+	text-align: center
+	margin-top: 30px
+
+.promocode-check
+	margin-bottom: 20px
+	.style-label
+		align-items: center
+.input-row--code
+	display: none
+
+.text--green
+	color $green
+	display: inline-block
+	margin-right: 3px
+.text--bold
+	font-weight: 700
+
+.modal-user
+	position: absolute
+	display: inline-block
+	@extend .type--sm
+	font-weight 700
+	flex(mid)
+	cp()
+	top: 0
+	right: 44px
+	height: 45px
+	padding: 10px 20px
+	border 1px solid $border-color
+	tr(all)
+
+
+
+.lk-menu__el__icon
+	margin-right: 25px
+	position: relative
+	.icon
+		size 20px
+		fill $green
+.lk-menu__el-bonus
+	position: absolute
+	@extend .type--xs
+	color $red
+	font-weight: 700
+	top -10px
+	right: -100%
+.lk-menu__el__name
+	@extend .type--bold
+	color $dark
+	font-size 18px
+	text-overflow: ellipsis
+	white-space nowrap
+	overflow: hidden
+.lk-menu__el
+	f()
+	tr(all)
+	align-items: center
+	padding: 20px
+	border 1px solid #e5e5e5
+	margin-bottom: -1px
+	&:hover
+		.icon
+			fill $green
+		.lk-menu__el-text
+			color $green
+.lk-menu__el-icon
+	margin-right: 25px
+	position: relative
+	flex(mid)
+	.icon
+		tr(all)
+		size 20px
+		fill $gray
+.lk-menu__el-text
+	tr(all)
+	@extend .type--sm
+
+.lk
+	f()
+	justify-content: space-between
+	margin-top: 60px
+.lk-bar
+	width: 300px
+.lk-user
+	f()
+	background: #f2f2f2
+	padding: 20px
+	margin-bottom: 20px
+.lk-user__icon
+	margin-top: 10px
+	margin-right: 20px
+	.icon
+		size 20px
+		fill black
+//.user__content
+.user__title
+	font-size: 16px
+	font-weight:700
+	margin-bottom: 10px
+.lk-user__out
+	link($green)
+	@extend .type--sm
+.lk-content
+	width: calc(100% - 350px)
+	.title
+		margin: 30px 0
+.lk-menu__el--active
+	border 1px solid $green
+	position: relative
+	border-right 0
+	&:before
+		content ''
+		height: 58%
+		position: absolute
+		top 0
+		right: 0
+		width: 1px
+		background: $green
+		transform rotate(-30deg)
+		transform-origin top
+	&:after
+		content ''
+		height: 58%
+		position: absolute
+		bottom 0
+		right: 0
+		width: 1px
+		background: $green
+		transform rotate(30deg)
+		transform-origin bottom
+	.icon
+		fill $green
+	.lk-menu__el-text
+		color $green
+		font-weight: 700
+
+.indent
+	f()
+.indent-content
+	f()
+	justify-content: space-between
+	width: 100%
+	padding: 20px 30px
+	border 1px solid $border-color
+.indent-col
+	width: 48%
+
+.indent--history
+	.indent-col
+		&:nth-child(1)
+			width: 45%
+		&:nth-child(2)
+			width: 30%
+		&:nth-child(3)
+			width: 20%
+.indent-head
+	margin-bottom: 10px
+	@extend .type--sm
+.indent-title
+	font-size: 24px
+	@extend .type--bold
+	up()
+	margin-bottom: 10px
+
+.indent-name
+	@extend .type--sm
+	color $green
+	margin-bottom: 10px
+.indent-descr
+	@extend .type--sm
+.indent-cost
+	@extend .type--lg
+	@extend .type--bold
+	up()
+	margin-bottom: 10px
+.indent-bonus
+	margin-top: 30px
+	@extend .type--sm
+.indent-bonus-val
+	@extend .type--md
+	@extend .type--bold
+	color $green
+	display: inline-block
+	margin-left: 3px
+.indent-state
+	padding: 15px
+	color white
+	flex(mid)
+	width: 45px
+	background: $green
+	span
+		display: inline-block
+		transform rotate(-90deg)
+		transform-origin center
+		font-weight: 700
+		white-space nowrap
+.indent-state--unpay
+	background: $red
+.indent-state--disable
+	background: #c4c4c4
+
+.indent-pay
+	width:calc(100% - 45px)
+	border 1px solid $green
+	flex(between)
+	padding: 20px
+.indent-pay__text
+	@extend .type--sm
+	font-weight 700
+	line-height: 1.6
+	width: 50%
+	margin-right: 10%
+.indent-pay__get
+	margin-right: 5%
+	padding: 10px 20px
+	@extend .type--md
+	up()
+.indent-pay__remove
+	.icon
+		&:hover
+			fill $red
+		tr(all)
+		cp()
+		size 20px
+		fill $gray
+
+.indent-row
+	margin-bottom: 20px
+
+.indent-bal
+	@extend .type--md
+	@extend .type--bold
+	color $green
+	display: inline-block
+
+.indent-day
+	@extend .type--md
+	@extend .type--bold
+	color $green
+	display: inline-block
+//.banner-bonus
+.banner-bonus__head
+	bg-full()
+	padding: 20px
+	flex(mid)
+.banner-bonus-info
+	max-width 550px
+	width: 100%
+.banner-bonus-info__text
+	color white
+	@extend .type--sm
+	font-weight 700
+.banner-bonus-info__val
+	font-size: 72px
+	@extend .type--bold
+	color white
+	line-height: 1.2
+.banner-bonus__footer
+	padding: 20px
+	background: $red
+	flex(mid)
+	width: 100%
+.banner-bonus__footer-text
+	@extend .type--sm
+	max-width 550px
+	width: 100%
+	color white
+	font-weight 700
+
+.lk-section
+	.title
+		margin: 30px 0
+	margin-bottom: 30px
+
+.banner-friend
+	padding: 30px
+	background: #fe7c8a
+.banner-friend__content
+	width: calc(100% - 250px)
+.banner-friend__title
+	font-size: 24px
+	color black
+	font-weight 700
+	margin-bottom: 20px
+.banner-friend__text
+	line-height: 1.6
+	margin-bottom: 20px
+.url
+	f()
+	width: 100%
+	.input
+		border 0
+		border-radius 10px 0 0 10px
+.url-text
+	width: 60%
+.url-get
+	cp()
+	flex(mid)
+	tr(all)
+	background: $green
+	padding: 15px 20px
+	border-radius 0px 10px 10px 0
+	color white
+	font-weight: 700
+	font-size: 14px
+	&:hover
+		background: lighten($green,10)
+
+.lk-person
+	display: grid
+	grid-gap 30px
+	grid-template-columns: 1fr 1fr
+.lk-person__el
+	height: 140px
+	padding: 30px
+	flex(mid)
+	fl()
+	background: #f2f2f2
+.lk-person__el--title
+	@extend .type--bold
+	font-size: 18px
+	margin-bottom: 15px
+//.lk-person__el--text
+
+.lk-profile
+	f()
+	justify-content: space-between
+.lk-profile-col
+	width: 40%
+.lk-profile-title
+	@extend .type--bold
+	font-size: 18px
+	margin-bottom: 20px
+.profile
+	@extend .type--sm
+.profile-row
+	flex(between)
+	margin-bottom: 20px
+.profile-item
+	width: 48%
+.profile-val
+	width: 48%
+//.adress-wrap
+.adress
+	padding: 20px
+	border 1px solid $border-color
+	margin-bottom: 20px
+	br(10px)
+.adress-head
+	flex(between)
+	margin-bottom: 10px
+.adress-title
+	@extend .type--bold
+	@extend .type--sm
+.adress-tool
+	f()
+.adress-tool__el
+	flex(mid)
+	round()
+	cp()
+	tr()
+	size 30px
+	border 1px solid $gray
+	margin-left: 10px
+	&:hover
+		border 1px solid $green
+		.icon
+			fill $green
+	.icon
+		tr()
+		size 12px
+		fill $gray
+.adress-text
+	@extend .type--sm
+	line-height: 1.6
+	margin-bottom: 10px
+	&:last-child
+		margin-bottom: 0
+.adress-text--add
+	opacity:.6
+
+.adress-add
+	flex(mid)
+	cp()
+	tr(all)
+	br(10px)
+	height: 130px
+	background: #e7f4ed
+	&:hover
+		background: #b6efd0
+.adress-add__icon
+	round()
+	flex(mid)
+	size 50px
+	color white
+	background: $green
+	font-size: 40px
+	margin-right: 10px
+.adress-add__text
+	@extend .type--sm
+	@extend .type--bold
+	up()
+
+.pay-total
+	@extend .type--sm
+	color $green
+	text-align: center
+	margin-top: -20px
+	margin-bottom: 30px
+.pay-point
+	f()
+	justify-content: space-between
+	margin-bottom: 20px
+.pay-point__el
+	@extend .type--sm
+	width: 48.5%
+	padding: 20px
+	border 1px solid $border-color
+.pay-point__title
+	margin-bottom: 5px
+.pay-point__text
+	margin-bottom: 20px
+.pay-point__val
+	@extend .type--md
+	font-weight 700
+	color $green
+	margin-right: 5px
+	display: inline-block
+.pay-point__val--disable
+	color $gray
+
+.pay-point__get
+	link($green)
+.pay-row
+	margin-bottom: 20px
+	padding: 20px
+	border 1px solid $border-color
+	@extend .type--sm
+	flex(between)
+.pay-date
+	color $gray
+.pay-info
+	width: 40%
+.pay-title
+	@extend .type--sm
+	@extend .type--bold
+	line-height: 1.6
+	margin-bottom: 10px
+.pay-text
+	@extend .type--sm
+.pay-val
+	font-size: 18px
+	@extend .type--bold
+	color $green
+.pay-state
+	@extend .type--sm
+	@extend .type--bold
+	color $green
+.type--disable
+	color $gray

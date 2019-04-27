@@ -1,0 +1,98 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.page.skin--fe
+	+header('main')
+	.page-content
+		.main-cont
+			.lk-bnner
+				img(src="img/lk-banner.jpg", alt="")
+			.lk
+				.lk-bar
+					.lk-user
+						.lk-user__icon
+							+icon("user","icon")
+						.lk-user__content
+							.user__title Константин Константинопольский
+							a(href="#").lk-user__out Выйти из аккаунта
+					.lk-menu
+						a(href="#").lk-menu__el.lk-menu__el--active
+							.lk-menu__el-icon
+								+icon("food","icon")
+							.lk-menu__el-text Мои заказы
+						a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("gift","icon")
+							.lk-menu__el-text Мои бонусы
+								span.slide-menu-money 2167 ₽
+						a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("profile-plus","icon")
+							.lk-menu__el-text Пригласить друга
+						a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("history","icon")
+							.lk-menu__el-text История заказов
+						a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("profile","icon")
+							.lk-menu__el-text Профиль
+						//a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("purse","icon")
+							.lk-menu__el-text Вывод средств
+						//a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("payment","icon")
+							.lk-menu__el-text История начислений
+
+				.lk-content
+					.title.title--center Профиль
+					.lk-section
+						.lk-profile
+							.lk-profile-col
+								.lk-profile-title Личные данные
+								.profile
+									.profile-row
+										.profile-item Имя
+										.profile-val Константин
+									.profile-row
+										.profile-item Фамилия
+										.profile-val Константинопольский
+									.profile-row
+										.profile-item Телефон
+										.profile-val +7 456 123 45 67
+									.profile-row
+										.profile-item E-mail
+										.profile-val mail@mail.com
+									.profile-row
+										.profile-item Дата рождения
+										.profile-val 27 января 1992
+							.lk-profile-col
+								.lk-profile-title Адреса доставки
+								.adress-wrap
+									.adress
+										.adress-head
+											.adress-title Основной адрес
+											.adress-tool
+												.adress-tool__el
+													+icon("edit","icon")
+												.adress-tool__el
+													+icon("close","icon")
+										.adress-text Москва, ул. Петропавловская, д. 101, корп. 1, кв. 25, подъезд 8, этаж 3
+										.adress-text.adress-text--add Примечание к адресу
+									.adress
+										.adress-head
+											.adress-title Основной адрес
+											.adress-tool
+												.adress-tool__el
+													+icon("edit","icon")
+												.adress-tool__el
+													+icon("close","icon")
+										.adress-text Москва, ул. Петропавловская, д. 101
+									.adress-add
+										.adress-add__icon +
+										.adress-add__text добавить адрес
+	+footer()
+	+modal()
+include ./block_html/_script.pug

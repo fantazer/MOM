@@ -4,5 +4,21 @@ include block_html/_include.pug
 .page.skin--fe
 	+header('main')
 	.page-content
+		.main-cont
+			h1 Модальные окна
+			p Чтобы вызвать нужное окно добавь на элемент класс .modal-get и data-modal="имя окна"
+			br
+			br
+			.btn--md.btn--mark.modal-get(data-modal="login") Авторизация | data-modal="login "
+			br
+			br
+			.btn--md.btn--mark.modal-get(data-modal="sms") CMC | data-modal="sms"
+			br
+			br
+			.btn--md.btn--mark.modal-get(data-modal="registration") Регистрация | data-modal="registration"
+			br
+			br
+			.btn--md.btn--mark.modal-get(data-modal="truemessage") Успешное действие | data-modal="truemessage"
 	+footer()
+	+modal()
 include ./block_html/_script.pug

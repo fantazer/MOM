@@ -1,0 +1,69 @@
+mixin modal()
+	.modal-layer
+		.modal-filter
+		.modal-wrap
+			//success message
+			.modal(data-modal="truemessage")
+				.modal-content.modal-content--true
+					.modal-close
+						+icon("close-fat","icon")
+					+icon("success--color","icon icon-true")
+					.modal-title Отлично!
+					.modal-text-true Спасибо за Ваш отзыв, мы ценим внимание каждого клиента
+			//login
+			.modal.modal--md(data-modal="login")
+				.modal-content
+					.modal-user Я пользователь
+					.modal-close
+						+icon("close-fat","icon")
+					.modal-title Войти в личный кабинет
+					.modal-text Пожалуйста, введите свой номер телефона, мы пришлём вам проверочный смс-код
+					form(action="#").login-form
+						.input-row
+							input(type="text" placeholder="Телефон" class="input")
+						.login-remember
+							.check-el
+								label.style-label.style-label--checkbox
+									input(type="checkbox").sytle-input
+									.sytle-input-element
+										+icon("checked","icon-check")
+									.sytle-input-text Я ознакомился с #[a(href="#") политикой конфиденциальности], #[a(href="#") публичной офертой] и даю согласие на обработку моих персональных данных
+						.btn--md.btn--mark.btn--full Отправить
+			.modal.modal--md(data-modal="sms")
+				.modal-content
+					.modal-user Я пользователь
+					.modal-close
+						+icon("close-fat","icon")
+					.modal-title Войти в личный кабинет
+					.modal-text Введите код из смс, которая пришла вам на телефон
+					form(action="#").login-form
+						.input-row
+							input(type="text" placeholder="код" class="input")
+						.btn--md.btn--mark.btn--full Войти
+					.foget-link
+						.link-mark Выслать смс повторно
+			.modal.modal--md(data-modal="registration")
+				.modal-content
+					.modal-user Я пользователь
+					.modal-close
+						+icon("close-fat","icon")
+					.modal-title Войти в личный кабинет
+					.modal-text Заполните эти поля, чтобы завершить процесс регистрации
+					form(action="#").login-form
+						.input-row
+							input(type="text" placeholder="Имя" class="input")
+						.input-row
+							input(type="text" placeholder="Телефон" class="input")
+						.promocode-check
+							.check-el
+								label.style-label.style-label--checkbox
+									input(type="checkbox").sytle-input
+									.sytle-input-element
+										+icon("checked","icon-check")
+									.sytle-input-text У меня есть промокод
+						.input-row.input-row--code
+							input(type="text" placeholder="Промокод" class="input")
+						.btn--md.btn--mark.btn--full Отправить
+					.modal-text Регистрируйся и зарабатывай до 10% с покупки каждого привлечённого тобой пользователя
+					.modal-text.modal-text--footer.modal-text--sm #[span.text--green.text--bold 45 000]  (примерная стоимость месячной подписки) #[span.text--green.text--bold * 10% = 4 500] рублей в месяц с одного клиента
+			//cart === end
