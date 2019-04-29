@@ -5,7 +5,7 @@ include block_html/_include.pug
 	+header('main')
 	.page-content
 		.main-cont
-			.lk-bnner
+			.lk-banner
 				img(src="img/lk-banner.jpg", alt="")
 			.lk
 				.lk-bar
@@ -48,7 +48,8 @@ include block_html/_include.pug
 
 				.lk-content
 					.lk-section
-						.banner-friend(style="background-image:url('img/banner-friend.jpg')")
+						.banner-friend
+							.banner-friend-img(style="background-image:url('img/friend-banner.png')")
 							.banner-friend__content
 								.banner-friend__title Пригласи друга и вы оба получите бонусные баллы
 								.banner-friend__text Поделись ссылкой с другом. Вы оба получите бонусы на свой счёт.Потратить их можно будет в любой момент.
@@ -64,7 +65,6 @@ include block_html/_include.pug
 							.lk-person__el
 								.lk-person__el--title 1 человек
 								.lk-person__el--text Сделал заказ благодаря вам
-
 	+footer()
 	+modal()
 include ./block_html/_script.pug

@@ -27,6 +27,14 @@ include block_html/_include.pug
 						];
 				each item,i in items
 					a(href="#" class=i===0?'blog-tag__el--active':'').blog-tag__el #{item}
+
+				select.select-beauty.select
+					option(value="1") Все темы
+					option(value="1") Здоровье
+					option(value="1") Интервью
+					option(value="1") Спорт
+					option(value="1") Снижение веса
+					option(value="1") Прочее
 			.blog
 				- for (var i=0;i<10;i++)
 					a(href="#").blog__el

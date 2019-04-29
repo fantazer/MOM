@@ -243,9 +243,9 @@ gulp.task('watch', () => {
 
 gulp.task('pug', function() {
 		gulp.src(['app/html/*.pug','app/module/**/*.pug',])
-				.pipe(changed('app/', {extension: '.html'}))
-				.pipe(cache('pug'))
-				.pipe(pugInheritance({basedir: 'app/html/',skip:'node_modules/'}))
+				//.pipe(changed('app/', {extension: '.html'}))
+				//.pipe(cache('pug'))
+				//.pipe(pugInheritance({basedir: 'app/html/',skip:'node_modules/'}))
 				.pipe(gulpif(global.watch, emitty.stream(global.emittyChangedFile)))
 				.pipe(progeny({
 						regexp: /^\s*@import\s*(?:\(\w+\)\s*)?['"]([^'"]+)['"]/

@@ -1,0 +1,128 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.page.skin--fe
+	+header('main')
+	.page-content
+		.main-cont
+			.lk-banner
+				img(src="img/lk-banner.jpg", alt="")
+			.lk
+				.lk-bar
+					.lk-user
+						.lk-user__icon
+							+icon("user","icon")
+						.lk-user__content
+							.user__title Константин Константинопольский
+							a(href="#").lk-user__out Выйти из аккаунта
+					.lk-menu
+						a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("pocket","icon")
+							.lk-menu__el-text Мои финансы
+								span.slide-menu-money 2167 ₽
+						a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("purse","icon")
+							.lk-menu__el-text Вывод средств
+						a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("profile-plus","icon")
+							.lk-menu__el-text Мой промокод
+						a(href="#").lk-menu__el.lk-menu__el--active
+							.lk-menu__el-icon
+								+icon("food","icon")
+							.lk-menu__el-text Мои заказы
+						a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("history","icon")
+							.lk-menu__el-text История заказов
+						a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("payment","icon")
+							.lk-menu__el-text История начислений
+						a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("profile","icon")
+							.lk-menu__el-text Профиль
+						//a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("payment","icon")
+							.lk-menu__el-text История начислений
+				.lk-content
+					.title.title--center Вывод средств
+					.pay-total 1 бонусный балл = 1 рубль
+					.lk-section
+						.pay-point
+							.pay-point__el
+								.pay-point__title на вашем счету
+								.pay-point__text
+									span.pay-point__val 2167
+									| бонусных балла
+							.pay-point__el
+								.pay-point__title на вашем счету
+								.pay-point__text
+									span.pay-point__val.pay-point__val--disable 2167
+									| бонусных балла
+						.content
+							ul
+								li Вывести средства с разных аккаунтов на одинаковые реквизиты нельзя.
+								li Заявка на вывод будет обработана в течение 1-3 рабочих дней.
+								li Прописать условия вывода. Варианты вывода средств. История вывода средств.
+								li Указывайте только реальные, зарегистрированные данные.
+
+					.lk-section
+						.title.title--center Выберите свой вариант вывода средств
+						.payout
+							.payout__el
+								.payout__el-icon
+									+icon("visa--color","icon")
+								.payout__el-text Банк. карта Visa
+							.payout__el.payout__el--active
+								.payout__el-icon
+									+icon("mastercard--color","icon")
+								.payout__el-text Банк. карта MasterCard
+							.payout__el
+								.payout__el-icon
+									+icon("maestro--color","icon")
+								.payout__el-text Банк. карта Maestro
+							.payout__el
+								.payout__el-icon
+									+icon("mir--color","icon")
+								.payout__el-text Банк. карта Мир
+							.payout__el
+								.payout__el-icon
+									+icon("apay","icon")
+								.payout__el-text Apple Pay
+							.payout__el
+								.payout__el-icon
+									+icon("gpay--color","icon")
+								.payout__el-text Google Pay
+					.lk-section
+						.title.title--center История вывода средств
+						.clients
+							- for (var i=0;i<4;i++)
+								.card
+									.book-row
+										.book-row__title № заявки
+										.book-row__dot
+										.book-row__value 1084573
+									.book-row
+										.book-row__title Дата
+										.book-row__dot
+										.book-row__value 14 / 02 / 2019  17:51
+									.book-row
+										.book-row__title Банк. карта Visa
+										.book-row__dot
+										.book-row__value 73** **** **** **51
+									.book-row
+										.book-row__title Сумма
+										.book-row__dot
+										.book-row__value 487 руб
+									.book-row
+										.book-row__title Статус
+										.book-row__dot
+										.book-row__value.book-row__value--md.book-row__value--green выполнено
+	+footer()
+	+modal()
+include ./block_html/_script.pug

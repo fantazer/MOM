@@ -42,6 +42,7 @@ body
 .header-logo
 	+below(640px)
 		width: 120px
+		max-width initial
 	//width: 12%
 	max-width 12%
 .header-logo-divider
@@ -217,6 +218,49 @@ body
 	opacity:1
 	transform translate(20px,-20px)
 	left -9999px
+
+.bubble
+	position: relative
+	cp()
+	display: inline-block
+	&:hover
+		.bubble-info
+			opacity:1
+			transform translateY(-10px)
+			left: -85px
+.bubble-info
+	@extend .type--xs
+	height: auto
+	transition opacity .4s, transform .4s
+	position: absolute
+	bottom 100%
+	background: white
+	box-shadow 0 2px 8px rgba(43, 45, 53, 0.1)
+	border-radius 10px
+	padding: 15px 20px
+	line-height: 1.6
+	width: 190px
+	opacity:1
+	transform translateY(-30px)
+	left -9999px
+	font-weight: 400!important
+	color black
+	font-family:'Montserrat', sans-serif
+.info
+	round()
+	flex(mid)
+	tr(all)
+	font-family:'Montserrat'
+	font-weight: 400
+	size 20px
+	border 1px solid $border-color
+	display: inline-flex
+	font-size: 12px
+	margin-left: 3px
+	&:hover
+		border 1px solid $green
+		color $green
+
 .description-el__text
 	@extend .type--sm
 	text-align: center
@@ -238,6 +282,7 @@ body
 .section-title
 	+below(768px)
 		margin-bottom: 30px
+		font-size: 28px
 	@extend .type--xl
 	@extend .type--bold
 	letter-spacing 0.72px
@@ -247,6 +292,8 @@ body
 	margin-left: auto
 	margin-right: auto
 .section-title--extend
+	+below(640px)
+		margin: 20px
 	margin: 40px auto
 
 //.diet
@@ -1361,7 +1408,7 @@ body
 		size 200px
 .controller__logo--color
 	display: none
-	
+
 // skin feel eat
 .skin--fe
 	.header-phone__icon
@@ -1386,6 +1433,8 @@ body
 
 
 .mode
+	+below(480px)
+		grid-gap 10px
 	display: grid
 	grid-gap 30px
 	grid-template-columns: repeat(3, 1fr)
@@ -1403,6 +1452,9 @@ body
 .mode__el--active
 	border 2px solid $green
 .sale
+	+below(480px)
+		grid-template-columns: 1fr
+
 	display: grid
 	grid-gap 30px
 	grid-template-columns: 1fr 1fr
@@ -1434,6 +1486,10 @@ body
 	margin-top: 40px
 
 .article-head
+	+below(640px)
+		.nav-item
+			display: none
+		fl()
 	flex(between)
 .article-head__nav
 	flex(mid)
@@ -1458,14 +1514,23 @@ body
 		size 35px
 		fill $green
 .nav-prev__text
+	+below(640px)
+		display: none
 	@extend .type--sm
 	tr(all)
-//.article-head__date
+.article-head__date
+	+below(640px)
+		margin-bottom: 10px
+		font-size: 14px
+	color #cdcdcd
 //.article-head__soc
 //.soc-row
 //.soc-row__el
 
 .article-img
+	+below(1024px)
+		width: calc(100% + 20px)
+		margin-left: -10px
 	margin: 30px 0
 	margin-left: -100px
 	width calc(100% + 200px)
@@ -1475,10 +1540,11 @@ body
 .title
 	+below(768px)
 		margin: 30px auto
-	@extend .type--xl
+	@extend .type--md
 	@extend .type--bold
 	letter-spacing 0.72px
 	margin: 40px auto
+	font-size: 28px
 .title--center
 	text-align: center
 .title--sm
@@ -1521,6 +1587,10 @@ body
 	margin-bottom: 50px
 
 .why
+	+below(640px)
+		grid-template-columns: 1fr
+		grid-gap 20px
+		margin-bottom: 20px
 	display: grid
 	grid-row-gap 50px
 	grid-column-gap 30px
@@ -1539,10 +1609,15 @@ body
 	line-height: 1.8
 
 .blog
+	+below(640px)
+		grid-template-columns: 1fr
+		grid-gap 10px
 	display: grid
-	grid-gap 3   0px
+	grid-gap 30px
 	grid-template-columns: 1fr 1fr
 .blog__el
+	+below(1024px)
+		fl()
 	f()
 	tr(all)
 	br(10px)
@@ -1551,21 +1626,29 @@ body
 	&:hover
 		bsh-hover()
 	&:nth-child(4n-1)
-		.blog__el-img
-			order 2
-		.blog__el-content
-			order 1
+		+above(1025px)
+			.blog__el-img
+				order 2
+			.blog__el-content
+				order 1
 	&:nth-child(4n)
-		.blog__el-img
-			order 2
-		.blog__el-content
-			order 1
+		+above(1025px)
+			.blog__el-img
+					order 2
+			.blog__el-content
+					order 1
 .blog__el-img
+	+below(1024px)
+		width: 100%
+		padding: 30% 10%
 	bg-full()
 	padding: 20% 10%
 	width: 45%
 	order 1
 .blog__el-content
+	+below(1024px)
+		width: 100%
+		padding: 20px
 	order 2
 	width: 55%
 	padding: 20px 30px
@@ -1588,10 +1671,17 @@ body
 	@extend .type--sm
 
 .blog-tag
+	+below(769px)
+		.nice-select
+			display: none
+	+below(768px)
+		margin-bottom: 0
 	f()
 	fw()
 	margin-bottom: 40px
 .blog-tag__el
+	+below(768px)
+		display: none
 	@extend .type--sm
 	br(5px)
 	tr(all)
@@ -1836,7 +1926,9 @@ body
 	border 1px solid $border-color
 	tr(all)
 
-
+.lk-menu
+	+below(768px)
+		display: none
 
 .lk-menu__el__icon
 	margin-right: 25px
@@ -1883,16 +1975,28 @@ body
 	@extend .type--sm
 
 .lk
+	+below(768px)
+		margin-top: 30px
 	f()
+	fw()
 	justify-content: space-between
 	margin-top: 60px
 .lk-bar
+	+below(960px)
+		width: 100%
 	width: 300px
 .lk-user
 	f()
 	background: #f2f2f2
 	padding: 20px
 	margin-bottom: 20px
+.lk-banner
+	+below(640px)
+		margin-left: -10px
+		width calc(100% + 20px)
+	img
+		min-height 160px
+		width: 100%
 .lk-user__icon
 	margin-top: 10px
 	margin-right: 20px
@@ -1908,14 +2012,20 @@ body
 	link($green)
 	@extend .type--sm
 .lk-content
+	+below(960px)
+		width: 100%
 	width: calc(100% - 350px)
 	.title
 		margin: 30px 0
 .lk-menu__el--active
+	+below(1024px)
+		background: $green
 	border 1px solid $green
 	position: relative
 	border-right 0
 	&:before
+		+below(1024px)
+			display: none
 		content ''
 		height: 58%
 		position: absolute
@@ -1926,6 +2036,8 @@ body
 		transform rotate(-30deg)
 		transform-origin top
 	&:after
+		+below(1024px)
+			display: none
 		content ''
 		height: 58%
 		position: absolute
@@ -1936,29 +2048,51 @@ body
 		transform rotate(30deg)
 		transform-origin bottom
 	.icon
+		+below(1023px)
+			fill white
 		fill $green
 	.lk-menu__el-text
+		+below(1023px)
+			color white
 		color $green
 		font-weight: 700
-
+	.slide-menu-money
+		+below(1024px)
+			color yellow
 .indent
+	+below(640px)
+		fl()
 	f()
 .indent-content
+	+below(640px)
+		order 2
+		fl()
+		padding: 20px
 	f()
 	justify-content: space-between
 	width: 100%
 	padding: 20px 30px
 	border 1px solid $border-color
 .indent-col
+	+below(640px)
+		width: 100%
+		&:first-child
+			margin-bottom: 20px
 	width: 48%
 
 .indent--history
 	.indent-col
 		&:nth-child(1)
+			+below(640px)
+				width: 100%
 			width: 45%
 		&:nth-child(2)
+			+below(640px)
+				width: 100%
 			width: 30%
 		&:nth-child(3)
+			+below(640px)
+				width: 100%
 			width: 20%
 .indent-head
 	margin-bottom: 10px
@@ -1981,6 +2115,7 @@ body
 	up()
 	margin-bottom: 10px
 .indent-bonus
+
 	margin-top: 30px
 	@extend .type--sm
 .indent-bonus-val
@@ -1990,12 +2125,17 @@ body
 	display: inline-block
 	margin-left: 3px
 .indent-state
+	+below(640px)
+		order 1
+		width: 100%
 	padding: 15px
 	color white
 	flex(mid)
 	width: 45px
 	background: $green
 	span
+		+below(640px)
+			transform rotate(0deg)
 		display: inline-block
 		transform rotate(-90deg)
 		transform-origin center
@@ -2007,11 +2147,21 @@ body
 	background: #c4c4c4
 
 .indent-pay
+	+below(640px)
+		width: 100%
+		fw()
 	width:calc(100% - 45px)
 	border 1px solid $green
 	flex(between)
 	padding: 20px
+	.btn--md
+		+below(640px)
+			min-width 200px
 .indent-pay__text
+	+below(640px)
+		width: 100%
+		margin-bottom: 10px
+		margin-right: 0
 	@extend .type--sm
 	font-weight 700
 	line-height: 1.6
@@ -2047,6 +2197,8 @@ body
 	display: inline-block
 //.banner-bonus
 .banner-bonus__head
+	+below(640px)
+		background-position: 75% 0
 	bg-full()
 	padding: 20px
 	flex(mid)
@@ -2058,16 +2210,22 @@ body
 	@extend .type--sm
 	font-weight 700
 .banner-bonus-info__val
+	+below(640px)
+		font-size: 48px
 	font-size: 72px
 	@extend .type--bold
 	color white
 	line-height: 1.2
 .banner-bonus__footer
+	+below(640px)
+		padding: 20px 10px
 	padding: 20px
 	background: $red
 	flex(mid)
 	width: 100%
 .banner-bonus__footer-text
+	+below(640px)
+		text-align: center
 	@extend .type--sm
 	max-width 550px
 	width: 100%
@@ -2075,6 +2233,8 @@ body
 	font-weight 700
 
 .lk-section
+	+below(640px)
+		margin-bottom: 20px
 	.title
 		margin: 30px 0
 	margin-bottom: 30px
@@ -2082,7 +2242,10 @@ body
 .banner-friend
 	padding: 30px
 	background: #fe7c8a
+	position: relative
 .banner-friend__content
+	+below(1280px)
+		width: 100%
 	width: calc(100% - 250px)
 .banner-friend__title
 	font-size: 24px
@@ -2093,14 +2256,24 @@ body
 	line-height: 1.6
 	margin-bottom: 20px
 .url
+	+below(640px)
+		fw()
 	f()
 	width: 100%
 	.input
+		+below(640px)
+			br(0)
 		border 0
 		border-radius 10px 0 0 10px
 .url-text
+	+below(640px)
+		width: 100%
 	width: 60%
+	font-size: 14px
 .url-get
+	+below(640px)
+		width: 100%
+		br(0)
 	cp()
 	flex(mid)
 	tr(all)
@@ -2114,6 +2287,9 @@ body
 		background: lighten($green,10)
 
 .lk-person
+	+below(640px)
+		grid-template-columns: 1fr
+		grid-gap 20px
 	display: grid
 	grid-gap 30px
 	grid-template-columns: 1fr 1fr
@@ -2130,9 +2306,14 @@ body
 //.lk-person__el--text
 
 .lk-profile
+	+below(640px)
+		fw()
 	f()
 	justify-content: space-between
 .lk-profile-col
+	+below(640px)
+		width: 100%
+		margin-bottom: 20px
 	width: 40%
 .lk-profile-title
 	@extend .type--bold
@@ -2215,10 +2396,15 @@ body
 	margin-top: -20px
 	margin-bottom: 30px
 .pay-point
+	+below(640px)
+		fw()
 	f()
 	justify-content: space-between
-	margin-bottom: 20px
+	margin-bottom: 30px
 .pay-point__el
+	+below(640px)
+		width: 100%
+		margin-bottom: 20px
 	@extend .type--sm
 	width: 48.5%
 	padding: 20px
@@ -2239,14 +2425,22 @@ body
 .pay-point__get
 	link($green)
 .pay-row
+	+below(640px)
+		fl()
 	margin-bottom: 20px
 	padding: 20px
 	border 1px solid $border-color
 	@extend .type--sm
 	flex(between)
 .pay-date
-	color $gray
+	+below(640px)
+		width: 100%
+		margin-bottom: 10px
+	color black
 .pay-info
+	+below(640px)
+		width: 100%
+		margin-bottom: 10px
 	width: 40%
 .pay-title
 	@extend .type--sm
@@ -2256,12 +2450,229 @@ body
 .pay-text
 	@extend .type--sm
 .pay-val
+	+below(640px)
+		width: 100%
+		margin-bottom: 20px
 	font-size: 18px
 	@extend .type--bold
 	color $green
 .pay-state
+	+below(640px)
+		width: 100%
 	@extend .type--sm
 	@extend .type--bold
 	color $green
 .type--disable
 	color $gray
+
+.finance
+	padding: 20px 20px 40px 20px
+	border 1px solid $border-color
+	@extend .type--sm
+.finance-head
+	f()
+	justify-content: space-between
+	padding-bottom: 20px
+	border-bottom 1px solid $border-color
+.finance-head-info
+	width: 40%
+//.finance-text
+.finance-title
+	@extend .type--md
+	@extend .type--bold
+
+.finance-head-descr
+	width: 55%
+.finance-head-descr-row
+	f()
+	justify-content: flex-end
+	align-items: center
+.finance-head-descr-row__text
+	margin-right: 10px
+.finance-head-descr-row__val
+	@extend .type--bold
+	font-size: 18px
+.finance-content
+	padding-top: 30px
+.calc
+	flex(between)
+.calc-state
+	flex(mid)
+	fl()
+.calc-perc
+	size 40px
+	flex(mid)
+	round()
+	background: #c2e2d0
+	font-size: 12px
+	margin-bottom: 5px
+.calc-text
+	font-size: 12px
+.calc-descr
+	font-size: 12px
+.calc-perc--bronze
+	background: #f0ac85
+.calc-perc--silver
+	background: #e5e5e5
+.calc-perc--gold
+	background: #feca31
+
+.book-row
+	&:last-child
+		margin-bottom: 0
+.book-row__title
+	display table-cell
+	white-space nowrap
+.book-row__dot
+	display table-cell
+	border-bottom 1px dashed $border-color
+	width 100%
+.book-row__value
+	+below(480px)
+		font-size: 10px
+	font-weight: 700
+	display table-cell
+	white-space nowrap
+	font-size: 14px
+	@extend .type--bold
+.book-row__value--md
+	font-size: 16px
+.book-row__value--green
+	color $green
+.book-row
+	margin-bottom: 15px
+	@extend .type--sm
+.card
+	+below(640px)
+		padding: 20px 15px
+	padding: 30px
+	border 1px solid $border-color
+	br(10px)
+	color #535353
+.card--sm
+	width: 60%
+.card--mid
+	margin-left: auto
+	margin-right: auto
+.card--green
+	border-color $green
+
+.clients
+	+below(768px)
+		grid-template-columns: 1fr
+	display: grid
+	grid-gap 20px
+	grid-template-columns: 1fr 1fr
+
+.promo__el
+	f()
+	align-items: center
+	margin-bottom: 20px
+
+.promo__el-icon
+	+below(480px)
+		display: none
+	size 100px
+	round()
+	background: #f3f2f2
+	flex(mid)
+	margin-right: 30px
+	.icon
+		size 40px
+		fill $green
+.promo__el-title
+	font-size: 18px
+	@extend .type--bold
+	margin-bottom: 10px
+.promo__el-val
+	f()
+	align-items: center
+.promo__el-val-text
+	padding: 5px 15px
+	border 1px solid $border-color
+	br(5px)
+	font-size: 14px
+.promo__el-val-copy
+	.icon
+		size 20px
+		margin-left: 20px
+		fill $green
+		cp()
+
+.payout
+	+below(640px)
+		grid-template-columns: repeat(3, 1fr)
+	display: grid
+	grid-gap 20px
+	grid-template-columns: repeat(5, 1fr)
+.payout__el--active
+	.payout__el-icon
+		border-color $green
+	.payout__el-text
+		color $green
+
+
+.payout__el
+	cp()
+.payout__el-icon
+	+below(640px)
+		height: 80px
+	flex(mid)
+	br(10px)
+	height: 90px
+	border 1px solid $border-color
+	margin-bottom: 10px
+	.icon
+		+below(480px)
+			size 50px
+		size 70px
+.payout__el-text
+	text-align: center
+	font-size: 12px
+	font-weight: 500
+
+.banner-friend-img
+	+below(1280px)
+		display: none
+	position: absolute
+	bg-full()
+	right: 0
+	bottom 0
+	padding: 13% 17%
+	z-index 10
+
+.nice-select
+	br(0)
+	margin-bottom: 20px
+	display: block
+	color #000000
+	font-size 14px
+	font-weight 700
+	height: auto
+	line-height:10px
+	.list
+		width: calc(100% )
+		left 0px
+		br(0)
+		border 0px solid $border-color
+		border-top 0
+		margin-top: 0
+		li
+			white-space: nowrap
+			overflow: hidden
+			text-overflow: ellipsis
+  .current //max width dots
+		white-space: nowrap
+		overflow: hidden
+		text-overflow: ellipsis
+		display: inline-block
+		max-width 120px
+
+select.select-beauty
+	display: none!important
+
+.element-select
+	padding: 20px 0
+
+.nice-select:active, .nice-select.open, .nice-select:focus
+	border 1px solid $border-color

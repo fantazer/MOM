@@ -1,0 +1,107 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.page.skin--fe
+	+header('main')
+	.page-content
+		.main-cont
+			.lk-banner
+				img(src="img/lk-banner.jpg", alt="")
+			.lk
+				.lk-bar
+					.lk-user
+						.lk-user__icon
+							+icon("user","icon")
+						.lk-user__content
+							.user__title Константин Константинопольский
+							a(href="#").lk-user__out Выйти из аккаунта
+					.lk-menu
+						a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("pocket","icon")
+							.lk-menu__el-text Мои финансы
+								span.slide-menu-money 2167 ₽
+						a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("purse","icon")
+							.lk-menu__el-text Вывод средств
+						a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("profile-plus","icon")
+							.lk-menu__el-text Мой промокод
+						a(href="#").lk-menu__el.lk-menu__el--active
+							.lk-menu__el-icon
+								+icon("food","icon")
+							.lk-menu__el-text Мои заказы
+						a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("history","icon")
+							.lk-menu__el-text История заказов
+						a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("payment","icon")
+							.lk-menu__el-text История начислений
+						a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("profile","icon")
+							.lk-menu__el-text Профиль
+						//a(href="#").lk-menu__el
+							.lk-menu__el-icon
+								+icon("payment","icon")
+							.lk-menu__el-text История начислений
+				.lk-content
+					.title.title--center Мои финансы
+					.pay-total 1 бонусный балл = 1 рубль
+					.pay-point
+						.pay-point__el
+							.pay-point__title на вашем счету
+							.pay-point__text
+								span.pay-point__val 2167
+								| бонусных балла
+							a(href="#").pay-point__get Вывести средства
+						.pay-point__el
+							.pay-point__title на вашем счету
+							.pay-point__text
+								span.pay-point__val.pay-point__val--disable 2167
+								| бонусных балла
+					.finance
+						.finance-head
+							.finance-head-info
+								.finance-text статус
+								.finance-title Bronze (+10%)
+							.finance-head-descr
+								.finance-head-descr-row
+									.finance-head-descr-row__text осталось до следующего статуса
+									.finance-head-descr-row__val 1854,23 балла
+								.finance-head-descr-row
+									.finance-head-descr-row__text оборот в текущем месяце
+									.finance-head-descr-row__val 1390,04 баллов
+						.finance-content
+							.calc
+								.calc-state
+									.calc-perc 0%
+									.calc-text Start
+									.calc-descr Оборот в месяц
+								.calc-state
+									.calc-perc.calc-perc--bronze 3%
+									.calc-text Start
+									.calc-descr 100 000 руб
+								.calc-state
+									.calc-perc.calc-perc--silver 5%
+									.calc-text Start
+									.calc-descr 500 000 руб
+								.calc-state
+									.calc-perc.calc-perc--gold 10%
+									.calc-text Start
+									.calc-descr 1 000 000 руб
+							.progres
+								.progres-line
+									.progres-bg
+									.progres-val
+									.progres-point
+									.progres-point
+									.progres-point
+									.progres-point
+	+footer()
+	+modal()
+include ./block_html/_script.pug

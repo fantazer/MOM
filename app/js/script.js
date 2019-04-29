@@ -1,5 +1,9 @@
 $(document).ready(function () {
 
+	// init niceselect
+	$('.select-beauty').niceSelect();
+	// init niceselect === end
+
 	// main slider
 	$('.slider').slick({
 		slidesToShow: 1,
@@ -304,4 +308,11 @@ $(document).ready(function () {
 		$(this).closest('.indent-row').slideUp();
 	});
 	// remove indent pay === end
+
+	// toggle payout
+	$('.payout__el').click(function(){
+		$('.payout__el').removeClass('payout__el--active')
+		$(this).addClass('payout__el--active')
+	});
+	// toggle payout === end
 });
