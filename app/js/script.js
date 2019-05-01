@@ -1,5 +1,11 @@
 $(document).ready(function () {
 
+	// set progress on bar
+	var progress = $('.progres-bg').data('val');
+	$('.progress-val--hor').attr('width',progress+"%");
+	$('.progress-val--vert').attr('height',progress+"%");
+	// set progress on bar === end
+
 	// init niceselect
 	$('.select-beauty').niceSelect();
 	// init niceselect === end

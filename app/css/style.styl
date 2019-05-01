@@ -118,6 +118,7 @@ body
 	bg-full()
 	padding: 18% 10%
 	display: list-item!important
+	list-style none
 .section
 	+below(640px)
 		padding: 40px 0
@@ -579,10 +580,10 @@ body
 		.akkord__el-head-icon
 			&:before
 				content ''
-				background: $pink
+				background: $green
 			&:after
 				content ''
-				background: $pink
+				background: $green
 	&:last-child
 		border 0
 .akkord__el-head
@@ -986,7 +987,6 @@ body
 			height: auto
 		br(30px)
 		overflow: hidden
-		height: 400px
 //.slider-control
 //.slider-control--left
 //.slider-control--right
@@ -1002,9 +1002,8 @@ body
 		overflow: initial
 	+below(480px)
 		height: 250px
-	height: 400px
 	bg-full()
-	padding: 40% 10%
+	padding: 44% 10%
 	position: relative
 	overflow: hidden
 .diet-slider__el-layer
@@ -1053,7 +1052,7 @@ body
 	display: grid
 	grid-gap 30px
 	grid-template-columns: repeat(6, 1fr)
-	margin-bottom: 40px
+	margin-bottom: 20px
 .diet-clock__el
 	flex(mid)
 	justify-content: flex-start
@@ -1180,7 +1179,7 @@ body
 .trust-new
 	@extend .type--sm
 	color $pink-mark
-	transform:translateY(-10px)
+	transform:translateY(-10px)!important
 
 //slide menu
 .head-toggle
@@ -1431,7 +1430,182 @@ body
 			color $green
 // skin feel eat === end
 
+// skin nation
+.skin--nation
+	.header-phone__icon
+		.icon
+			fill $green
+	.header-lk__icon
+		.icon
+			fill $green
+	.header-lk__bonus
+		color $red
+	.slide-menu-money
+		color $red
+	.akkord__el
+		border 1px solid #e5e5e5
+		margin-bottom: -1px
+	.akkord__el--active
+		border 1px solid $green
+		position: relative
+		.akkord__el-head-text
+			color $green
+	.slick-dots .slick-active .dot
+		background: $red
+	.description-el__plus-wrap
+		background: $green
+		&:hover
+			background: $red
+	.diet-cond__el--active
+		border-color $green
+		background: $green
+	.diet-cond__el-icon
+		.icon
+			fill white
+	.diet-cond__el-title
+		color: black
+	.diet-cond__el
+		&:hover
+			border-color $green
+	.diet-day__el-heart
+		top: -5px
+	.diet-clock__el
+		&:hover
+			.icon
+				fill $green
+	.diet-clock__el--active
+		.icon
+			fill $green
+	.diet-tab__head-sale
+		color $green
+	.mark
+		background: $green
+	.trust-new
+		color $green
+	.faq-tab__el
+		&:hover
+			border-color $green
+	.faq-tab__el--active
+		background: $green
+	.faq-tab__el-coner
+		background: $green
 
+// skin nation === end
+
+// skin green
+.skin--green
+	.header-phone__icon
+		.icon
+			fill $orange
+	.header-lk__icon
+		.icon
+			fill $orange
+	.header-lk__bonus
+		color $red
+	.slide-menu-money
+		color $red
+	.akkord__el
+		border 1px solid #e5e5e5
+		margin-bottom: -1px
+	.akkord__el--active
+		border 1px solid $orange
+		position: relative
+		.akkord__el-head-text
+			color $orange
+	.slick-dots .slick-active .dot
+		background: $red
+	.description-el__icon
+		&: > .icon
+			fill black
+	.description-el__plus
+		top -10px
+		right: -10px
+	.description-el__plus-wrap
+		background: black
+		border-radius 0
+		&:hover
+			background: $red
+	.diet-cond__el--active
+		border-color black
+		background: black
+		color white
+		.icon--mark
+			fill white!important
+	.diet-cond__el-icon
+		.icon
+			+below(768px)
+				height: 30px
+			fill black
+	.diet-cond__el-title
+		color: $orange
+	.diet-cond__el
+		+below(768px)
+			transform skew(0deg)
+		br(0)
+		transform skew(-10deg)
+		&:hover
+			border-color $orange
+	.diet-day__el-heart
+		top: -5px
+	.diet-clock__el
+		&:hover
+			.icon
+				fill $orange
+	.diet-clock__el--active
+		.icon
+			fill $orange
+	.diet-tab__head-sale
+		color $orange
+	.mark
+		background: $green
+		br(0)
+		transform skew(-10deg)
+		span
+			transform skew(10deg)
+			display: block
+	.trust-new
+		color $green
+	.faq-tab__el
+		&:hover
+			border-color black
+	.faq-tab__el--active
+		background: black
+	.faq-tab__el-coner
+		background: black
+	.faq-tab__el-text
+		color $orange
+	.diet-cond
+		grid-template-columns repeat(6, 1fr)
+	.diet-day__el--active
+		background: black
+		color white
+	.diet-get__el--trust
+		.icon
+			transform: skew(10deg)
+		span
+			transform: skew(10deg)
+	.diet-tab__title
+		color $orange
+		font-size: 56px
+		margin-bottom: 0
+	.diet-tab__text
+		color black
+	.diet-cost-bonus
+		color black
+	.deliver-map-col
+		background: black
+		color white
+		br(0)
+	.deliver-map-title
+		color $orange
+// skin green === end
+
+.diet-cond__el-icon--lg
+	.icon
+		+below(768px)
+			width: 60px
+			height: 40px
+		width: 100px
 .mode
 	+below(480px)
 		grid-gap 10px
@@ -2470,35 +2644,61 @@ body
 	border 1px solid $border-color
 	@extend .type--sm
 .finance-head
+	+below(640px)
+		fw()
 	f()
 	justify-content: space-between
 	padding-bottom: 20px
 	border-bottom 1px solid $border-color
 .finance-head-info
-	width: 40%
+	+below(640px)
+		width: 100%
+		margin-bottom: 20px
+	width: 35%
 //.finance-text
 .finance-title
 	@extend .type--md
 	@extend .type--bold
 
 .finance-head-descr
-	width: 55%
+	+below(640px)
+		width: 100%
+	width: 65%
 .finance-head-descr-row
+	+below(640px)
+		justify-content: flex-start
+		fl()
+		align-items: flex-start
+		margin-bottom: 10px
 	f()
 	justify-content: flex-end
 	align-items: center
 .finance-head-descr-row__text
+	+below(1200px)
+		font-size: 12px
 	margin-right: 10px
 .finance-head-descr-row__val
 	@extend .type--bold
 	font-size: 18px
 .finance-content
+	+below(640px)
+		f()
 	padding-top: 30px
 .calc
+	+below(640px)
+		fl()
+		width 100%
+		order 2
 	flex(between)
 .calc-state
+	+below(640px)
+		width: 100%
+		flex-flow row
+		margin-left: 20px
+		justify-content: flex-start
 	flex(mid)
 	fl()
+	width: 15%
 .calc-perc
 	size 40px
 	flex(mid)
@@ -2507,8 +2707,13 @@ body
 	font-size: 12px
 	margin-bottom: 5px
 .calc-text
+	+below(640px)
+		font-weight: 700
+		margin: 0 10px
 	font-size: 12px
 .calc-descr
+	+below(1200px)
+		font-size: 10px
 	font-size: 12px
 .calc-perc--bronze
 	background: #f0ac85
@@ -2676,3 +2881,32 @@ select.select-beauty
 
 .nice-select:active, .nice-select.open, .nice-select:focus
 	border 1px solid $border-color
+
+.progres-bg
+	width: 88%
+	margin: 20px auto
+.progress-horiz
+	+below(640px)
+		display: none
+	width: 100% !important
+
+.progress-vert
+	+above(641px)
+		display: none
+
+.input-row-half
+	+below(640px)
+		fw()
+		margin-bottom: 0
+	f()
+	justify-content: space-between
+	margin-bottom: 20px
+	.input-wrap
+		+below(640px)
+			width: 100%
+			margin-bottom: 20px
+		width: 48%
+
+.section-video
+	margin-bottom: -40px
+	background: #f0f0f0

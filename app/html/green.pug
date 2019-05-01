@@ -1,0 +1,278 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.page.skin--green
+	+header('green')
+	.page-content
+		//main-slider
+		.slider
+			- for (var i=0;i<2;i++)
+				a(href="#" style="background-image:url('img/diet-slider-10.jpg')").slider__el
+		//main-slider===end
+
+		// main section
+		.section.section--gray.section--about
+			.main-cont
+				.description
+					.description__info
+						.description-title
+							.description-title__logo
+								img(src="img/logo-green-simple.svg", alt="")
+							.description-title__text — доставка здорового питания
+						.description-text Мы составляем меню каждую неделю, считаем БЖУ, выбираем только свежие продукты и лучшие рецептуры. Мы делаем полезное вкусным. Мы составляем меню каждую неделю, считаем БЖУ, выбираем только свежие продукты и лучшие рецептуры. Мы делаем полезное вкусным.
+					.description__img(style="background-image:url('img/about.jpg')")
+				.description-list
+					-
+						var items = [
+						{"icon":"power-sqrt","text":"100% достижение результатов"},
+						{"icon":"no_oil-sqrt","text":"без жарки и масла"},
+						{"icon":"vkus-sqrt","text":"вкусное разнообразное меню"},
+						{"icon":"diet-sqrt","text":"сбалансированный режим питания"},
+						{"icon":"sveg-sqrt","text":"всегда свежие продукты"},
+						{"icon":"24-sqrt","text":"24 часа экономии времени"}
+						];
+					each item in items
+						.description-el
+							.description-el__icon
+								+icon(item.icon,"icon")
+								.description-el__plus
+									.description-el__plus-wrap
+										.description-el__more в нашем арсенале более 1140 различных блюд
+										+icon("plus","icon")
+							.description-el__text #{item.text}
+		// main section === end
+
+		// section program
+		.section.section--program
+			.main-cont
+				.section-title Программы питания
+				.diet-wrap
+					//head toggle cond
+					.diet-cond
+						.diet-cond__el.diet-cond__el--active
+							.diet-cond__el-icon
+								+icon("detox","icon icon--main")
+								+icon("detox_w","icon icon--mark")
+							.diet-cond__el-title DETOX
+						.diet-cond__el
+							.diet-cond__el-icon.diet-cond__el-icon--lg
+								+icon("xs","icon icon--main")
+								+icon("xs_w","icon icon--mark")
+							.diet-cond__el-title 1200 ккал
+						.diet-cond__el
+							.diet-cond__el-icon
+								+icon("s","icon icon--main")
+								+icon("s_w","icon icon--mark")
+							.diet-cond__el-title 1600 ккал
+						.diet-cond__el
+							.diet-cond__el-icon
+								+icon("m","icon icon--main")
+								+icon("m_w","icon icon--mark")
+							.diet-cond__el-title 1800 ккал
+						.diet-cond__el
+							.diet-cond__el-icon
+								+icon("l","icon icon--main")
+								+icon("l_w","icon icon--mark")
+							.diet-cond__el-title 2200 ккал
+						.diet-cond__el.diet-cond__el-icon--lg
+							.diet-cond__el-icon
+								+icon("xl","icon icon--main")
+								+icon("xl_w","icon icon--mark")
+							.diet-cond__el-title 2500 ккал
+					.diet
+						.diet-day
+							-
+								var items = ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
+							each item,i in items
+								.diet-day__el(class=i===0?'diet-day__el--active':'') <span> #{item} </span>
+						.diet-consist
+							- for (var k=0;k<7;k++)
+								.diet-container(class=k===0?'diet-container--active':'')
+									.diet-slider-wrap
+										.slider-wrap
+											.slider-control.slider-control--left
+												+icon("arrow-left","icon")
+											.slider-control.slider-control--right
+												+icon("arrow-right","icon")
+											.diet-slider.slider-item
+												- for (var i=0;i<7;i++)
+													.diet-slider__el(style="background-image:url('img/diet-slider-1.jpg')")
+														.diet-slider__el-layer
+															.diet-slider__el-content
+																.diet-slider__el-title Фарфалле с семгой и соусом песто #{i}
+																.diet-slider__el-text макароны из твердых сортов фарфалле, сливки 10%, семга, специи, соус песто макароны из сортов фарфалле, сливки 10%, семга, специи, соус песто.
+																.diet-slider-gbu
+																	.diet-slider-gbu__el В блюде:
+																	.diet-slider-gbu__el 890 ккал
+																	.diet-slider-gbu__el 45 белки
+																	.diet-slider-gbu__el 6 жиры
+																	.diet-slider-gbu__el 29.4 углеводы
+									.diet-control
+										.diet-clock
+											-
+												var items = [
+													{"icon":"7","text":"завтрак"},
+													{"icon":"9_30","text":"второй завтрак"},
+													{"icon":"12","text":"обед"},
+													{"icon":"15","text":"полдник"},
+													{"icon":"17_30","text":"второй полдник"},
+													{"icon":"20","text":"ужин"}
+												];
+											each item,i in items
+												.diet-clock__el(class=i===0?'diet-clock__el--active':'')
+													.diet-clock__el-icon
+														+icon(item.icon,"icon")
+													.diet-clock__el-text #{item.text}
+										.diet-tab
+											.diet-tab__head-wrap
+												.diet-tab__head.diet-tab__head--active
+													.diet-tab__head-el
+														.diet-tab__head-day 1 день
+														.diet-tab__head-sale -50%
+												.diet-tab__head
+													.diet-tab__head-el
+														.diet-tab__head-day 6 дней
+												.diet-tab__head
+													.diet-tab__head-el
+														.diet-tab__head-day 14 дней
+														.diet-tab__head-sale -3%
+												.diet-tab__head
+													.diet-tab__head-el
+														.diet-tab__head-day 28 дней
+														.diet-tab__head-sale -7%
+											.diet-tab__cont-wrap
+												- for (var j=0;j<4;j++)
+													.diet-tab__cont(class=j===0?'diet-tab__cont--active':'')
+														.diet-tab__title XS
+														.diet-tab__text ≈ 2500 ккал, 6 приёмов/день
+														.diet-cost
+															.diet-cost-val 7 700 ₽
+															.diet-cost-day 500 ₽/день
+															.diet-cost-bonus Вы получите <span class="mark"><span>215</span></span> баллов
+														.diet-get
+															.diet-get__el.diet-get__el--order.btn--mark
+																span Заказать
+															.diet-get__el.diet-get__el--trust.btn--light
+																	+icon("fire--color","icon")
+																	span.trust-text В рассрочку
+																	span.trust-new new!
+					//head toggle cond
+		// section program === end
+
+		// section how
+		.section.section-how(style="background-image:url('img/how-work.jpg')")
+			.main-cont
+				.section-title Как это работает
+		// section how === end
+
+		// section deliver-map
+		.section.section-deliver-map
+			.main-cont
+				.deliver-map-container
+					.deliver-map-el
+					.deliver-map-cont
+						.deliver-map-col
+							.deliver-map-title Доставка
+							.deliver-map-content
+								p Мы доставляем для Вас еду бесплатно во все районы Москвы в пределах МКАД и за пределами (не более 15 км от МКАДа).
+								p Доставка внутри МКАД с 2-х часовым интервалом и без опозданий.
+								p Мы осуществляем доставки в утреннее время с 06:00 до 12:00 и вечернее с 20:00 до 23:00 (в пределах МКАД).  Доставки в населенные пункты Московской области, расположенные в пределах 15км от МКАД  только в утреннее время с 08-00 до 11-00.
+								p ДОСТАВКА осуществляется каждый день или раз в 2 дня.
+								p Если Вы не нашли из выше написанного  подходящее время  доставки еды, то позвоните нам, и мы решим этот вопрос по телефону.
+						.deliver-map-col
+							.deliver-map-title Оплата
+							.deliver-map-content
+								p Для Вас мы предусмотрели 3 варианта оплаты:
+								p 1) Удобная онлайн-оплата на сайте при оформлении заказа. Так же наш сервис для удобства позволяет Вам производить оплату с помощью епл пей и гугл пей.
+								p 2) Покупка рационов питания в рассрочку (подойдет только для  держателей карт-рассрочек  ХАЛКА, Совесть, Свобода (Хоум Кредит), Тинькоф.   (пока написать так, еще не знаю с кем точно сотрудничать будем)
+								p 3) Наличный расчет курьеру в первый день доставки питания.
+				.deliver-map-mobile
+					.akkord__el
+						.akkord__el-head
+							.akkord__el-head-text Оплата
+							.akkord__el-head-icon
+						.akkord__el-content
+							p Для Вас мы предусмотрели 3 варианта оплаты:
+							p 1) Удобная онлайн-оплата на сайте при оформлении заказа. Так же наш сервис для удобства позволяет Вам производить оплату с помощью епл пей и гугл пей.
+							p 2) Покупка рационов питания в рассрочку (подойдет только для  держателей карт-рассрочек  ХАЛКА, Совесть, Свобода (Хоум Кредит), Тинькоф.   (пока написать так, еще не знаю с кем точно сотрудничать будем)
+							p 3) Наличный расчет курьеру в первый день доставки питания.
+					.akkord__el
+						.akkord__el-head
+							.akkord__el-head-text Доставка
+							.akkord__el-head-icon
+						.akkord__el-content
+							p Для Вас мы предусмотрели 3 варианта оплаты:
+							p 1) Удобная онлайн-оплата на сайте при оформлении заказа. Так же наш сервис для удобства позволяет Вам производить оплату с помощью епл пей и гугл пей.
+							.deliver-map-mobile__item
+							p 2) Покупка рационов питания в рассрочку (подойдет только для  держателей карт-рассрочек  ХАЛКА, Совесть, Свобода (Хоум Кредит), Тинькоф.   (пока написать так, еще не знаю с кем точно сотрудничать будем)
+							p 3) Наличный расчет курьеру в первый день доставки питания.
+
+		// section deliver-map === end
+
+		// section review
+		.section.section--gray.section-review
+			.main-cont
+				.section-title Отзывы наших клиентов
+				.slider-wrap
+					.slider-control.slider-control--left
+						+icon("arrow-left","icon")
+					.slider-control.slider-control--right
+						+icon("arrow-right","icon")
+					.slider-item.review-slider
+						- for(var j=1;j<3;j++)
+							- for(var i=1;i<5;i++)
+								.review-slider__el
+									.review-slider__el-img(style="background-image:url('img/review-"+ i +".jpg')")
+		// section review === end
+
+		// section faq
+		.section.section-review
+			.main-cont--sm
+				.section-title FAQ
+				.faq-tab
+					-
+						var items = [
+							{"icon":"tarif","text":"Тарифы"},
+							{"icon":"product","text":"Продукты"},
+							{"icon":"deliver","text":"Доставка и оплата"},
+							{"icon":"snow","text":"Хранение"}
+						];
+					each item,i in items
+						.faq-tab__el(class=i===0?'faq-tab__el--active':'')
+							.faq-tab__el-icon
+								+icon(item.icon,"icon")
+							.faq-tab__el-text #{item.text}
+							.faq-tab__el-coner
+				.faq-container
+					- for (var i=0;i<4;i++)
+						.faq(class=i===0?'faq--active':'')
+							- for (var j=0;j<4;j++)
+								.akkord__el
+									.akkord__el-head
+										.akkord__el-head-text Как мне заказать питание? #{i}
+										.akkord__el-head-icon
+									.akkord__el-content
+										p Меню разработано профессиональным нутрициологом Юлей Гурбановой - cоздателем проекта осознанного питания GetLean.
+
+										p Юля проходила курсы по питанию и нутрициологии в Stanford University, The Hong Kong University of Science and Technology, The University of Edinburgh, AFPA. American Fitness & Professionals Association.
+		// section faq === end
+
+		//section video
+		.section.section--gray.section-video
+			.main-cont--md
+				.video-wrap
+					.video-info
+						.video-info__title Хватит откладывать до понедельника!
+						.video-info__text Начните питаться правильно уже сегодня!
+						.video-info__get
+							.video-info__get-el.btn--mark Начать сегодня
+							.video-info__get-el.btn--light Перезвоните мне
+					.video-cont
+						.video-cont__title Если у вас остались вопросы, посмотрите видео
+						a(href="https://youtu.be/Y4G0xemXFm8").fancybox.video-link
+							.video(style="background-image:url('img/video-cover.jpg')")
+								.video-filter
+								+icon("play--color","icon")
+		//section video ==end
+	+footer()
+include ./block_html/_script.pug

@@ -6,7 +6,11 @@ mixin header(type)
 				a(href="/").header-logo
 					if type==='main'
 						img(src="img/logo-fe-long.svg", alt="")
-					else
+					if type==='nation'
+						img(src="img/logo-zn-long.svg", alt="")
+					if type==='green'
+						img(src="img/logo-green-simple.svg", alt="")
+					if type==='mom'
 						img(src="img/logo-mam-long.svg", alt="")
 				.header-logo-divider
 				.header-location Москва

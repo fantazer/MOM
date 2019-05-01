@@ -91,4 +91,43 @@
 		&:hover
 			background: lighten($green,10)
 
+.skin--nation
+	.btn--md
+		br(5px)
+	.btn--mark
+		background: $red
+		&:hover
+			background: lighten($red,10)
+	.btn--light
+		border 1px solid $red
+		background-color #ffffff
+		color $red
+		&:hover
+			background: $red
+			color white
+		.nav-icon
+			fill $mark
 
+.skin--green
+	.btn--md
+		br(0px)
+	.btn--mark
+		br(0px)
+		background: $orange
+		transform: skew(-10deg);
+		span
+			transform: skew(10deg);
+
+		&:hover
+			background: lighten($orange,10)
+	.btn--light
+		transform: skew(-10deg);
+		br(0px)
+		border 1px solid $orange
+		background-color #ffffff
+		color $orange
+		&:hover
+			background: $orange
+			color white
+		.nav-icon
+			fill $mark

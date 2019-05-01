@@ -66,4 +66,83 @@ mixin modal()
 						.btn--md.btn--mark.btn--full Отправить
 					.modal-text Регистрируйся и зарабатывай до 10% с покупки каждого привлечённого тобой пользователя
 					.modal-text.modal-text--footer.modal-text--sm #[span.text--green.text--bold 45 000]  (примерная стоимость месячной подписки) #[span.text--green.text--bold * 10% = 4 500] рублей в месяц с одного клиента
+			.modal(data-modal="adress")
+				.modal-content
+					.modal-close
+						+icon("close-fat","icon")
+					.modal-title Добавить адрес
+					form( action="#")
+						.select-city
+						.input-row
+							input(type="text" name="name" placeholder="Улица").input
+						.input-row-half
+							.input-wrap
+								input(type="text" name="name" placeholder="Дом").input
+							.input-wrap
+								input(type="text" name="name" placeholder="Квартира").input
+						.input-row-half
+							.input-wrap
+								input(type="text" name="name" placeholder="Подъезд").input
+							.input-wrap
+								input(type="text" name="name" placeholder="Этаж").input
+						.input-row
+							input(type="text" name="name" placeholder="Примечание к адресу").input
+						.promocode-check
+							.check-el
+								label.style-label.style-label--checkbox
+									input(type="checkbox").sytle-input
+									.sytle-input-element
+										+icon("checked","icon-check")
+									.sytle-input-text Это основной адрес
+						input(type="submit" value="Cохранить").modal-send.btn--md.btn--mark.btn--full
+			//modal profile-edit
+			.modal(data-modal="profile-edit")
+				.modal-content
+					.modal-close
+						+icon("close-fat","icon")
+					.modal-title Изменить профиль
+					form( action="#")
+						.select-city
+						.input-row
+							.input-row__title Имя
+							input(type="text" name="name"  value="Александр").input
+						.input-row
+							.input-row__title Телефон:
+							input(type="text" name="name"  value="+7 923 666 7667").input
+						.input-row
+							.input-row__title День рождения:
+							input(type="text" name="name"  value="30.20.1982").input
+						input(type="submit" value="Cохранить").btn--md.btn--mark.btn--full.modal-send
+			//modal profile-edit === end
+
+			//modal adres-edit
+			.modal(data-modal="adress-edit")
+				.modal-content
+					.modal-close
+						+icon("close-fat","icon")
+					.modal-title Изменить адрес
+					form( action="#")
+						.select-city
+						.input-row
+							.input-row__title Улица
+							input(type="text" name="name"  value="Ленина").input
+						.input-row-half
+							.input-wrap
+								.input-row__title Улица
+								input(type="text" name="name"  value="14").input
+							.input-wrap
+								.input-row__title Квартира
+								input(type="text" name="name"  value="35").input
+						.input-row-half
+							.input-wrap
+								.input-row__title Подъезд
+								input(type="text" name="name"  value="2").input
+							.input-wrap
+								.input-row__title Этаж
+								input(type="text" name="name"  value="17").input
+						.input-row
+							.input-row__title Примечание к адресу
+							input(type="text" name="name" placeholder="Примечание к адресу" value="Дом").input
+						input(type="submit" value="Cохранить").btn--md.btn--mark.btn--full.modal-send
+			//modal adres-edit === end
 			//cart === end
