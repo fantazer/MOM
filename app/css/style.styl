@@ -535,7 +535,7 @@ body
 	+below(480px)
 		font-size: 8px
 	text-align: center
-
+	font-weight: 700
 .faq-container
 	+below(640px)
 		width calc(100% + 20px)
@@ -1082,6 +1082,7 @@ body
 			fill $pink
 	.diet-clock__el-text
 		color black
+		font-weight: 700
 .diet-tab
 	br(30px)
 	overflow: hidden
@@ -1230,7 +1231,23 @@ body
 	height: 100%
 	position: relative
 
-
+.slide-menu-company
+	display: grid
+	grid-gap 10px
+	grid-template-columns: repeat(2, 1fr)
+	padding: 10px
+	background: #f6f7fa
+.slide-menu-company__el
+	flex(mid)
+	bsh()
+	br(10px)
+	padding: 10px
+	background: white
+	img
+		size 60px
+.slide-menu-company__el--lg
+	img
+		width: 90px
 //slide menu === end
 
 .slide-menu-head
@@ -1370,6 +1387,15 @@ body
 	top 0
 	width: 120%
 	-webkit-filter unquote("grayscale(0%)")
+.controller__el-filter
+	display: none
+	position: absolute
+	top 0
+	left:0
+	width: 100%
+	height: 100%
+	background: rgba(0, 0, 0, 0.41)
+	z-index 1
 .controller__el--left
 	.controller__el-img
 		left 0
@@ -1401,13 +1427,18 @@ body
 	flex(mid)
 
 .controller__logo
+	z-index 10
 	img
 		+below(640px)
 			size 120px
 		size 200px
 .controller__logo--color
-	display: none
+	+above(769px)
+		display: none
 
+.controller__logo--white
+	+below(768px)
+		display: none
 // skin feel eat
 .skin--fe
 	.header-phone__icon
@@ -1714,6 +1745,7 @@ body
 .title
 	+below(768px)
 		margin: 30px auto
+		font-size: 20px
 	@extend .type--md
 	@extend .type--bold
 	letter-spacing 0.72px
@@ -1845,14 +1877,15 @@ body
 	@extend .type--sm
 
 .blog-tag
-	+below(769px)
+	+above(769px)
 		.nice-select
-			display: none
+			display: none!important
 	+below(768px)
 		margin-bottom: 0
 	f()
 	fw()
 	margin-bottom: 40px
+
 .blog-tag__el
 	+below(768px)
 		display: none
@@ -1948,12 +1981,14 @@ body
 	top: 0
 	right: 0
 	size 45px
-	border 1px solid $border-color
+	border-left 1px solid $border-color
+	border-bottom 1px solid $border-color
 	tr(all)
 	&:hover
-		border 1px solid $green
+		border-color $green
+		background: $green
 		.icon
-			fill $green
+			fill white
 			opacity:1
 	.icon
 		tr(all)
@@ -2194,6 +2229,11 @@ body
 .lk-menu__el--active
 	+below(1024px)
 		background: $green
+		&:hover
+			.lk-menu__el-text
+				color white!important
+			.icon
+				fill white!important
 	border 1px solid $green
 	position: relative
 	border-right 0
@@ -2532,6 +2572,11 @@ body
 		tr()
 		size 12px
 		fill $gray
+.adress-tool__el--remove
+	&:hover
+		border 1px solid $red
+		.icon
+			fill $red
 .adress-text
 	@extend .type--sm
 	line-height: 1.6
@@ -2763,7 +2808,7 @@ body
 	border-color $green
 
 .clients
-	+below(768px)
+	+below(1200px)
 		grid-template-columns: 1fr
 	display: grid
 	grid-gap 20px
