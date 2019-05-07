@@ -15,7 +15,8 @@
   "dependencies": {
     "jquery": "~2.1.4",
     "normalize.css": "~3.0.3",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "air-datepicker": "^2.2.3"
   },
   "devDependencies": {
     "fancybox": "^3.5.7",

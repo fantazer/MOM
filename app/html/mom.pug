@@ -1,7 +1,7 @@
 include block_html/_style.pug
 include block_html/_include.pug
 
-.page
+.page.skin--mom
 	+header('mom')
 	.page-content
 		//main-slider
@@ -150,8 +150,8 @@ include block_html/_include.pug
 															.diet-cost-day 500 ₽/день
 															.diet-cost-bonus Вы получите <span class="mark">215</span> баллов
 														.diet-get
-															.diet-get__el.diet-get__el--order Заказать
-															.diet-get__el.diet-get__el--trust
+															.diet-get__el.diet-get__el--order.modal-get(data-modal="order") Заказать
+															.diet-get__el.diet-get__el--trust.modal-get(data-modal="order-reg")
 																+icon("fire--color","icon")
 																span.trust-text В рассрочку
 																span.trust-new new!
@@ -275,4 +275,5 @@ include block_html/_include.pug
 								+icon("play--color","icon")
 		//section video ==end
 	+footer()
+	+modal()
 include ./block_html/_script.pug

@@ -150,9 +150,9 @@ include block_html/_include.pug
 															.diet-cost-day 500 ₽/день
 															.diet-cost-bonus Вы получите <span class="mark"><span>215</span></span> баллов
 														.diet-get
-															.diet-get__el.diet-get__el--order.btn--mark
+															.diet-get__el.diet-get__el--order.btn--mark.modal-get(data-modal="order")
 																span Заказать
-															.diet-get__el.diet-get__el--trust.btn--light
+															.diet-get__el.diet-get__el--trust.btn--light.modal-get(data-modal="order-reg")
 																	+icon("fire--color","icon")
 																	span.trust-text В рассрочку
 																	span.trust-new new!
@@ -275,4 +275,5 @@ include block_html/_include.pug
 								+icon("play--color","icon")
 		//section video ==end
 	+footer()
+	+modal()
 include ./block_html/_script.pug

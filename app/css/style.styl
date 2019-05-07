@@ -228,7 +228,7 @@ body
 		.bubble-info
 			opacity:1
 			transform translateY(-10px)
-			left: -85px
+			left: -100px
 .bubble-info
 	@extend .type--xs
 	height: auto
@@ -240,7 +240,7 @@ body
 	border-radius 10px
 	padding: 15px 20px
 	line-height: 1.6
-	width: 190px
+	width: 240px
 	opacity:1
 	transform translateY(-30px)
 	left -9999px
@@ -1154,6 +1154,9 @@ body
 	color white
 	display: inline-block
 	margin: 0 5px
+	font-size: 14px
+	font-weight:bold
+
 .diet-get
 	+below(480px)
 		fl()
@@ -1490,6 +1493,8 @@ body
 	.diet-cond__el--active
 		border-color $green
 		background: $green
+		.diet-cond__el-title
+			color white
 	.diet-cond__el-icon
 		.icon
 			fill white
@@ -1520,7 +1525,22 @@ body
 		background: $green
 	.faq-tab__el-coner
 		background: $green
-
+	.deliver-map-title
+		color $green
+	.order-head__icon
+		.icon
+			fill $green
+	.order-note__icon
+		.icon
+			fill $green
+	.order-note__val
+		color $green
+	.style-label--radio .sytle-input:checked ~ .sytle-input-element .icon-radio
+		background: $green
+	.check-el .sytle-input-element:hover
+		border-color $green!important
+	.sytle-input-text a
+		color $green
 // skin nation === end
 
 // skin green
@@ -1629,8 +1649,35 @@ body
 		br(0)
 	.deliver-map-title
 		color $orange
+	.order-head__icon
+		.icon
+			fill $orange
+	.order-note__icon
+		.icon
+			fill $orange
+	.order-note__val
+		color $orange
+	.style-label--radio .sytle-input:checked ~ .sytle-input-element .icon-radio
+		background: $orange
+	.check-el .sytle-input-element:hover
+		border-color $orange!important
+	.sytle-input-text a
+		color $orange
+
 // skin green === end
 
+
+// skin mom
+.skin--mom
+	.order-head__icon
+		.icon
+			fill $pink
+	.order-note__icon
+		.icon
+			fill #FF70B6
+	.order-note__val
+		color #FF70B6
+// skin mom === end
 .diet-cond__el-icon--lg
 	.icon
 		+below(768px)
@@ -1960,13 +2007,13 @@ body
 .modal-content
 	+below(640px)
 		height: 100%
-		padding: 20px 10px
+		padding: 60px 10px 20px 10px
 		overflow-y scroll
 		width: 100%!important
 		br(0)
 	background: white
 	position: relative
-	padding: 70px 60px
+	padding: 70px 50px
 
 .modal__show
 	max-height 100%
@@ -2020,6 +2067,14 @@ body
 	color black
 	@extend .type--md
 	@extend .type--bold
+
+.modal-title--left
+	@extend .type--md
+	@extend .type--bold
+	margin-bottom: 10px
+	font-size: 18px
+.modal-title--bright
+	opacity:.4
 
 .modal-text
 	+below(768px)
@@ -2955,3 +3010,170 @@ select.select-beauty
 .section-video
 	margin-bottom: -40px
 	background: #f0f0f0
+
+.order-head
+	+below(640px)
+		fw()
+	f()
+	margin-bottom: 30px
+.order-head__icon
+	margin-right: 20px
+	.icon
+		size 60px
+.order-head__val
+	font-size: 14px
+	@extend .type--bold
+	color #A9A9A9
+	margin-bottom: 10px
+.order-head__title
+	@extend .type--lg
+	@extend .type--bold
+	margin-bottom: 10px
+	line-height: 1.2
+.order-head__info
+	.mark
+		display: inline-block
+		margin-top: -3px
+
+.input-row__title
+	font-size: 12px
+	margin-bottom: 5px
+	font-weight: 700
+	opacity: .4
+
+.input-row
+	position: relative
+.input-placeholder-val
+	position: absolute
+	left 15px
+	top 17px
+	tr(all)
+	font-size: 12px
+	color #b1afaf
+.input-animate
+	display: inline-block
+	z-index 20
+	color black
+.input-animate:focus+span,
+.input-animate[data-empty="false"] + span
+	top 5px
+	font-size: 8px
+
+.form-section
+	margin-bottom: 30px
+
+.datepicker
+	z-index 9999
+
+.order-info
+	@extend .type--sm
+	link($gray)
+	cp()
+	font-weight: 400
+	display: inline-block
+	margin-bottom: 20px
+
+.order-note
+	f()
+.order-note__icon
+	margin-right: 15px
+	.icon
+		size 35px
+.order-note__text
+	font-size: 12px
+	margin-bottom: 5px
+.order-note__val
+	font-size: 14px
+	font-weight: 700
+
+.input-row--mid
+	.style-label
+		align-items: center
+
+.order-get
+	width: 100%
+
+.incr
+	+below(640px)
+		width: 100%
+	f()
+	justify-content: space-between
+	position relative
+	width 100px
+	border-top 1px solid $border-color
+	border-bottom 1px solid $border-color
+	border-radius 38px
+	user-select none
+	background: white
+.incr__nav
+	flex(mid)
+	tr(background )
+	round()
+	size 34px
+	border 1px solid $border-color
+	background white
+	.icon
+		size 12px
+		fill #b3b3b3
+		opacity:1
+	&:hover
+		cp()
+		background-color $gray
+		border 0
+		.icon
+			fill white
+	&:active
+		background-color $gray
+.incr__val
+	flex(mid)
+	background white
+	position relative
+	tr(all)
+	color black
+	font-weight 700
+	min-width 30px
+.item__incr
+	+below(640px)
+		width: 100%
+	width: 100px
+//increment===end
+
+.order-slider__el
+	padding: 20px
+	border 1px solid $border-color
+	br(5px)
+.order-slider__el-img
+	bg-full()
+	min-height 150px
+	padding: 5%
+	background-size: contain
+	margin-bottom: 20px
+
+.order-slider__el-footer
+	flex(between)
+
+.order-slider__el-cost
+	font-weight: 700
+	font-size: 18px
+
+.order-slider
+	+below(640px)
+		margin-left: -15px
+		width calc(100% + 30px)
+	margin-left: -40px
+	width calc(100% + 80px)
+	//Отступы для для слайдов
+	.slick-slide
+		+below(640px)
+			margin: 0 5px
+		margin: 0 10px
+	.slick-list
+		+below(640px)
+			margin: 0 -5px
+		margin: 0 -10px
+
+.order-slider-wrap
+	margin-bottom: 60px
+
+.order-slider__el-title
+	margin-bottom: 20px

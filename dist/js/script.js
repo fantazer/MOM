@@ -1,9 +1,10 @@
 $(document).ready(function () {
 
+
 	// set progress on bar
 	var progress = $('.progres-bg').data('val');
-	$('.progress-val--hor').attr('width',progress+"%");
-	$('.progress-val--vert').attr('height',progress+"%");
+	$('.progress-val--hor').attr('width', progress + "%");
+	$('.progress-val--vert').attr('height', progress + "%");
 	// set progress on bar === end
 
 	// init niceselect
@@ -15,14 +16,14 @@ $(document).ready(function () {
 		slidesToShow: 1,
 		speed: 800, //animate time
 		autoplay: false,
-		arrows:false,
+		arrows: false,
 		autoplaySpeed: 8000, //time between
-		dots:true,
-		customPaging : function(slider, i) {
-		 	return '<span class="dot"></span>';
+		dots: true,
+		customPaging: function (slider, i) {
+			return '<span class="dot"></span>';
 		},
 		//fade: true
-		});
+	});
 	// main slider === end
 
 	// review slider
@@ -30,42 +31,67 @@ $(document).ready(function () {
 		slidesToShow: 4,
 		speed: 800, //animate time
 		autoplay: false,
-		arrows:false,
+		arrows: false,
 		autoplaySpeed: 8000, //time between
-		dots:true,
-		customPaging : function(slider, i) {
-		 	return '<span class="dot"></span>';
+		dots: true,
+		customPaging: function (slider, i) {
+			return '<span class="dot"></span>';
 		},
 		responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 3
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 1
-      }
-    }
-  ]
+			{
+				breakpoint: 768,
+				settings: {
+					arrows: false,
+					centerMode: true,
+					centerPadding: '40px',
+					slidesToShow: 3
+				}
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					arrows: false,
+					centerMode: true,
+					centerPadding: '40px',
+					slidesToShow: 1
+				}
+			}
+		]
 		//fade: true
-		});
+	});
 	// review slider === end
 
+	// order slider
+	$('.order-slider').slick({
+		slidesToShow: 1,
+		speed: 800, //animate time
+		autoplay: false,
+		arrows: false,
+		autoplaySpeed: 8000, //time between
+		dots: true,
+		centerMode: true,
+		centerPadding: '80px',
+		responsive: [
+			{
+				breakpoint: 640,
+				settings: {
+					centerPadding: '40px',
+				}
+			}
+		],
+		customPaging: function (slider, i) {
+			return '<span class="dot"></span>';
+		},
+		//fade: true
+	});
+	// order slider === end
+
 	// custom nav slider
-	$('.slider-control--right').click(function(){
+	$('.slider-control--right').click(function () {
 		$(this).closest(".slider-wrap").find(".slider-item").slick('slickNext');
 	});
 
-	$('.slider-control--left').click(function(){
+	$('.slider-control--left').click(function () {
 		$(this).closest(".slider-wrap").find(".slider-item").slick('slickPrev');
 	});
 	// custom nav slider === end
@@ -73,66 +99,65 @@ $(document).ready(function () {
 	// ==== diet calc ====
 
 	//toggle state header
-	$('.diet-cond__el').click(function(){
+	$('.diet-cond__el').click(function () {
 		$('.diet-cond__el').removeClass('diet-cond__el--active');
 		$(this).addClass('diet-cond__el--active');
 	});
 	//toggle state header=== end
 
 	// tab programs
-	$('.diet-tab__head').click(function(){
+	$('.diet-tab__head').click(function () {
 		$(this).closest('.diet-tab').find('.diet-tab__head').removeClass('diet-tab__head--active');
 		$(this).addClass('diet-tab__head--active');
 		var currentTab = $(this).index();
 		console.log(currentTab);
-		$(this).closest('.diet-tab').find('.diet-tab__cont').each(function(){
-				if($(this).index()===currentTab){
-					$(this).addClass('diet-tab__cont--active')
-				}else{
-					$(this).removeClass('diet-tab__cont--active')
-				}
-			})
+		$(this).closest('.diet-tab').find('.diet-tab__cont').each(function () {
+			if ($(this).index() === currentTab) {
+				$(this).addClass('diet-tab__cont--active')
+			} else {
+				$(this).removeClass('diet-tab__cont--active')
+			}
+		})
 	});
 	// tab programs === end
 
 	//calc slider
 	$('.diet-slider').slick({
-			slidesToShow: 1,
-			speed: 800, //animate time
-			autoplay: false,
-			arrows:false,
-			autoplaySpeed: 8000, //time between
-			dots:false,
-			centerMode: true,
-			lazyLoad: 'ondemand',
-			infinite:true,
-			centerPadding: '8%',
+		slidesToShow: 1,
+		speed: 800, //animate time
+		autoplay: false,
+		arrows: false,
+		autoplaySpeed: 8000, //time between
+		dots: false,
+		centerMode: true,
+		lazyLoad: 'ondemand',
+		infinite: true,
+		centerPadding: '8%',
 
-			//fade: true
+		//fade: true
 	});
 	//calc slider === end
 
 	//toggle state day
-	$('.diet-day__el').click(function(){
+	$('.diet-day__el').click(function () {
 		$('.diet-day__el').removeClass('diet-day__el--active');
 		$(this).addClass('diet-day__el--active');
 		var current = $(this).index();
-		$('.diet-container').each(function(){
+		$('.diet-container').each(function () {
 			console.log($(this).index());
-				if($(this).index()===current){
-					$(this).addClass('diet-container--active');
-				}else{
-					$(this).removeClass('diet-container--active');
-				}
-			})
+			if ($(this).index() === current) {
+				$(this).addClass('diet-container--active');
+			} else {
+				$(this).removeClass('diet-container--active');
+			}
+		})
 		//$('.diet-slider').eq(current).slick('reinit');
 	});
 	//toggle state day === end
 
 
-
 	//clock state + nav slider day
-	$('.diet-clock__el').click(function(){
+	$('.diet-clock__el').click(function () {
 		var currentClock = $(this).closest('.diet-container').find('.diet-clock__el');
 		currentClock.removeClass('diet-clock__el--active');
 		$(this).addClass('diet-clock__el--active');
@@ -145,13 +170,13 @@ $(document).ready(function () {
 
 	//change state on slider move
 	$('.diet-slider').on("afterChange", function (event, slick, currentSlide, nextSlide) {
-		$(this).closest('.diet-container').find('.diet-clock__el').each(function(){
-				if($(this).index()===currentSlide){
-					$(this).addClass('diet-clock__el--active')
-				}else{
-					$(this).removeClass('diet-clock__el--active')
-				}
-			})
+		$(this).closest('.diet-container').find('.diet-clock__el').each(function () {
+			if ($(this).index() === currentSlide) {
+				$(this).addClass('diet-clock__el--active')
+			} else {
+				$(this).removeClass('diet-clock__el--active')
+			}
+		})
 	});
 	//change state on slider move === end
 
@@ -159,28 +184,27 @@ $(document).ready(function () {
 	// tab programs === end
 
 
-
 	// ==== diet calc  end====
 
 	// toggle faq head
-	$('.faq-tab__el').click(function(){
+	$('.faq-tab__el').click(function () {
 		$('.faq-tab__el').removeClass('faq-tab__el--active');
 		$(this).addClass('faq-tab__el--active');
 		var currentTab = $(this).index();
 		console.log(currentTab);
-		$('.faq').each(function(){
+		$('.faq').each(function () {
 			console.log($(this).index());
-				if($(this).index()===currentTab){
-					$(this).addClass('faq--active')
-				}else{
-					$(this).removeClass('faq--active')
-				}
-			})
+			if ($(this).index() === currentTab) {
+				$(this).addClass('faq--active')
+			} else {
+				$(this).removeClass('faq--active')
+			}
+		})
 	});
 	// toggle faq head === end
 
 	// akkord row toggle
-	$('.akkord__el').click(function(){
+	$('.akkord__el').click(function () {
 		$(this).toggleClass('akkord__el--active');
 		$(this).find('.akkord__el-content').slideToggle();
 	});
@@ -188,10 +212,10 @@ $(document).ready(function () {
 
 	// init fancybox
 	$('.fancybox').fancybox({
-		thumbs : {
-			autoStart : true
+		thumbs: {
+			autoStart: true
 		},
-		buttons : [
+		buttons: [
 			'zoom',
 			'close'
 		]
@@ -200,7 +224,7 @@ $(document).ready(function () {
 
 	//mobile menu
 	//Фиксируем скрол
-	$('.head-toggle--open').click(function(){
+	$('.head-toggle--open').click(function () {
 		$('body').css({
 			overflow: '',
 			position: '',
@@ -208,7 +232,7 @@ $(document).ready(function () {
 		})
 	});
 
-	$('.head-toggle').click(function(event){
+	$('.head-toggle').click(function (event) {
 		event.stopPropagation();
 		$(this).toggleClass('head-toggle--open');
 		$('.slide-menu').toggleClass('slide-menu--open');
@@ -220,12 +244,12 @@ $(document).ready(function () {
 	});
 
 	$(document).on("click", function () {
-			$('.head-wrap').removeClass('head--up');
-			$('.head-toggle').removeClass('head-toggle--open');
-			$('.slide-menu').removeClass('slide-menu--open');
-			console.log(modalState.isModalShow);
-			if(modalState.isModalShow == false){
-				$('body').removeClass('body-fix')
+		$('.head-wrap').removeClass('head--up');
+		$('.head-toggle').removeClass('head-toggle--open');
+		$('.slide-menu').removeClass('slide-menu--open');
+		console.log(modalState.isModalShow);
+		if (modalState.isModalShow == false) {
+			$('body').removeClass('body-fix')
 		}
 	});
 
@@ -233,7 +257,7 @@ $(document).ready(function () {
 
 
 	//animate main-page on load
-	if($(".controller").length) {
+	if ($(".controller").length) {
 		var tl = new TimelineMax();
 		tl.fromTo('.page-head', 1.5, {y: -200, opacity: 0}, {y: 0, opacity: 1}).staggerFromTo('.controller__el', 1, {x: -20, opacity: 0}, {x: 0, opacity: 1, ease: Sine.easeOut}, 0.5).staggerFromTo('.controller__logo', .8, {x: 20, opacity: 0}, {x: 0, opacity: 1, ease: Sine.easeOut}, 0.3);
 	}
@@ -257,7 +281,7 @@ $(document).ready(function () {
 			modalState.scrollPos = $(window).scrollTop();
 			$('body').css({
 				overflow: 'hidden',
-				position: 'fixed',
+				//position: 'fixed',
 				overflowY: 'hidden',
 				top: -modalState.scrollPos,
 				width: '100%'
@@ -302,23 +326,84 @@ $(document).ready(function () {
 	//modals===end
 
 	//toggle input promocode
-	$('.promocode-check').click(function(){
-		if($(".promocode-check input").prop('checked')){
+	$('.promocode-check').click(function () {
+		if ($(".promocode-check input").prop('checked')) {
 			$('.input-row--code').slideToggle();
 		}
 	});
 	//toggle input promocode===end
 
 	// remove indent pay
-	$('.indent-pay__remove').click(function(){
+	$('.indent-pay__remove').click(function () {
 		$(this).closest('.indent-row').slideUp();
 	});
 	// remove indent pay === end
 
 	// toggle payout
-	$('.payout__el').click(function(){
+	$('.payout__el').click(function () {
 		$('.payout__el').removeClass('payout__el--active')
 		$(this).addClass('payout__el--active')
 	});
 	// toggle payout === end
+
+	//datepicker
+	//doc http://t1m0n.name/air-datepicker/docs/index-ru.html
+	var dp = $('.getdate').datepicker({
+		minDate: new Date(),
+		autoClose: true
+	}).data('datepicker');
+
+  $('.modal-wrap').on('scroll', function () {
+  	dp.update();
+  });
+	//datepicker===end
+
+
+	// animate placeholder
+	$('.input-animate').each(function () {
+		var current = $(this);
+		var dataString = "<span class='input-placeholder-val'>" + current.data('input') + "</span>";
+		current.parent().append(dataString);
+		if ($(this).val()) {
+			$(this).attr('data-empty', !this.value);
+		}
+	});
+
+	$('.input-animate').on('input change load', function (e) {
+		$(e.currentTarget).attr('data-empty', !e.currentTarget.value);
+		if ($(this).val()) {
+			$(this).attr('data-empty', !e.currentTarget.value);
+		}
+	});
+
+	$('.input-placeholder-val').click(function () {
+		$(this).parent().find('.input-animate').focus(); //найти Input и повесить focus
+	});
+	$('.input').click(function () {
+		console.log($(this).val());
+	});
+	//animate placeholder === end
+
+	//increment field
+	$('.incr__minus').click(function () {
+		var $input = $(this).parent().find('.incr__val span');
+		var count = parseInt($input.html()) - 1;
+		count = count < 1 ? 0 : count;
+		$input.html(count);
+	});
+
+	$('.incr__minus.incr--one').click(function () {
+		var $input = $(this).parent().find('.incr__val span');
+		var count = parseInt($input.html()) - 1;
+		count = count < 2 ? 1 : count;
+		$input.html(count);
+	});
+
+	$('.incr__plus').click(function () {
+		var $input = $(this).parent().find('.incr__val span');
+		var count = parseInt($input.html()) + 1;
+		count = count > 100 ? 100 : count;
+		$input.html(count);
+	});
+	//increment field end
 });

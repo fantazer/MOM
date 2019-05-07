@@ -706,7 +706,7 @@
                             </div>
                             <div class="input-row-half">
                                 <div class="input-wrap">
-                                    <div class="input-row__title">Улица</div>
+                                    <div class="input-row__title">Дом</div>
                                     <input class="input" type="text" name="name" value="14" />
                                 </div>
                                 <div class="input-wrap">
@@ -733,7 +733,454 @@
                     </div>
                 </div>
                 <!--modal adres-edit === end-->
-                <!--cart === end-->
+                <!--modal order-->
+                <div class="modal" data-modal="order">
+                    <div class="modal-content">
+                        <div class="modal-close">
+                            <svg class="icon">
+                                <use xlink:href="#close-fat"></use>
+                            </svg>
+                        </div>
+                        <div class="order-head">
+                            <div class="order-head__icon">
+                                <svg class="icon">
+                                    <use xlink:href="#day-1"></use>
+                                </svg>
+                            </div>
+                            <div class="order-head__contet">
+                                <div class="order-head__val">≈ 2500 ккал, 6 приёмов/день</div>
+                                <div class="order-head__title">Я беременна. 1 триместр</div>
+                                <div class="order-head__info">14 дней питания
+                                    <span class="mark">- 3%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <form action="#">
+                            <div class="form-section">
+                                <div class="modal-title--left modal-title--bright">Ваши данные</div>
+                                <div class="input-row">
+                                    <input class="input input-animate" type="text" data-input="Ваше имя и фамилия" />
+                                </div>
+                                <div class="input-row">
+                                    <input class="input input-animate" type="text" data-input="Телефон" />
+                                </div>
+                                <div class="input-row">
+                                    <input class="input input-animate" type="text" data-input="E-mail" />
+                                </div>
+                            </div>
+                            <div class="form-section">
+                                <div class="modal-title--left modal-title--bright">Куда доставить</div>
+                                <a class="order-info" href="#">информация о доставке</a>
+                                <div class="input-row">
+                                    <input class="input getdate" type="text" placeholder="Дата первой доставки" />
+                                </div>
+                                <div class="input-row">
+                                    <input class="input input-animate" type="text" name="name" data-input="Улица" />
+                                </div>
+                                <div class="input-row">
+                                    <input class="input input-animate" type="text" name="name" data-input="Дом" />
+                                </div>
+                                <div class="input-row">
+                                    <input class="input input-animate" type="text" name="name" data-input="Квартира" />
+                                </div>
+                                <div class="order-note">
+                                    <div class="order-note__icon">
+                                        <svg class="icon">
+                                            <use xlink:href="#bonuses"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="order-note__info">
+                                        <div class="order-note__text">Вам будет начислено</div>
+                                        <div class="order-note__val">250 баллов</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-section">
+                                <div class="modal-title--left modal-title--bright">Регулярность доставки</div>
+                                <div class="input-row input-row--mid">
+                                    <div class="check-el">
+                                        <label class="style-label style-label--radio">
+                                            <input class="sytle-input" type="radio" name="deliver" checked="checked" />
+                                            <div class="sytle-input-element">
+                                                <div class="icon-radio"></div>
+                                            </div>
+                                            <div class="sytle-input-text">Ежедневно</div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="input-row input-row--mid">
+                                    <div class="check-el">
+                                        <label class="style-label style-label--radio">
+                                            <input class="sytle-input" type="radio" name="deliver" />
+                                            <div class="sytle-input-element">
+                                                <div class="icon-radio"></div>
+                                            </div>
+                                            <div class="sytle-input-text">Раз в два дня</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-section">
+                                <div class="login-remember">
+                                    <div class="check-el">
+                                        <label class="style-label style-label--checkbox">
+                                            <input class="sytle-input" type="checkbox" />
+                                            <div class="sytle-input-element">
+                                                <svg class="icon-check">
+                                                    <use xlink:href="#checked"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="sytle-input-text">мне нужен комплект столовых приборов</div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <textarea class="input" name="text" cols="30" rows="10" placeholder="Комментарий"></textarea>
+                            </div>
+                            <div class="form-section">
+                                <div class="modal-title--left modal-title--bright">Рекомендуем также заказать</div>
+                            </div>
+                            <div class="order-slider-wrap">
+                                <div class="order-slider">
+                                    <div class="order-slider__el">
+                                        <div class="order-slider__el-img" style="background-image:url('img/drink.jpg')"></div>
+                                        <div class="order-slider__el-title">Вода минеральная Моршинская 0,5 л</div>
+                                        <div class="order-slider__el-footer">
+                                            <div class="order-slider__el-cost">120 ₽</div>
+                                            <div class="elements-icr-block">
+                                                <div class="incr">
+                                                    <div class="incr__minus incr__nav">
+                                                        <svg class="icon">
+                                                            <use xlink:href="#minus"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="incr__val">
+                                                        <span>0</span>
+                                                        <div class="incr__val-coner"></div>
+                                                    </div>
+                                                    <div class="incr__plus incr__nav">
+                                                        <svg class="icon">
+                                                            <use xlink:href="#plus"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-slider__el">
+                                        <div class="order-slider__el-img" style="background-image:url('img/drink.jpg')"></div>
+                                        <div class="order-slider__el-title">Вода минеральная Моршинская 0,5 л</div>
+                                        <div class="order-slider__el-footer">
+                                            <div class="order-slider__el-cost">120 ₽</div>
+                                            <div class="elements-icr-block">
+                                                <div class="incr">
+                                                    <div class="incr__minus incr__nav">
+                                                        <svg class="icon">
+                                                            <use xlink:href="#minus"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="incr__val">
+                                                        <span>0</span>
+                                                        <div class="incr__val-coner"></div>
+                                                    </div>
+                                                    <div class="incr__plus incr__nav">
+                                                        <svg class="icon">
+                                                            <use xlink:href="#plus"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-slider__el">
+                                        <div class="order-slider__el-img" style="background-image:url('img/drink.jpg')"></div>
+                                        <div class="order-slider__el-title">Вода минеральная Моршинская 0,5 л</div>
+                                        <div class="order-slider__el-footer">
+                                            <div class="order-slider__el-cost">120 ₽</div>
+                                            <div class="elements-icr-block">
+                                                <div class="incr">
+                                                    <div class="incr__minus incr__nav">
+                                                        <svg class="icon">
+                                                            <use xlink:href="#minus"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="incr__val">
+                                                        <span>0</span>
+                                                        <div class="incr__val-coner"></div>
+                                                    </div>
+                                                    <div class="incr__plus incr__nav">
+                                                        <svg class="icon">
+                                                            <use xlink:href="#plus"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-slider__el">
+                                        <div class="order-slider__el-img" style="background-image:url('img/drink.jpg')"></div>
+                                        <div class="order-slider__el-title">Вода минеральная Моршинская 0,5 л</div>
+                                        <div class="order-slider__el-footer">
+                                            <div class="order-slider__el-cost">120 ₽</div>
+                                            <div class="elements-icr-block">
+                                                <div class="incr">
+                                                    <div class="incr__minus incr__nav">
+                                                        <svg class="icon">
+                                                            <use xlink:href="#minus"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="incr__val">
+                                                        <span>0</span>
+                                                        <div class="incr__val-coner"></div>
+                                                    </div>
+                                                    <div class="incr__plus incr__nav">
+                                                        <svg class="icon">
+                                                            <use xlink:href="#plus"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-section">
+                                <div class="login-remember">
+                                    <div class="check-el">
+                                        <label class="style-label style-label--checkbox">
+                                            <input class="sytle-input" type="checkbox" />
+                                            <div class="sytle-input-element">
+                                                <svg class="icon-check">
+                                                    <use xlink:href="#checked"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="sytle-input-text">Я ознакомился с
+                                                <a href="#">политикой конфиденциальности</a>,
+                                                <a href="#">публичной офертой</a>и даю согласие на обработку моих персональных данных</div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <input class="btn--md btn--mark order-get" type="submit" value="Оплатить 12 500 ₽" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--modal order === end-->
+                <!--modal order-reg-->
+                <div class="modal" data-modal="order-reg">
+                    <div class="modal-content">
+                        <div class="modal-close">
+                            <svg class="icon">
+                                <use xlink:href="#close-fat"></use>
+                            </svg>
+                        </div>
+                        <div class="order-head">
+                            <div class="order-head__icon">
+                                <svg class="icon">
+                                    <use xlink:href="#day-1"></use>
+                                </svg>
+                            </div>
+                            <div class="order-head__contet">
+                                <div class="order-head__val">≈ 2500 ккал, 6 приёмов/день</div>
+                                <div class="order-head__title">Я беременна. 1 триместр</div>
+                                <div class="order-head__info">14 дней питания
+                                    <span class="mark">- 3%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <form action="#">
+                            <div class="form-section">
+                                <div class="modal-title--left modal-title--bright">Куда доставить</div>
+                                <a class="order-info" href="#">информация о доставке</a>
+                                <div class="input-row">
+                                    <input class="input getdate" type="text" placeholder="Дата первой доставки" />
+                                </div>
+                                <div class="input-row">
+                                    <input class="input input-animate" type="text" name="name" data-input="Улица" />
+                                </div>
+                                <div class="input-row">
+                                    <input class="input input-animate" type="text" name="name" data-input="Дом" />
+                                </div>
+                                <div class="input-row">
+                                    <input class="input input-animate" type="text" name="name" data-input="Квартира" />
+                                </div>
+                                <div class="order-note">
+                                    <div class="order-note__icon">
+                                        <svg class="icon">
+                                            <use xlink:href="#free"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="order-note__info">
+                                        <div class="order-note__text">Доставка бесплатна, но баллы не будут начислены из-за того, что вы за пределами МКАД
+                                            <span class="info bubble">?
+                                                <div class="bubble-info">Получите рацион питания внутри МКАД, когда вы находитесь на работе или по делам и получите баллы.</div>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-section">
+                                <div class="modal-title--left modal-title--bright">Регулярность доставки</div>
+                                <div class="input-row input-row--mid">
+                                    <div class="check-el">
+                                        <label class="style-label style-label--radio">
+                                            <input class="sytle-input" type="radio" name="deliver" checked="checked" />
+                                            <div class="sytle-input-element">
+                                                <div class="icon-radio"></div>
+                                            </div>
+                                            <div class="sytle-input-text">Раз в два дня
+                                                <span class="info bubble">?
+                                                    <div class="bubble-info">Мы доставляем за МКАД раз в два дня</div>
+                                                </span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-section">
+                                <div class="login-remember">
+                                    <div class="check-el">
+                                        <label class="style-label style-label--checkbox">
+                                            <input class="sytle-input" type="checkbox" />
+                                            <div class="sytle-input-element">
+                                                <svg class="icon-check">
+                                                    <use xlink:href="#checked"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="sytle-input-text">мне нужен комплект столовых приборов</div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <textarea class="input" name="text" cols="30" rows="10" placeholder="Комментарий"></textarea>
+                            </div>
+                            <div class="form-section">
+                                <div class="modal-title--left modal-title--bright">Рекомендуем также заказать</div>
+                            </div>
+                            <div class="order-slider-wrap">
+                                <div class="order-slider">
+                                    <div class="order-slider__el">
+                                        <div class="order-slider__el-img" style="background-image:url('img/drink.jpg')"></div>
+                                        <div class="order-slider__el-title">Вода минеральная Моршинская 0,5 л</div>
+                                        <div class="order-slider__el-footer">
+                                            <div class="order-slider__el-cost">120 ₽</div>
+                                            <div class="elements-icr-block">
+                                                <div class="incr">
+                                                    <div class="incr__minus incr__nav">
+                                                        <svg class="icon">
+                                                            <use xlink:href="#minus"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="incr__val">
+                                                        <span>0</span>
+                                                        <div class="incr__val-coner"></div>
+                                                    </div>
+                                                    <div class="incr__plus incr__nav">
+                                                        <svg class="icon">
+                                                            <use xlink:href="#plus"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-slider__el">
+                                        <div class="order-slider__el-img" style="background-image:url('img/drink.jpg')"></div>
+                                        <div class="order-slider__el-title">Вода минеральная Моршинская 0,5 л</div>
+                                        <div class="order-slider__el-footer">
+                                            <div class="order-slider__el-cost">120 ₽</div>
+                                            <div class="elements-icr-block">
+                                                <div class="incr">
+                                                    <div class="incr__minus incr__nav">
+                                                        <svg class="icon">
+                                                            <use xlink:href="#minus"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="incr__val">
+                                                        <span>0</span>
+                                                        <div class="incr__val-coner"></div>
+                                                    </div>
+                                                    <div class="incr__plus incr__nav">
+                                                        <svg class="icon">
+                                                            <use xlink:href="#plus"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-slider__el">
+                                        <div class="order-slider__el-img" style="background-image:url('img/drink.jpg')"></div>
+                                        <div class="order-slider__el-title">Вода минеральная Моршинская 0,5 л</div>
+                                        <div class="order-slider__el-footer">
+                                            <div class="order-slider__el-cost">120 ₽</div>
+                                            <div class="elements-icr-block">
+                                                <div class="incr">
+                                                    <div class="incr__minus incr__nav">
+                                                        <svg class="icon">
+                                                            <use xlink:href="#minus"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="incr__val">
+                                                        <span>0</span>
+                                                        <div class="incr__val-coner"></div>
+                                                    </div>
+                                                    <div class="incr__plus incr__nav">
+                                                        <svg class="icon">
+                                                            <use xlink:href="#plus"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-slider__el">
+                                        <div class="order-slider__el-img" style="background-image:url('img/drink.jpg')"></div>
+                                        <div class="order-slider__el-title">Вода минеральная Моршинская 0,5 л</div>
+                                        <div class="order-slider__el-footer">
+                                            <div class="order-slider__el-cost">120 ₽</div>
+                                            <div class="elements-icr-block">
+                                                <div class="incr">
+                                                    <div class="incr__minus incr__nav">
+                                                        <svg class="icon">
+                                                            <use xlink:href="#minus"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="incr__val">
+                                                        <span>0</span>
+                                                        <div class="incr__val-coner"></div>
+                                                    </div>
+                                                    <div class="incr__plus incr__nav">
+                                                        <svg class="icon">
+                                                            <use xlink:href="#plus"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-section">
+                                <div class="login-remember">
+                                    <div class="check-el">
+                                        <label class="style-label style-label--checkbox">
+                                            <input class="sytle-input" type="checkbox" />
+                                            <div class="sytle-input-element">
+                                                <svg class="icon-check">
+                                                    <use xlink:href="#checked"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="sytle-input-text">Я ознакомился с
+                                                <a href="#">политикой конфиденциальности</a>,
+                                                <a href="#">публичной офертой</a>и даю согласие на обработку моих персональных данных</div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <input class="btn--md btn--mark order-get" type="submit" value="Оплатить 12 500 ₽" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--modal order-reg === end-->
             </div>
         </div>
     </div>
