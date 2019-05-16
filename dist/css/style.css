@@ -533,6 +533,8 @@ h4,
 h5,
 .section-title,
 .diet-cond__el-title,
+.how-el,
+.how-el-point,
 .deliver-map-title,
 .video-info__title,
 .video-cont__title,
@@ -1747,6 +1749,101 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.how {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 94% 85%;
+  background-position: 50% 30px;
+  margin-top: 100px;
+}
+.how-content {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.how-el {
+  position: absolute;
+  width: 250px;
+  text-align: center;
+  opacity: 0.3;
+  -webkit-transition: all 0.4s;
+          transition: all 0.4s;
+}
+.how-el--active {
+  opacity: 1;
+}
+.how-el--order {
+  bottom: 0;
+  left: -4%;
+}
+.how-el--prepear {
+  top: -50px;
+  left: 10%;
+}
+.how-el--pack {
+  bottom: -40px;
+  left: 40%;
+}
+.how-el--get {
+  top: -50px;
+  right: 10%;
+}
+.how-el--end {
+  bottom: -60px;
+  right: -4%;
+}
+.how-el-point {
+  position: absolute;
+  text-align: center;
+}
+.how-el-point .icon {
+  width: 40px;
+  height: 40px;
+}
+.how-el-point--order {
+  bottom: 8%;
+  left: 4.5%;
+}
+.how-el-point--prepear {
+  top: 18%;
+  left: 20%;
+}
+.how-el-point--pack {
+  bottom: 9%;
+  left: 48.5%;
+}
+.how-el-point--get {
+  top: 18%;
+  right: 20%;
+}
+.how-el-point--end {
+  bottom: 8%;
+  right: 4.5%;
+}
+#heart {
+  width: 40px;
+  height: 40px;
+}
+.traectory {
+  width: 100%;
 }
 .deliver-map-container {
   position: relative;
@@ -3909,6 +4006,12 @@ body {
 }
 .skin--green .sytle-input-text a {
   color: #f37321;
+}
+.skin--mom .how-el-point .icon {
+  fill: #c4c4c4;
+}
+.skin--mom .how-el-point--active .icon {
+  fill: #eea4c8;
 }
 .skin--mom .order-head__icon .icon {
   fill: #eea4c8;

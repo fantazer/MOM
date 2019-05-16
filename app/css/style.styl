@@ -380,6 +380,74 @@ body
 
 .section-how
 	bg-full()
+	height: 100vh
+	flex(mid)
+.how
+	position: relative
+	bg-full()
+	background-size:94% 85%
+	background-position 50% 30px
+	margin-top: 100px
+.how-content
+	position: absolute
+	height: 100%
+	width: 100%
+	top 0
+	left 0
+.how-el
+	position: absolute
+	width: 250px
+	text-align: center
+	@extend .type--bold
+	opacity:0.3
+	tr(all)
+.how-el--active
+	opacity:1
+
+.how-el--order
+	bottom 0
+	left -4%
+.how-el--prepear
+	top -50px
+	left 10%
+.how-el--pack
+	bottom -40px
+	left 40%
+.how-el--get
+	top -50px
+	right: 10%
+.how-el--end
+	bottom -60px
+	right: -4%
+
+
+.how-el-point
+	position: absolute
+	text-align: center
+	@extend .type--bold
+	.icon
+		size 40px
+.how-el-point--order
+	bottom 8%
+	left 4.5%
+.how-el-point--prepear
+	top 18%
+	left 20%
+.how-el-point--pack
+	bottom 9%
+	left 48.5%
+.how-el-point--get
+	top 18%
+	right 20%
+.how-el-point--end
+	bottom 8%
+	right 4.5%
+
+#heart
+	size 40px
+.traectory
+	width: 100%
+
 
 .deliver-map-container
 	+below(1024px)
@@ -1669,6 +1737,13 @@ body
 
 // skin mom
 .skin--mom
+	.how-el-point
+		.icon
+			fill $gray
+	.how-el-point--active
+		.icon
+			fill #eea4c8
+
 	.order-head__icon
 		.icon
 			fill $pink
