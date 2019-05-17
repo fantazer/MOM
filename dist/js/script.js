@@ -1,61 +1,70 @@
 $(document).ready(function () {
 
-	//animate on scroll
-	function pathPrepare ($el) {
-		var lineLength = $el[0].getTotalLength();
-		$el.css("stroke-dasharray", lineLength);
-		$el.css("stroke-dashoffset", lineLength);
-	}
-	var $wave = $("path#wave");
-	pathPrepare($wave);
+	if($('#how').length !=0) {
+		//animate on scroll
+		function pathPrepare($el) {
+			var lineLength = $el[0].getTotalLength();
+			$el.css("stroke-dasharray", lineLength);
+			$el.css("stroke-dashoffset", lineLength);
+		}
 
-	function prepaer(){
-		$('.how-el-point--prepear').toggleClass('how-el-point--active');
-		$('.how-el--prepear').toggleClass('how-el--active');
-	};
-	function pack(){
-		$('.how-el-point--pack').toggleClass('how-el-point--active');
-		$('.how-el--pack').toggleClass('how-el--active');
-	};
-	function get(){
-		$('.how-el-point--get').toggleClass('how-el-point--active');
-		$('.how-el--get').toggleClass('how-el--active');
-	};
-	function end(){
-		$('.how-el-point--end').toggleClass('how-el-point--active');
-		$('.how-el--end').toggleClass('how-el--active');
-	};
+		var $wave = $("path#wave");
+		pathPrepare($wave);
+		function order() {
+			$('.how-el-point--order').toggle();
+		};
+		function prepaer() {
+			$('.how-el-point--prepear').toggleClass('how-el-point--active');
+			$('.how-el--prepear').toggleClass('how-el--active');
+		};
 
-	var path = MorphSVGPlugin.pathDataToBezier("#wave", {align:"#heart"});
-	//var tl = new TimelineMax({onUpdate:updatePercentage});
-	var tl = new TimelineMax();
-	var controller = new ScrollMagic.Controller();
-	tl
-		.add( function(){ console.log( tl.progress() ) } )
-		.set("#heart",{
-			transformOrigin: "center",
-			xPercent: -50,
-			yPercent: -50
-		})
-		.to("#heart", 48, {bezier:{values:path, type:"cubic"}, ease:Linear.easeNone})
-		.to($wave, 48, {strokeDashoffset: 0, ease:Linear.easeNone},0)
-		.add(prepaer, tl.duration()/5)
-		.add(pack, tl.duration()/2)
-		.add(get, tl.duration()*.75)
-		.add(end, tl.duration()*.98);
+		function pack() {
+			$('.how-el-point--pack').toggleClass('how-el-point--active');
+			$('.how-el--pack').toggleClass('how-el--active');
+		};
+
+		function get() {
+			$('.how-el-point--get').toggleClass('how-el-point--active');
+			$('.how-el--get').toggleClass('how-el--active');
+		};
+
+		function end() {
+			$('.how-el-point--end').toggle();
+			$('.how-el--end').toggleClass('how-el--active');
+		};
+
+		var path = MorphSVGPlugin.pathDataToBezier("#wave", {align: "#heart"});
+		//var tl = new TimelineMax({onUpdate:updatePercentage});
+		var tl = new TimelineMax();
+		var controller = new ScrollMagic.Controller();
+		tl
+			.add(function () {
+				console.log(tl.progress())
+			})
+			.set("#heart", {
+				transformOrigin: "center",
+				xPercent: -50,
+				yPercent: -50
+			})
+			.to("#heart", 48, {bezier: {values: path, type: "cubic"}, ease: Linear.easeNone})
+			.to($wave, 48, {strokeDashoffset: 0, ease: Linear.easeNone}, 0)
+			.add(order, tl.duration() *.02)
+			.add(prepaer, tl.duration() / 5)
+			.add(pack, tl.duration() / 2)
+			.add(get, tl.duration() * .75)
+			.add(end, tl.duration() * .98);
 
 
-	var scene = new ScrollMagic.Scene({
+		var scene = new ScrollMagic.Scene({
 			triggerElement: "#how",
 			triggerHook: "onLeave",
-			duration: "300%",
+			duration: "200%",
 			//offset:'-200px'
 		}).setPin("#how")
-		.setTween(tl)
-		.addTo(controller);
-	//animate on scroll
-
-
+			.setTween(tl)
+			.addTo(controller);
+		//animate on scroll
+	}
 	// set progress on bar
 	var progress = $('.progres-bg').data('val');
 	$('.progress-val--hor').attr('width', progress + "%");

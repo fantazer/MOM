@@ -379,6 +379,7 @@ body
 	@extend .type--sm
 
 .section-how
+
 	bg-full()
 	height: 100vh
 	flex(mid)
@@ -395,6 +396,8 @@ body
 	top 0
 	left 0
 .how-el
+	+below(1200px)
+		font-size: 14px
 	position: absolute
 	width: 250px
 	text-align: center
@@ -405,18 +408,23 @@ body
 	opacity:1
 
 .how-el--order
-	bottom 0
+	bottom -30px
 	left -4%
 .how-el--prepear
 	top -50px
 	left 10%
 .how-el--pack
+	+below(1200px)
+		left 38%
 	bottom -40px
 	left 40%
 .how-el--get
 	top -50px
 	right: 10%
 .how-el--end
+	+below(1200px)
+		right: 10px
+		text-align: right
 	bottom -60px
 	right: -4%
 
@@ -426,15 +434,18 @@ body
 	text-align: center
 	@extend .type--bold
 	.icon
-		size 40px
+		size 35px
 .how-el-point--order
 	bottom 8%
 	left 4.5%
+	display: none
 .how-el-point--prepear
 	top 18%
 	left 20%
 .how-el-point--pack
-	bottom 9%
+	+below(1024px)
+		bottom 8%
+	bottom 11%
 	left 48.5%
 .how-el-point--get
 	top 18%
@@ -442,8 +453,7 @@ body
 .how-el-point--end
 	bottom 8%
 	right 4.5%
-
-#heart
+svg#heart
 	size 40px
 .traectory
 	width: 100%
@@ -1534,6 +1544,12 @@ body
 
 // skin nation
 .skin--nation
+	.how-el-point
+		.icon
+			fill $green
+	.how-el-point--active
+		.icon
+			fill $red
 	.header-phone__icon
 		.icon
 			fill $green
@@ -1593,8 +1609,6 @@ body
 		background: $green
 	.faq-tab__el-coner
 		background: $green
-	.deliver-map-title
-		color $green
 	.order-head__icon
 		.icon
 			fill $green
@@ -1613,6 +1627,17 @@ body
 
 // skin green
 .skin--green
+	.section-how
+		.section-title
+			color $orange
+	.how-el
+		color white
+	.how-el-point
+		.icon
+			fill $green
+	.how-el-point--active
+		.icon
+			fill $orange
 	.header-phone__icon
 		.icon
 			fill $orange

@@ -157,9 +157,30 @@ include block_html/_include.pug
 		// section program === end
 
 		// section how
-		.section.section-how(style="background-image:url('img/how-work.jpg')")
-			.main-cont
+		.section.section-how#how(style="background-image:url('img/how-work--nation.jpg')")
+			.main-cont.section-how-wrap
 				.section-title Как это работает
+				.how(style="background-image:url('img/way--mom.svg')")
+					.how-content
+						.how-el.how-el--order.how-el--active Вы оформляете заказ
+						.how-el-point.how-el-point--order.how-el-point--active
+							+icon("cross","icon")
+						.how-el.how-el--prepear Шеф-повар готовит блюда из свежих продуктов
+						.how-el-point.how-el-point--prepear
+							+icon("cross","icon")
+						.how-el.how-el--pack Упаковываем и доставляем на ваш адрес
+						.how-el-point.how-el-point--pack
+							+icon("cross","icon")
+						.how-el.how-el--get Вы питаетесь и быстрее выздоравливаете
+						.how-el-point.how-el-point--get
+							+icon("cross","icon")
+						.how-el.how-el--end Повторные заказ вы уже можете заказать со скидкой до 100%
+						.how-el-point.how-el-point--end
+							+icon("cross","icon")
+					<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="525.4 274.4 1020.5 269.3"  xml:space="preserve" >
+					<path style="stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1009.23px; stroke-dashoffset: 1009.23px;" fill="none" stroke="#0d8c45" stroke-width="5" d="M587,504.5c0-91.6,73.8-165.8,164.8-165.8c60.5,0,113.4,32.8,142,81.7l0,0 c28.6,48.9,81.5,81.7,142,81.7c60.5,0,113.4-32.8,142-81.7l0,0c28.6-48.9,81.5-81.7,142-81.7c91,0,164.8,74.2,164.8,165.8" id="wave"/>
+					<path id="heart" x="0px" y="0px"  viewBox="0 35 35" style="fill:#ed1e40;" d="M25 0H10V10L0 10V25H10V35H25V25H35V10L25 10V0Z" />
+					</svg>
 		// section how === end
 
 		// section deliver-map

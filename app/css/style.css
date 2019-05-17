@@ -1787,11 +1787,16 @@ body {
   -webkit-transition: all 0.4s;
           transition: all 0.4s;
 }
+@media only screen and (max-width: 1200px) {
+  .how-el {
+    font-size: 14px;
+  }
+}
 .how-el--active {
   opacity: 1;
 }
 .how-el--order {
-  bottom: 0;
+  bottom: -30px;
   left: -4%;
 }
 .how-el--prepear {
@@ -1802,6 +1807,11 @@ body {
   bottom: -40px;
   left: 40%;
 }
+@media only screen and (max-width: 1200px) {
+  .how-el--pack {
+    left: 38%;
+  }
+}
 .how-el--get {
   top: -50px;
   right: 10%;
@@ -1810,25 +1820,37 @@ body {
   bottom: -60px;
   right: -4%;
 }
+@media only screen and (max-width: 1200px) {
+  .how-el--end {
+    right: 10px;
+    text-align: right;
+  }
+}
 .how-el-point {
   position: absolute;
   text-align: center;
 }
 .how-el-point .icon {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
 }
 .how-el-point--order {
   bottom: 8%;
   left: 4.5%;
+  display: none;
 }
 .how-el-point--prepear {
   top: 18%;
   left: 20%;
 }
 .how-el-point--pack {
-  bottom: 9%;
+  bottom: 11%;
   left: 48.5%;
+}
+@media only screen and (max-width: 1024px) {
+  .how-el-point--pack {
+    bottom: 8%;
+  }
 }
 .how-el-point--get {
   top: 18%;
@@ -1838,7 +1860,7 @@ body {
   bottom: 8%;
   right: 4.5%;
 }
-#heart {
+svg#heart {
   width: 40px;
   height: 40px;
 }
@@ -3738,6 +3760,12 @@ body {
 .skin--fe .akkord__el--active .akkord__el-head-text {
   color: #0d8c45;
 }
+.skin--nation .how-el-point .icon {
+  fill: #0d8c45;
+}
+.skin--nation .how-el-point--active .icon {
+  fill: #ed1e40;
+}
 .skin--nation .header-phone__icon .icon {
   fill: #0d8c45;
 }
@@ -3813,9 +3841,6 @@ body {
 .skin--nation .faq-tab__el-coner {
   background: #0d8c45;
 }
-.skin--nation .deliver-map-title {
-  color: #0d8c45;
-}
 .skin--nation .order-head__icon .icon {
   fill: #0d8c45;
 }
@@ -3833,6 +3858,18 @@ body {
 }
 .skin--nation .sytle-input-text a {
   color: #0d8c45;
+}
+.skin--green .section-how .section-title {
+  color: #f37321;
+}
+.skin--green .how-el {
+  color: #fff;
+}
+.skin--green .how-el-point .icon {
+  fill: #0d8c45;
+}
+.skin--green .how-el-point--active .icon {
+  fill: #f37321;
 }
 .skin--green .header-phone__icon .icon {
   fill: #f37321;
