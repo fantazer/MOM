@@ -379,7 +379,8 @@ body
 	@extend .type--sm
 
 .section-how
-
+	+below(1200px)
+		display: none
 	bg-full()
 	height: 100vh
 	flex(mid)
@@ -3277,3 +3278,32 @@ select.select-beauty
 
 .order-slider__el-title
 	margin-bottom: 20px
+
+//.range
+.range-wrap
+	margin-bottom: 50px
+.irs-slider
+	background: $red
+	round()
+	border 1px solid darken($red,10)
+.irs-line-left
+	background: #cbbaac
+.irs-line-right
+	background: #cbbaac
+	border-radius 0px 5px 5px 0
+.irs-line-mid
+	background: #cbbaac
+.irs-bar-edge
+	background: $red
+	border-radius  5px 0 0 5px
+.irs-bar
+	background: $red
+.irs-min, .irs-max
+	display: none
+.irs-from, .irs-to, .irs-single
+	background: white
+	color black
+	@extend .type--main
+	top 45px
+
+

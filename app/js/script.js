@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
+	//animate on scroll
 	if($('#how').length !=0) {
-		//animate on scroll
 		function pathPrepare($el) {
 			var lineLength = $el[0].getTotalLength();
 			$el.css("stroke-dasharray", lineLength);
@@ -63,8 +63,9 @@ $(document).ready(function () {
 		}).setPin("#how")
 			.setTween(tl)
 			.addTo(controller);
-		//animate on scroll
 	}
+	//animate on scroll
+
 	// set progress on bar
 	var progress = $('.progres-bg').data('val');
 	$('.progress-val--hor').attr('width', progress + "%");

@@ -444,14 +444,20 @@ h5,
 .type--main,
 h4,
 p,
-body {
+body,
+.irs-from,
+.irs-to,
+.irs-single {
   font-size: 16px;
 }
 @media only screen and (max-width: 768px) {
   .type--main,
   h4,
   p,
-  body {
+  body,
+  .irs-from,
+  .irs-to,
+  .irs-single {
     font-size: 14px;
   }
 }
@@ -1762,6 +1768,11 @@ body {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+}
+@media only screen and (max-width: 1200px) {
+  .section-how {
+    display: none;
+  }
 }
 .how {
   position: relative;
@@ -6682,4 +6693,43 @@ select.select-beauty {
 }
 .order-slider__el-title {
   margin-bottom: 20px;
+}
+.range-wrap {
+  margin-bottom: 50px;
+}
+.irs-slider {
+  background: #ed1e40;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  border: 1px solid #c8102e;
+}
+.irs-line-left {
+  background: #cbbaac;
+}
+.irs-line-right {
+  background: #cbbaac;
+  -webkit-border-radius: 0px 5px 5px 0;
+          border-radius: 0px 5px 5px 0;
+}
+.irs-line-mid {
+  background: #cbbaac;
+}
+.irs-bar-edge {
+  background: #ed1e40;
+  -webkit-border-radius: 5px 0 0 5px;
+          border-radius: 5px 0 0 5px;
+}
+.irs-bar {
+  background: #ed1e40;
+}
+.irs-min,
+.irs-max {
+  display: none;
+}
+.irs-from,
+.irs-to,
+.irs-single {
+  background: #fff;
+  color: #111;
+  top: 45px;
 }
